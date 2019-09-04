@@ -14,12 +14,12 @@ class Qrg < Formula
   def install
     ENV['GOPATH'] = buildpath
     ENV['GO111MODULE'] = 'on'
-    uniq2_path = buildpath/"src/github.com/tamada/qrg/"
-    uniq2_path.install buildpath.children
+    qrg_path = buildpath/"src/github.com/tamada/qrg/"
+    qrg_path.install buildpath.children
 
-    cd uniq2_path do
+    cd qrg_path do
       system "make", "build"
-      bin.install "cmd/uniq2/qrg"
+      bin.install "qrg"
     end
   end
 end
