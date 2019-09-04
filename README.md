@@ -6,8 +6,10 @@
     * Extended uniq.
 * [heatman](https://github.com/tamada/goheatman)
     * Creating heat map from given csv file.
-* [heatman](https://github.com/tamada/qrg)
+* [qrg](https://github.com/tamada/qrg)
     * QR code generator.
+* [9rules](https://github.com/tamada/9rules) (ninerules)
+    * Checking tool of small object programming for the Java language.
 
 ## How to install rrh, uniq2 and/or heatman.
 
@@ -17,5 +19,6 @@ $ brew install rrh
 $ brew install uniq2
 $ brew install heatman
 $ brew install qrg
+$ brew install ninerules # <- 9rules
 ```
 
