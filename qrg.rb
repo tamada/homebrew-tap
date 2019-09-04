@@ -2,7 +2,7 @@ require "formula"
 
 HOMEBREW_QRG_VERSION="1.0.0"
 
-class Uniq2 < Formula
+class Qrg < Formula
   desc "QR code generator"
   homepage "https://github.com/tamada/qrg"
   url "https://github.com/tamada/qrg.git", :tag => "v#{HOMEBREW_QRG_VERSION}"
