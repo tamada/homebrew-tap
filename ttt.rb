@@ -13,6 +13,6 @@ class Ttt < Formula
 
   def install
       bin.install "ttt"
-      share.install Dir["ttt/data"]
+      pkgshare.install "data"
   end
 end
