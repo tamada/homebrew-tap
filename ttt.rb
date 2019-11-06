@@ -13,6 +13,6 @@ class Ttt < Formula
 
   def install
       bin.install "ttt"
-      share.install "data","ttt/data"
+      share.install Dir["data"]
   end
 end
