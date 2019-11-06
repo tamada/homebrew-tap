@@ -13,6 +13,7 @@ class Ttt < Formula
 
   def install
       bin.install "ttt"
-      pkgshare.install "data"
+      pkgshare.install "data" # pkgshare.install symlinks ttt/data to /usr/local/share directory.
+      # share.install symlinks data to /usr/local/share.
   end
 end
