@@ -10,6 +10,8 @@
     * QR code generator.
 * [9rules](https://github.com/tamada/9rules) (ninerules)
     * Checking tool of small object programming for the Java language.
+* [pochi](https://github.com/tamada/pochi)
+    * Detecting the software theft, the birthmark toolkit for the JVM platform.
 
 ## How to install rrh, uniq2 and/or heatman.
 
@@ -20,5 +22,6 @@ $ brew install uniq2
 $ brew install heatman
 $ brew install qrg
 $ brew install ninerules # <- 9rules
+$ brew install pochi
 ```
 
