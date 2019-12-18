@@ -1,6 +1,6 @@
 require "formula"
 
-HOMEBREW_RRH_VERSION="1.0.4"
+HOMEBREW_RRH_VERSION="1.1.0"
 
 class Rrh < Formula
   desc "Git Repository Integrated Manager"
