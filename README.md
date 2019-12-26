@@ -14,6 +14,8 @@
     * Checking diploma of courses in ISE, KSU.
 * [pochi](https://github.com/tamada/pochi)
     * Detecting the software theft, the birthmark toolkit for the JVM platform.
+* [tjdoe](https://github.com/tamada/tjdoe)
+    * anonymizing the programs of the assignments in the programming courses and their score for grades.
 
 ## How to install rrh, uniq2, heatman, qrg, ninerules and/or ttt.
 
@@ -26,4 +28,5 @@ $ brew install qrg
 $ brew install ninerules # <- 9rules
 $ brew install ttt
 $ brew install pochi
+$ brew install tjdoe
 ```
