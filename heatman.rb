@@ -1,29 +1,17 @@
 require "formula"
 
-HOMEBREW_HEATMAN_VERSION="1.0.0"
+HOMEBREW_HEATMAN_VERSION="1.0.1"
 
 class Heatman < Formula
   desc "Creating heat map from given csv file."
   homepage "https://github.com/tamada/goheatman"
-  url "https://github.com/tamada/goheatman.git", :tag => "v#{HOMEBREW_HEATMAN_VERSION}"
+  url "https://github.com/tamada/goheatman/releases/download/v#{HOMEBREW_HEATMAN_VERSION}/heatman-v#{HOMEBREW_HEATMAN_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_HEATMAN_VERSION
-  head "https://github.com/tamada/goheatman.git", :branch => "master"
+  sha256 "0bb68f9a24e624b2bf57a2442dc3637ebec5d51aa80a98f3bc09b520d2508b7a"
 
   depends_on "go"  => :build
 
   def install
-    ENV['GOPATH'] = buildpath
-    ENV['GO111MODULE'] = 'on'
-    uniq2_path = buildpath/"src/github.com/tamada/goheatman/"
-    uniq2_path.install buildpath.children
-
-    cd uniq2_path do
-      system "make", "build"
-      bin.install "cmd/heatman/heatman"
-    end
-
-    test do
-      system "make test"
-    end
+    bin.install "heatman"
   end
 end
