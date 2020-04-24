@@ -20,13 +20,12 @@
 ## How to install rrh, uniq2, heatman, qrg, ninerules, ttt, pochi, and/or tjdoe.
 
 ```sh
-$ brew tap tamada/brew # <- at the first time
-$ brew install rrh
-$ brew install uniq2
-$ brew install heatman
-$ brew install qrg
-$ brew install ninerules # <- 9rules
-$ brew install ttt
-$ brew install pochi
-$ brew install tjdoe
+$ brew install tamada/brew/rrh
+$ brew install tamada/brew/uniq2
+$ brew install tamada/brew/heatman
+$ brew install tamada/brew/qrg
+$ brew install tamada/brew/ninerules # <- 9rules
+$ brew install tamada/brew/ttt
+$ brew install tamada/brew/pochi
+$ brew install tamada/brew/tjdoe
 ```
