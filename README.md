@@ -1,4 +1,4 @@
-# Homebrew Recipes
+# :beer: Homebrew Recipes
 
 * [rrh](https://github.com/tamada/rrh)
     * Git repository manager.
@@ -17,7 +17,7 @@
 * [tjdoe](https://github.com/tamada/tjdoe)
     * anonymizing the programs of the assignments in the programming courses and their score for grades.
 
-## How to install rrh, uniq2, heatman, qrg, ninerules and/or ttt.
+## How to install rrh, uniq2, heatman, qrg, ninerules, ttt, pochi, and/or tjdoe.
 
 ```sh
 $ brew tap tamada/brew # <- at the first time

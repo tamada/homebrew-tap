@@ -1,35 +1,23 @@
 require "formula"
 
-HOMEBREW_RRH_VERSION="1.1.0"
+HOMEBREW_RRH_VERSION="1.2.0"
 
 class Rrh < Formula
   desc "Git Repository Integrated Manager"
   homepage "https://github.com/tamada/rrh"
-  url "https://github.com/tamada/rrh.git", :tag => "v#{HOMEBREW_RRH_VERSION}"
+  url "https://github.com/tamada/rrh/releases/download/v#{HOMEBREW_RRH_VERSION}/rrh-#{HOMEBREW_RRH_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_RRH_VERSION
-  head "https://github.com/tamada/rrh.git", :branch => "master"
-
-  depends_on "go"  => :build
+  sha256 "abab357af44a9e9178bac5040503bdc44dd53bda664b4d3f4acc653a56f97a14"
 
   option "without-completions", "Disable bash completions"
 
   def install
-    ENV['GOPATH'] = buildpath
-    ENV['GO111MODULE'] = 'on'
-    rrh_path = buildpath/"src/github.com/tamada/rrh/"
-    rrh_path.install buildpath.children
-
-    cd rrh_path do
-      system "make", "build"
-      bin.install "rrh"
-    end
-
-    test do
-      system "make test"
-    end
+    bin.install "bin/rrh"
+    bin.install "bin/rrh-new"
+    bin.install "bin/rrh-helloworld"
 
     if build.with? "completions"
-      bash_completion.install "src/github.com/tamada/rrh/completions/bash/rrh"
+      bash_completion.install "completions/bash/rrh"
     end
   end
 end
