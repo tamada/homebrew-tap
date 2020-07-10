@@ -13,7 +13,7 @@ class Omelette < Formula
   depends_on "java" => :optional
 
   def install
-    bin.install "omelette"
+    bin.install "bin/omelette"
     system "sh", "./bin/download_dependencies.sh"
 
     if build.with? "completions"
