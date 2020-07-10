@@ -12,6 +12,8 @@ class Omelette < Formula
   depends_on "bash_completion@2" => :optional
   depends_on "java" => :optional
 
+  option "without-completions", "Disable bash completions"
+
   def install
     bin.install "bin/omelette"
     system "sh", "./bin/download_dependencies.sh"
