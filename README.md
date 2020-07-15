@@ -17,9 +17,11 @@
 * [tjdoe](https://github.com/tamada/tjdoe)
     * anonymizing the programs of the assignments in the programming courses and their score for grades.
 * [omelette](https://github.com/tamada/omelette)
-    * Unit tests runner/coverage calculator on the CLI environment for the Java platform.
+    * An agent for running unit tests on the CLI environemnt for the Java platform
+* [sibling](https://github.com/tamada/sibling)
+    * get next/previous sibling directory name
 
-## How to install rrh, uniq2, heatman, qrg, ninerules, ttt, pochi, tjdoe, and/or omelette.
+## How to install rrh, uniq2, heatman, qrg, ninerules, ttt, pochi, tjdoe, omelette, and/or sibling.
 
 ```sh
 $ brew install tamada/brew/rrh
@@ -31,4 +33,5 @@ $ brew install tamada/brew/ttt
 $ brew install tamada/brew/pochi
 $ brew install tamada/brew/tjdoe
 $ brew install tamada/brew/omelette
+$ brew install tamada/brew/sibling
 ```
