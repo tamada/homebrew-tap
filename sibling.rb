@@ -14,7 +14,7 @@ class Sibling < Formula
   option "without-completions", "Disable bash completions"
 
   def install
-    bin.install "bin/sibling"
+    bin.install "sibling"
 
     if build.with? "completions"
       bash_completion.install "completions/bash/sibling.bash"
