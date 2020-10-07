@@ -12,6 +12,6 @@ class Tjdoe < Formula
   depends_on "go"  => :build
 
   def install
-      bin.install "tjdoe"
+    bin.install "tjdoe"
   end
 end

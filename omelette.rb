@@ -18,9 +18,7 @@ class Omelette < Formula
     bin.install "bin/omelette"
     system "sh", "./bin/download_dependencies.sh"
 
-    lib.install "lib/jacocoagent.jar"
-    lib.install "lib/jacococli.jar"
-    lib.install "lib/junit4"
+    prefix.install "lib"
 
     if build.with? "completions"
       bash_completion.install "completions/bash/omelette"

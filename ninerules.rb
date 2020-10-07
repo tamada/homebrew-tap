@@ -16,10 +16,10 @@ class Ninerules < Formula
   def install
     (bin/"9rules").write <<~EOS
       #!/bin/sh
-      java -jar #{libexec}/9rules-#{HOMEBREW_9RULES_VERSION}.jar "$@"
+      java -jar #{prefix}/9rules-#{HOMEBREW_9RULES_VERSION}.jar "$@"
     EOS
-    libexec.install "9rules-#{HOMEBREW_9RULES_VERSION}.jar"
-    libexec.install "lib"
-    libexec.install "bin"
+    prefix.install "9rules-#{HOMEBREW_9RULES_VERSION}.jar"
+    prefix.install "lib"
+    prefix.install "bin"
   end
 end

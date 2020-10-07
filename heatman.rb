@@ -9,8 +9,6 @@ class Heatman < Formula
   version HOMEBREW_HEATMAN_VERSION
   sha256 "0bb68f9a24e624b2bf57a2442dc3637ebec5d51aa80a98f3bc09b520d2508b7a"
 
-  depends_on "go"  => :build
-
   def install
     bin.install "heatman"
   end

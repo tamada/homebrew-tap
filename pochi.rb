@@ -11,9 +11,15 @@ class Pochi < Formula
   def install
       (bin/"pochi").write <<~EOS
         #! /bin/sh
-        exec #{libexec}/bin/pochi.sh "$@"
+        exec #{prefix}/bin/pochi.sh "$@"
       EOS
-      libexec.install "lib"
-      libexec.install "bin"
+      prefix.install "lib"
+      prefix.install "bin"
+  end
+
+  def caveats
+    <<~EOS
+      The examples are available in the #{prefix}/examples
+    EOS
   end
 end
