@@ -1,20 +1,19 @@
 require "formula"
 
-POCHI_VERSION = "1.0.0"
+POCHI_VERSION = "2.0.0"
 
 class Pochi < Formula
   desc "Java birthmark toolkit, detecting the software theft by native characteristics of the programs."
   homepage "https://tamada.github.io/pochi"
-  url "https://github.com/tamada/pochi/releases/download/v#{POCHI_VERSION}/pochi-#{POCHI_VERSION}-dist.zip"
-  sha256 "0e47b350ee816826bd523cb5d5c2ae41ae792b834e213c34945e4c92c6c76d20"
+  url "https://github.com/tamada/pochi/releases/download/v#{POCHI_VERSION}/pochi-#{POCHI_VERSION}_darwin_amd64.tar.gz"
+  sha256 "10a9b1473bbce27423ec8d02f91222314caee55b32c6559787114074eb87f465"
 
   def install
-      (bin/"pochi").write <<~EOS
-        #! /bin/sh
-        exec #{prefix}/bin/pochi.sh "$@"
-      EOS
-      prefix.install "lib"
-      prefix.install "bin"
+    prefix.install "completions"
+    prefix.install "docs"
+    prefix.install "examples"
+    prefix.install "lib"
+    bin.install "bin/pochi"
   end
 
   def caveats
