@@ -7,7 +7,7 @@ class Lioss < Formula
   homepage "https://github.com/tamada/lioss"
   url "https://github.com/tamada/lioss/releases/download/v#{HOMEBREW_LIOSS_VERSION}/lioss-#{HOMEBREW_LIOSS_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_LIOSS_VERSION
-  sha256 "a2c0f51c13fc46686a6ae6ae1ceaf02a1b8b37c547a3f6cf91922bc7c9b52a65"
+  sha256 "8e98a9ca1dbcc14f14c1f023602f16610534a9b71abe3ba35a735bbd49684afb"
 
   option "without-completions", "Disable bash completions"
 
