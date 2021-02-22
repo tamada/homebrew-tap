@@ -1,13 +1,13 @@
 require "formula"
 
-HOMEBREW_WILDCAT_VERSION="1.0.0"
+HOMEBREW_WILDCAT_VERSION="1.0.1"
 
 class Wildcat < Formula
   desc "Another implementation of wc (word count)"
   homepage "https://github.com/tamada/wildcat"
   url "https://github.com/tamada/wildcat/releases/download/v#{HOMEBREW_WILDCAT_VERSION}/wildcat-#{HOMEBREW_WILDCAT_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_WILDCAT_VERSION
-  sha256 "c13eda2b81a97a25533206c0c7e31266d0b68d9b8019c348b9d08eda98ea06cf"
+  sha256 "fc091bfbd70f18193869a42ba71422b21e2c357e7e7154fb37b3fc7cf24dae5b"
 
   depends_on "bash_completion@2" => :optional
 
