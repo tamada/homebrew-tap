@@ -7,7 +7,7 @@ class Wildcat < Formula
   homepage "https://github.com/tamada/wildcat"
   url "https://github.com/tamada/wildcat/releases/download/v#{HOMEBREW_WILDCAT_VERSION}/wildcat-#{HOMEBREW_WILDCAT_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_WILDCAT_VERSION
-  sha256 "i290aebc46a85ad075b4429d699ae12754b5d4a56211b01509d413478a7b41ed7"
+  sha256 "290aebc46a85ad075b4429d699ae12754b5d4a56211b01509d413478a7b41ed7"
 
   depends_on "bash_completion@2" => :optional
 
