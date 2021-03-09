@@ -1,5 +1,3 @@
-require "formula"
-
 HOMEBREW_UNIQ2_VERSION="1.1.1"
 
 class Uniq2 < Formula

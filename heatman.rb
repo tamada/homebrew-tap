@@ -1,5 +1,3 @@
-require "formula"
-
 HOMEBREW_HEATMAN_VERSION="1.0.1"
 
 class Heatman < Formula

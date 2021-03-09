@@ -1,5 +1,3 @@
-require "formula"
-
 HOMEBREW_QRG_VERSION="1.0.0"
 
 class Qrg < Formula

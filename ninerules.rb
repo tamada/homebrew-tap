@@ -1,9 +1,3 @@
-require "formula"
-
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 HOMEBREW_9RULES_VERSION="1.1.0"
 
 class Ninerules < Formula

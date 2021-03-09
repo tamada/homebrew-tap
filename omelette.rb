@@ -9,10 +9,9 @@ class Omelette < Formula
   version HOMEBREW_OMELETTE_VERSION
   sha256 "a2c0f51c13fc46686a6ae6ae1ceaf02a1b8b37c547a3f6cf91922bc7c9b52a65"
 
-  depends_on "bash_completion@2" => :optional
-  depends_on "java" => :optional
-
   option "without-completions", "Disable bash completions"
+  depends_on "bash-completion@2" => :optional
+  depends_on "java" => :optional
 
   def install
     bin.install "bin/omelette"
@@ -20,8 +19,6 @@ class Omelette < Formula
 
     prefix.install "lib"
 
-    if build.with? "completions"
-      bash_completion.install "completions/bash/omelette"
-    end
+    bash_completion.install "completions/bash/omelette" if build.with? "completions"
   end
 end

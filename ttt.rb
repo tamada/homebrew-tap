@@ -1,5 +1,3 @@
-require "formula"
-
 HOMEBREW_TTT_VERSION="1.0.0"
 
 class Ttt < Formula
