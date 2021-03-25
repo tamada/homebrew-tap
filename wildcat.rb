@@ -1,11 +1,11 @@
-VERSION="1.1.0"
+VERSION="1.1.1"
 
 class Wildcat < Formula
   desc "Another implementation of wc (word count)"
   homepage "https://github.com/tamada/wildcat"
   url "https://github.com/tamada/wildcat/releases/download/v#{VERSION}/wildcat-#{VERSION}_darwin_amd64.tar.gz"
   version VERSION
-  sha256 "9e5c193354673e2be51fb6e3f7930fc3d17138b4991ddc62c973e769c4a21f7d"
+  sha256 "a10fff0f9569b1ea4fdb298ed5adb2ac9b79fd3085f518b84fbecc7a07d8fdc8"
   license "Apache-2.0"
 
   option "without-completions", "Disable bash completions"
