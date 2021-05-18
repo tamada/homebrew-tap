@@ -10,7 +10,6 @@ class Pochi < Formula
   depends_on "bash-completion@2" => :optional
 
   def install
-    prefix.install "completions"
     prefix.install "Dockerfile"
     prefix.install "docs"
     prefix.install "examples"
