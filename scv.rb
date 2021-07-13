@@ -13,6 +13,6 @@ class Scv < Formula
   def install
     bin.install "scv"
 
-    bash_completion.install "completions/bash/scv" if build.with? "completions"
+    bash_completion.install "completions/bash/scv.bash" if build.with? "completions"
   end
 end
