@@ -16,6 +16,7 @@ class Pochi < Formula
     prefix.install "lib"
     prefix.install "LICENSE"
     prefix.install "README.md"
+
     bin.install "bin/pochi"
 
     bash_completion.install "completions/bash/pochi" if build.with? "completions"
