@@ -5,7 +5,7 @@ class Sibling < Formula
   homepage "https://github.com/tamada/sibling"
   url "https://github.com/tamada/sibling/releases/download/v#{HOMEBREW_SIBLING_VERSION}/sibling-#{HOMEBREW_SIBLING_VERSION}_darwin_amd64.tar.gz"
   version HOMEBREW_SIBLING_VERSION
-  sha256 "d7699f1ed97097c7641539561b7624cdc38fdaf56574f1569e538cf563715ebd"
+  sha256 "6f13a912f9189474a723d29508302d7d83b8d3bf2346b67ec3058a3ee2327942"
 
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
