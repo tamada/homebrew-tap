@@ -1,10 +1,10 @@
-POCHI_VERSION = "2.5.2"
+POCHI_VERSION = "2.6.0"
 
 class Pochi < Formula
   desc "Java birthmark toolkit, detecting the software theft by native characteristics of the programs."
   homepage "https://tamada.github.io/pochi"
   url "https://github.com/tamada/pochi/releases/download/v#{POCHI_VERSION}/pochi-#{POCHI_VERSION}.zip"
-  sha256 "4f044e3e40d7e4fb06ab1a7f323cbe424725e0942db1952483036302db8a84b2"
+  sha256 "b9e322613e27403b1052cae2c988aad353aae7a5b411e3cc9890a0fa37d52c5a"
 
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
