@@ -4,7 +4,7 @@ Homebrew recipes for my products.
 
 ## Available products
 
-| name | WWW | description | version | release date |
+| formula | WWW | description | version | release date |
 |------|-----|-------------|---------|--------------|
 | [rrh](https://github.com/tamada/rrh) | [:earth_asia:](https://tamada.github.io/rrh) |  Git repository manager. | 1.2.0 | 2021-05-14 |
 | [uniq2](https://github.com/tamada/uniq2) | [:earth_asia:](https://tamada.github.io/uniq2) |  Extended uniq. | 1.1.1 | 2021-05-14 |
@@ -22,5 +22,6 @@ Homebrew recipes for my products.
 ## How to install above tools
 
 At first, execute `brew tap tamada/brew`, then ready to install above tools.
+Or, type `brew install tamada/brew/<formula>`.
 
 Next, executing `brew install tamada/brew/<TOOLNAME>` command installs tool in your environment.
