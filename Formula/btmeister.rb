@@ -15,7 +15,6 @@ class Btmeister < Formula
     bin.install "btmeister"
     prefix.install "README.md"
     prefix.install "LICENSE"
-    prefix.install "completions"
 
     bash_completion.install "completions/bash/btmeister" if build.with? "completions"
     zsh_completion.install  "completions/zsh/_btmeister" if build.with? "completions"
