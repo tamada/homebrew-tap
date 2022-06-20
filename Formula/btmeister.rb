@@ -4,7 +4,7 @@ class Btmeister < Formula
   desc "Detecting the build tools in use"
   homepage "https://github.com/tamada/btmeister"
   url "https://github.com/tamada/btmeister/releases/download/v#{VERSION}/btmeister-#{VERSION}_darwin_amd64.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "06ff30ba167231281ba288d55900dcee64eaf6639f2d8f00d909299d07df9103"
   license "MIT"
 
   option "without-completions", "Disable bash completions"
