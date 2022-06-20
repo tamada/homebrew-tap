@@ -4,6 +4,7 @@ class Btmeister < Formula
   desc "Detecting the build tools in use"
   homepage "https://github.com/tamada/btmeister"
   url "https://github.com/tamada/btmeister/releases/download/v#{VERSION}/btmeister-#{VERSION}_darwin_amd64.tar.gz"
+  version VERSION
   sha256 "06ff30ba167231281ba288d55900dcee64eaf6639f2d8f00d909299d07df9103"
   license "MIT"
 
