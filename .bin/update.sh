@@ -32,7 +32,7 @@ __perform_update() {
 }
 
 __update_readme() {
-    awk -F '|' -v TARGET=$1 -v VERSION=$2 -v DATE=$(date +%Y-%m-%d) -f bin/readme_updater.awk README.md > README.tmp
+    awk -F '|' -v TARGET=$1 -v VERSION=$2 -v DATE=$(date +%Y-%m-%d) -f .bin/readme_updater.awk README.md > README.tmp
     mv README.tmp README.md
     echo "$1 version $2: updated in README.md"
     return 0
