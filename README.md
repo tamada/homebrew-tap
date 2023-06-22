@@ -12,6 +12,7 @@ Homebrew recipes for my products.
 | [qrg](https://github.com/tamada/qrg) || QR code generator. | 1.0.0 | 2021-05-14 |
 | [9rules](https://github.com/tamada/9rules) | [:earth_asia:](https://tamada.github.io/9rules) |  Checking tool of small object programming for the Java language. | 1.1.0 | 2021-05-14 |
 | [ttt ](https://github.com/tamada/ttt) || Checking diploma of courses in ISE, KSU. | 1.0.0 | 2021-05-14 |
+| [peripherals](https://github.com/tamada/peripherals) | [:earth_asia:](https://tamada.github.io/peripherals) |  | 0.9.6 | 2023-06-22 |
 | [pochi](https://github.com/tamada/pochi) | [:earth_asia:](https://tamada.github.io/pochi) |  Detecting the software theft, the birthmark toolkit for the JVM platform. | 2.5.2 | 2021-09-14 |
 | [tjdoe](https://github.com/tamada/tjdoe) | [:earth_asia:](https://tamada.github.io/tjdoe) |  anonymizing the programs of the assignments in the programming courses and their score for grades. | 1.0.0 | 2021-05-14 |
 | [omelette](https://github.com/tamada/omelette) | [:earth_asia:](https://tamada.github.io/omelette) |  An agent for running unit tests on the CLI environemnt for the Java platform | 1.1.1 | 2021-05-14 |
