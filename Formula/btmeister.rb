@@ -1,4 +1,4 @@
-VERSION = "0.4.7"
+VERSION="0.4.7"
 
 class Btmeister < Formula
   desc "Detecting the build tools in use"
