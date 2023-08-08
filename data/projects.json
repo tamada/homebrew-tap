@@ -1,0 +1,114 @@
+[
+    {
+        "owner": "tamada",
+        "name": "btmeister",
+        "description": "Detecting the build tools in use",
+        "license": "MIT license",
+        "url": "https://tamada.github.io/btmeister/"
+    },
+    {
+        "owner": "tamada",
+        "name": "goheatman",
+        "description": "Create heat map image from given csv file",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/goheatman/"
+    },
+    {
+        "owner": "tamada",
+        "name": "lioss",
+        "description": "Identifying OSS license names from LICENSE files",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/lioss/"
+    },
+    {
+        "owner": "tamada",
+        "name": "9rules",
+        "description": "Checking tool of small object programming for the Java language.",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/9rules/"
+    },
+    {
+        "owner": "tamada",
+        "name": "omelette",
+        "description": "An agent for running unit tests on the CLI environemnt for the Java platform",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/omelette/"
+    },
+    {
+        "owner": "tamada",
+        "name": "peripherals",
+        "description": "Peripheral Utility Commands for the Shell Environment",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/peripherals/"
+    },
+    {
+        "owner": "tamada",
+        "name": "pochi",
+        "description": "Detecting the software theft, the birthmark toolkit for the JVM platform",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/pochi/"
+    },
+    {
+        "owner": "tamada",
+        "name": "qrg",
+        "description": "QR code generator for Go lang",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/qrg/"
+    },
+    {
+        "owner": "tamada",
+        "name": "rrh",
+        "description": "Remote Repositories Head/Repositories Ready to Hack",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/rrh/"
+    },
+    {
+        "owner": "tamada",
+        "name": "scv",
+        "description": "Similarities and distances calculator among vectors",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/scv/"
+    },
+    {
+        "owner": "tamada",
+        "name": "sibling",
+        "description": "get next/previous sibling directory name.",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/sibling/"
+    },
+    {
+        "owner": "tamada",
+        "name": "tjdoe",
+        "description": "anonymizes the programs of the assignments in the programming courses and their score for grades.",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/tjdoe/"
+    },
+    {
+        "owner": "tamada",
+        "name": "ttt",
+        "description": "",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/ttt/"
+    },
+    {
+        "owner": "tamada",
+        "name": "uniq2",
+        "description": "Eliminating duplicate lines from file.",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/uniq2/"
+    },
+    {
+        "owner": "tamada",
+        "name": "urleap",
+        "description": "URL shortener via bit.ly",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/urleap/"
+    },
+    {
+        "owner": "tamada",
+        "name": "wildcat",
+        "description": "Another implementation of wc (word count)",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/wildcat/"
+    }
+]
