@@ -53,7 +53,7 @@
         "name": "qrg",
         "description": "QR code generator for Go lang",
         "license": "WTFPL License",
-        "url": "https://tamada.github.io/qrg/"
+        "url": ""
     },
     {
         "owner": "tamada",

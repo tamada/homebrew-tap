@@ -4,8 +4,8 @@ Homebrew recipes for my products.
 
 ## Available products
 
-| Formula | GitHub | Description | Version | Release date |
-|---------|--------|-------------|---------|--------------|
+| Formula |-| Description | Version | Release date |
+|---------|-|-------------|---------|--------------|
 |[tamada/peripherals](https://tamada.github.io/peripherals/)| [:octocat:](https://github.com/tamada/peripherals) | Peripheral Utility Commands for the Shell Environment |v1.0.1 | 2023-08-05 |
 |[tamada/urleap](https://tamada.github.io/urleap/)| [:octocat:](https://github.com/tamada/urleap) | URL shortener via bit.ly |v0.2.5 | 2023-07-15 |
 |[tamada/sibling](https://tamada.github.io/sibling/)| [:octocat:](https://github.com/tamada/sibling) | get next/previous sibling directory name. |v1.3.0 | 2023-06-22 |
@@ -21,7 +21,7 @@ Homebrew recipes for my products.
 |[tamada/goheatman](https://tamada.github.io/goheatman/)| [:octocat:](https://github.com/tamada/goheatman) | Create heat map image from given csv file |v1.0.1 | 2020-03-08 |
 |[tamada/tjdoe](https://tamada.github.io/tjdoe/)| [:octocat:](https://github.com/tamada/tjdoe) | anonymizes the programs of the assignments in the programming courses and their score for grades. |v1.0.0 | 2019-12-26 |
 |[tamada/ttt](https://tamada.github.io/ttt/)| [:octocat:](https://github.com/tamada/ttt) |  |v1.0.0 | 2019-11-06 |
-|[tamada/qrg](https://tamada.github.io/qrg/)| [:octocat:](https://github.com/tamada/qrg) | QR code generator for Go lang || |
+|tamada/qrg| [:octocat:](https://github.com/tamada/qrg) | QR code generator for Go lang || |
 
 
 ## How to install above tools

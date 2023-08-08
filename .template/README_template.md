@@ -4,11 +4,11 @@ Homebrew recipes for my products.
 
 ## Available products
 
-| Formula | GitHub | Description | Version | Release date |
-|---------|--------|-------------|---------|--------------|
+| Formula |-| Description | Version | Release date |
+|---------|-|-------------|---------|--------------|
 {{- range $p := . }}
 |
-  {{- if $p.Url -}}
+  {{- if ne $p.Url "" -}}
     [{{ $p.RepoName }}]({{ $p.Url }})
   {{- else -}}
     {{ $p.RepoName }}
