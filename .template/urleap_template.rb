@@ -67,5 +67,5 @@ class Urleap < Formula
 
   test do
     system "#{bin}/urleap --version"
-  done
+  end
 end
