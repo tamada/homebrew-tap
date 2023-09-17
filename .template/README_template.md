@@ -4,16 +4,14 @@ Homebrew recipes for my products.
 
 ## Available products
 
-| Formula |-| Description | Version | Release date |
-|---------|-|-------------|---------|--------------|
+| Products | Url | Formula | Description | Version | Release date |
+|----------|-----|---------|-------------|---------|--------------|
 {{- range $p := . }}
-|
+| {{ $p.Name }} | [:octocat:]({{ printf "https://github.com/%s" $p.RepoName }})
   {{- if ne $p.Url "" -}}
-    [{{ $p.RepoName }}]({{ $p.Url }})
-  {{- else -}}
-    {{ $p.RepoName }}
+     [:spider_web:]({{ $p.Url }})
   {{- end -}}
-| [:octocat:]({{ printf "https://github.com/%s" $p.RepoName }}) | {{ $p.Description }} | 
+| `{{ $p.Owner }}/tap/{{ $p.Name }}` | {{ $p.Description }} | 
   {{- if $p.Release -}}
     {{ $p.Release.TagName }} | {{ formatDate $p.Release.PublishedAt }} |
   {{- else -}}
@@ -21,10 +19,15 @@ Homebrew recipes for my products.
   {{- end -}}
 {{- end }}
 
+## Archived products
 
-## How to install above tools
+| Products | Url | Formula | Description | Version | Release date |
+|----------|-----|---------|-------------|---------|--------------|
+| uniq2    | [:octocat:]() [:spider_web:](https://tamada.github.io/uniq2/) | `tamada/tap/uniq2` | Eliminating duplicate lines from file. | v1.0.0 | 2019-11-06 |
 
-At first, execute `brew tap tamada/tap`, then ready to install above tools.
+## How to install the above tools
+
+At first, execute `brew tap tamada/tap`, then ready to install the above tools.
 Then, type `brew install <formula>`.
 
-Or, execute `brew install tamada/tap/<formula>` command for installing tool in your environment.
+Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.

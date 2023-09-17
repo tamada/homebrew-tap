@@ -92,13 +92,6 @@
     },
     {
         "owner": "tamada",
-        "name": "uniq2",
-        "description": "Eliminating duplicate lines from file.",
-        "license": "WTFPL License",
-        "url": "https://tamada.github.io/uniq2/"
-    },
-    {
-        "owner": "tamada",
         "name": "urleap",
         "description": "URL shortener via bit.ly",
         "license": "MIT License",

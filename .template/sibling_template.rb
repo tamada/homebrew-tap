@@ -63,5 +63,5 @@ class Sibling < Formula
 
   test do
     system "#{bin}/sibling --version"
-  done
+  end
 end
