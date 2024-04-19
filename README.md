@@ -20,6 +20,7 @@ Homebrew recipes for my products.
 | goheatman | [:octocat:](https://github.com/tamada/goheatman)[:spider_web:](https://tamada.github.io/goheatman/)| `tamada/tap/goheatman` | Create heat map image from given csv file |v1.0.1 | 2020-03-08 |
 | tjdoe | [:octocat:](https://github.com/tamada/tjdoe)[:spider_web:](https://tamada.github.io/tjdoe/)| `tamada/tap/tjdoe` | anonymizes the programs of the assignments in the programming courses and their score for grades. |v1.0.0 | 2019-12-26 |
 | ttt | [:octocat:](https://github.com/tamada/ttt)[:spider_web:](https://tamada.github.io/ttt/)| `tamada/tap/ttt` |  |v1.0.0 | 2019-11-06 |
+| totebag | [:octocat:](https://github.com/tamada/totebag) [:spider_web:](https://tamada.github.io/totebag) | `tamada/totebag` | A tool for archiving files and directories and extracting several archive formats. | v0.1.15| 2024-04-18 |
 | qrg | [:octocat:](https://github.com/tamada/qrg)| `tamada/tap/qrg` | QR code generator for Go lang || |
 
 ## Archived products
