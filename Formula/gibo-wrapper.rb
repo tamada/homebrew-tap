@@ -41,7 +41,6 @@ class GiboWrapper < Formula
     bash_completion.install   "completions/bash/gibo" if build.with? "completions"
     zsh_completion.install    "completions/zsh/_gibo" if build.with? "completions"
     fish_completion.install   "completions/fish/gibo" if build.with? "completions"
-    elvish_completion.install "completions/elvish/gibo" if build.with? "completions"
   end
 
   def caveats
