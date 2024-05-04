@@ -12,25 +12,24 @@ class GiboWrapper < Formula
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
   depends_on "gibo"
-
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper_#{VERSION}_darwin_amd64.tar.gz"
+      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper-#{VERSION}_darwin_amd64.tar.gz"
       sha256 "f608f0b96eb0f0619e45ccda79b8efe32fb357d1eb9a093cf10f38bef8515a75"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper_#{VERSION}_darwin_arm64.tar.gz"
+      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper-#{VERSION}_darwin_arm64.tar.gz"
       sha256 "8170333fcb06936cdd6a284ea71b986ff1bb08d1b779aefa7a807f8404e02eda"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper_#{VERSION}_linux_arm64.tar.gz"
+      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper-#{VERSION}_linux_arm64.tar.gz"
       sha256 "b63b3efd36119f540572006d60544dad3137c30a419d8bdc9954986c9fa69648"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper_#{VERSION}_linux_amd64.tar.gz"
+      url "https://github.com/tamada/gibo-wrapper/releases/download/v#{VERSION}/gibo-wrapper-#{VERSION}_linux_amd64.tar.gz"
       sha256 "1c2c31f7b17c925b95243a3bb8d70dcfc771098229272ded9fd7191eb2c0de58"
     end
   end
