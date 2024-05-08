@@ -6,6 +6,7 @@ Homebrew recipes for my products.
 
 | Products | Url | Formula | Description | Version | Release date |
 |----------|-----|---------|-------------|---------|--------------|
+| gibo-wrapper | [:octocat:](https://github.com/tamada/gibo-wrapper)[:spider_web:](https://tamada.github.io/tamada/gibo-wrapper/)| `tamada/tap/gibo-wrapper` | gibo-wrapper acts like gibo and improves gibo by adding some features. |v0.8.1 | 2024-05-07 |
 | peripherals | [:octocat:](https://github.com/tamada/peripherals)[:spider_web:](https://tamada.github.io/peripherals/)| `tamada/tap/peripherals` | Peripheral Utility Commands for the Shell Environment |v1.0.1 | 2023-08-05 |
 | urleap | [:octocat:](https://github.com/tamada/urleap)[:spider_web:](https://tamada.github.io/urleap/)| `tamada/tap/urleap` | URL shortener via bit.ly |v0.2.5 | 2023-07-15 |
 | sibling | [:octocat:](https://github.com/tamada/sibling)[:spider_web:](https://tamada.github.io/sibling/)| `tamada/tap/sibling` | get next/previous sibling directory name. |v1.3.0 | 2023-06-22 |
@@ -20,7 +21,6 @@ Homebrew recipes for my products.
 | goheatman | [:octocat:](https://github.com/tamada/goheatman)[:spider_web:](https://tamada.github.io/goheatman/)| `tamada/tap/goheatman` | Create heat map image from given csv file |v1.0.1 | 2020-03-08 |
 | tjdoe | [:octocat:](https://github.com/tamada/tjdoe)[:spider_web:](https://tamada.github.io/tjdoe/)| `tamada/tap/tjdoe` | anonymizes the programs of the assignments in the programming courses and their score for grades. |v1.0.0 | 2019-12-26 |
 | ttt | [:octocat:](https://github.com/tamada/ttt)[:spider_web:](https://tamada.github.io/ttt/)| `tamada/tap/ttt` |  |v1.0.0 | 2019-11-06 |
-| gibo-wrapper | [:octocat:](https://github.com/tamada/gibo-wrapper)[:spider_web:](https://tamada.github.io/tamada/gibo-wrapper/)| `tamada/tap/gibo-wrapper` | gibo-wrapper acts like gibo and improves gibo by adding some features. || |
 | totebag | [:octocat:](https://github.com/tamada/totebag)[:spider_web:](https://tamada.github.io/tamada/totebag/)| `tamada/tap/totebag` | A tool for archiving files and directories and extracting several archive formats. || |
 | gibo-wrapper | [:octocat:](https://github.com/tamada/gibo-wrapper)[:spider_web:](https://github.com/tamada/gibo-wrapper/)| `tamada/tap/gibo-wrapper` | gibo-wrapper acts like gibo and improves gibo by adding some feature || |
 | qrg | [:octocat:](https://github.com/tamada/qrg)| `tamada/tap/qrg` | QR code generator for Go lang || |
