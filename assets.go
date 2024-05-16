@@ -51,13 +51,14 @@ func (r *Release) FindAssets(key []string) *Asset {
 }
 
 type Project struct {
-	Owner       string   `json:"owner"`
-	Name        string   `json:"name"`
-	RepoName    string   `json:"-"`
-	Description string   `json:"description"`
-	Url         string   `json:"url"`
-	License     string   `json:"license"`
-	Release     *Release `json:"-"`
+	Owner              string   `json:"owner"`
+	Name               string   `json:"name"`
+	RepoName           string   `json:"-"`
+	Description        string   `json:"description"`
+	Url                string   `json:"url"`
+	License            string   `json:"license"`
+	Release            *Release `json:"-"`
+	IgnoreFetchRelease bool     `json:"ignore-fetch-release"`
 }
 
 func (p *Project) IsMatchRepo(repoName string) bool {

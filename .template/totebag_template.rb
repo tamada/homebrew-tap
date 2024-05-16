@@ -1,11 +1,10 @@
 {{- $r := .Release -}}
 VERSION="{{ toVersion $r.TagName }}"
 
-class GiboWrapper < Formula
-  desc "gibo-wrapper acts like gibo to improve gibo by adding the following features"
+class Totebag < Formula
+  desc "{{ .Description }}"
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
-  depends_on "gibo"
 
   homepage "https://github.com/{{ .RepoName }}"
   version VERSION
@@ -59,21 +58,14 @@ class GiboWrapper < Formula
   {{- end }}
 
   def install
-    bin.install "gibo-wrapper"
+    bin.install "{{ .Name }}"
 
-    bash_completion.install "completions/bash/gibo" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/_gibo" if build.with? "completions"
-    fish_completion.install "completions/fish/gibo" if build.with? "completions"
+    bash_completion.install "completions/bash/{{ .Name }}" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_{{ .Name }}" if build.with? "completions"
+    fish_completion.install "completions/fish/{{ .Name }}" if build.with? "completions"
   end
 
   test do
-    system "#{bin}/gibo-wrapper --version"
-  end
-
-  def caveats
-    <<~EOS
-      Put the following alias setting into your shell configuration file.
-          alias gibo='gibo-wrapper $@'
-    EOS
+    system "#{bin}/{{ .Name }} --version"
   end
 end

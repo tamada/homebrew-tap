@@ -2,6 +2,7 @@ package main
 
 import (
 	"crypto/sha256"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -36,7 +37,12 @@ func funcMaps() map[string]interface{} {
 		"formatDate": formatDate,
 		"isAsset":    isAsset,
 		"findAsset":  findAsset,
+		"toVersion":  toVersion,
 	}
+}
+
+func toVersion(tagName string) string {
+	return strings.TrimPrefix(tagName, "v")
 }
 
 func findAsset(release *updater.Release, keywords ...string) *updater.Asset {
@@ -129,16 +135,50 @@ func printResult(results []*updater.Project, args []string) error {
 	return baseError
 }
 
-func getReleases(releases []*updater.Release, args []string) []*updater.Release {
+func getReleases(releases []*updater.Release, args []string) ([]*updater.Release, error) {
+	errs := make([]error, 0)
 	for _, arg := range args {
 		r, err := updater.GetLatest(arg)
 		if err == nil {
 			releases = updater.UpdateRelease(releases, r)
 		} else {
-			fmt.Println(color.Red.Sprintf("%s", err.Error()))
+			errs = append(errs, err)
 		}
 	}
-	return releases
+	return releases, errors.Join(errs...)
+}
+
+func updateReleasesIfNeeded(projects []*updater.Project, args []string) error {
+	errs := make([]error, 0)
+	for _, arg := range args {
+		r, err := updater.GetLatest(arg)
+		if err != nil {
+			errs = append(errs, err)
+			continue
+		}
+		for _, p := range projects {
+			if p.IsMatchRepo(arg) {
+				p.Release = r
+				break
+			}
+		}
+	}
+	return errors.Join(errs...)
+}
+
+func findLatestReleasesOnNoReleaseProjects(projects []*updater.Project, args []string) error {
+	errs := make([]error, 0)
+	for _, p := range projects {
+		if p.Release == nil && !p.IgnoreFetchRelease {
+			r, err := updater.GetLatest(p.RepoName)
+			if err != nil {
+				errs = append(errs, err)
+				continue
+			}
+			p.Release = r
+		}
+	}
+	return errors.Join(errs...)
 }
 
 func sortReleases(projects []*updater.Project) []*updater.Project {
@@ -154,12 +194,11 @@ func sortReleases(projects []*updater.Project) []*updater.Project {
 }
 
 func readProjects(args []string) ([]*updater.Project, error) {
-	releases, err := updater.ReadReleases("data/releases.json")
+	projects, err := updater.ParseProjects("data/projects.json")
 	if err != nil {
 		return nil, err
 	}
-	releases = getReleases(releases, args)
-	projects, err := updater.ParseProjects("data/projects.json")
+	releases, err := updater.ReadReleases("data/releases.json")
 	if err != nil {
 		return nil, err
 	}
@@ -171,7 +210,38 @@ func readProjects(args []string) ([]*updater.Project, error) {
 			}
 		}
 	}
+	if err := findLatestReleasesOnNoReleaseProjects(projects, args); err != nil {
+		return projects, err
+	}
+	if err := updateReleasesIfNeeded(projects, args); err != nil {
+		return projects, err
+	}
+
 	return projects, nil
+}
+
+func teardown(projects []*updater.Project) error {
+	releases := []*updater.Release{}
+	for _, p := range projects {
+		if p.Release != nil {
+			releases = append(releases, p.Release)
+		}
+	}
+	return writeReleaseJson(releases)
+}
+
+func writeReleaseJson(releases []*updater.Release) error {
+	f, err := os.Create("data/releases.json")
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	data, err := json.MarshalIndent(releases, "", "  ")
+	if err != nil {
+		return err
+	}
+	_, err = f.Write(data)
+	return err
 }
 
 func goMain(args []string) int {
@@ -180,10 +250,13 @@ func goMain(args []string) int {
 		fmt.Println(color.Red.Sprintf("Error: %s", err.Error()))
 		return 2
 	}
-	err = printResult(sortReleases(projects), args)
-	if err != nil {
+	if err = printResult(sortReleases(projects), args); err != nil {
 		fmt.Println(color.Red.Sprintf("Error: %s", err.Error()))
-		return 1
+		return 3
+	}
+	if err = teardown(projects); err != nil {
+		fmt.Println(color.Red.Sprintf("Error: %s", err.Error()))
+		return 5
 	}
 	return 0
 }
