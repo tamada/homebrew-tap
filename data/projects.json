@@ -4,28 +4,21 @@
         "name": "gibo-wrapper",
         "description": "gibo-wrapper acts like gibo and improves gibo by adding some features.",
         "license": "Unlicensed license",
-        "url": "https://tamada.github.io/tamada/gibo-wrapper/"
+        "url": "https://tamada.github.io/gibo-wrapper/"
     },
     {
         "owner": "tamada",
         "name": "totebag",
         "description": "A tool for archiving files and directories and extracting several archive formats.",
         "license": "MIT license",
-        "url": "https://tamada.github.io/tamada/totebag/"
+        "url": "https://tamada.github.io/totebag/"
     },
     {
         "owner": "tamada",
         "name": "btmeister",
         "description": "Detecting the build tools in use",
         "license": "MIT license",
-        "url": "https://tamada.github.io/tamada/btmeister/"
-    },
-    {
-        "owner": "tamada",
-        "name": "gibo-wrapper",
-        "description": "gibo-wrapper acts like gibo and improves gibo by adding some feature",
-        "license": "Unlicensed License",
-        "url": "https://github.com/tamada/gibo-wrapper/"
+        "url": "https://tamada.github.io/btmeister/"
     },
     {
         "owner": "tamada",
@@ -74,7 +67,8 @@
         "name": "qrg",
         "description": "QR code generator for Go lang",
         "license": "WTFPL License",
-        "url": ""
+        "url": "",
+        "ignore-fetch-release": true
     },
     {
         "owner": "tamada",

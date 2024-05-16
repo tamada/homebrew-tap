@@ -1,16 +1,632 @@
 [
-{"repoName":"tamada/peripherals","assets":[{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201286","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:18Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBG","label":"","name":"peripherals-1.0.1-darwin-amd64.tar.gz","size":7159412,"state":"uploaded","updatedAt":"2023-08-05T08:58:19Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201287","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:18Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBH","label":"","name":"peripherals-1.0.1-darwin-arm64.tar.gz","size":6979736,"state":"uploaded","updatedAt":"2023-08-05T08:58:19Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201288","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:18Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBI","label":"","name":"peripherals-1.0.1-linux-amd64.tar.gz","size":7204691,"state":"uploaded","updatedAt":"2023-08-05T08:58:19Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201291","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:18Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBL","label":"","name":"peripherals-1.0.1-linux-arm64.tar.gz","size":6752247,"state":"uploaded","updatedAt":"2023-08-05T08:58:19Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201296","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:19Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBQ","label":"","name":"peripherals-1.0.1-windows-386.tar.gz","size":7567419,"state":"uploaded","updatedAt":"2023-08-05T08:58:22Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/peripherals/releases/assets/120201289","contentType":"application/x-gtar","createdAt":"2023-08-05T08:58:18Z","downloadCount":0,"id":"RA_kwDOHp813M4HKiBJ","label":"","name":"peripherals-1.0.1-windows-amd64.tar.gz","size":7604397,"state":"uploaded","updatedAt":"2023-08-05T08:58:20Z","url":"https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-amd64.tar.gz"}],"name":"Release v1.0.1","publishedAt":"2023-08-05T08:56:35Z","tagName":"v1.0.1","url":"https://github.com/tamada/peripherals/releases/tag/v1.0.1"},
-{"repoName":"tamada/btmeister","assets":[{"apiUrl":"https://api.github.com/repos/tamada/btmeister/releases/assets/68999218","contentType":"application/x-gzip","createdAt":"2022-06-20T07:21:59Z","downloadCount":13,"id":"RA_kwDOHMsVnc4EHNgy","label":"","name":"btmeister-0.5.0_darwin_amd64.tar.gz","size":1151984,"state":"uploaded","updatedAt":"2022-06-20T07:22:00Z","url":"https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/btmeister/releases/assets/68999200","contentType":"application/x-gzip","createdAt":"2022-06-20T07:21:29Z","downloadCount":9,"id":"RA_kwDOHMsVnc4EHNgg","label":"","name":"btmeister-0.5.0_darwin_arm64.tar.gz","size":1067018,"state":"uploaded","updatedAt":"2022-06-20T07:21:30Z","url":"https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_darwin_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/btmeister/releases/assets/68999202","contentType":"application/x-gzip","createdAt":"2022-06-20T07:21:31Z","downloadCount":3,"id":"RA_kwDOHMsVnc4EHNgi","label":"","name":"btmeister-0.5.0_linux_amd64.tar.gz","size":2041333,"state":"uploaded","updatedAt":"2022-06-20T07:21:32Z","url":"https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/btmeister/releases/assets/68999207","contentType":"application/x-gzip","createdAt":"2022-06-20T07:21:46Z","downloadCount":3,"id":"RA_kwDOHMsVnc4EHNgn","label":"","name":"btmeister-0.5.0_linux_arm64.tar.gz","size":1951736,"state":"uploaded","updatedAt":"2022-06-20T07:21:47Z","url":"https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_linux_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/btmeister/releases/assets/68999285","contentType":"application/x-gzip","createdAt":"2022-06-20T07:22:51Z","downloadCount":3,"id":"RA_kwDOHMsVnc4EHNh1","label":"","name":"btmeister-0.5.0_windows_amd64.tar.gz","size":944740,"state":"uploaded","updatedAt":"2022-06-20T07:22:51Z","url":"https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_windows_amd64.tar.gz"}],"name":"Release v0.5.0","publishedAt":"2022-06-20T07:15:19Z","tagName":"v0.5.0","url":"https://github.com/tamada/btmeister/releases/tag/v0.5.0"},
-{"repoName":"tamada/goheatman","assets":[{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552592","contentType":"application/x-gzip","createdAt":"2020-03-08T05:41:24Z","downloadCount":1,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyNTky","label":"","name":"heatman-1.0.1_darwin_386.tar.gz","size":1631981,"state":"uploaded","updatedAt":"2020-03-08T05:42:36Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552602","contentType":"application/x-gzip","createdAt":"2020-03-08T05:42:37Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyNjAy","label":"","name":"heatman-1.0.1_darwin_amd64.tar.gz","size":1652220,"state":"uploaded","updatedAt":"2020-03-08T05:44:00Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552848","contentType":"application/x-gzip","createdAt":"2020-03-08T06:16:00Z","downloadCount":1,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyODQ4","label":"","name":"heatman-1.0.1_linux_386.tar.gz","size":1604530,"state":"uploaded","updatedAt":"2020-03-08T06:17:39Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552888","contentType":"application/x-gzip","createdAt":"2020-03-08T06:20:23Z","downloadCount":3,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyODg4","label":"","name":"heatman-1.0.1_linux_amd64.tar.gz","size":1630048,"state":"uploaded","updatedAt":"2020-03-08T06:20:27Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552890","contentType":"application/x-gzip","createdAt":"2020-03-08T06:20:27Z","downloadCount":1,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyODkw","label":"","name":"heatman-1.0.1_windows_386.tar.gz","size":1625043,"state":"uploaded","updatedAt":"2020-03-08T06:20:32Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/goheatman/releases/assets/18552891","contentType":"application/x-gzip","createdAt":"2020-03-08T06:20:32Z","downloadCount":1,"id":"MDEyOlJlbGVhc2VBc3NldDE4NTUyODkx","label":"","name":"heatman-1.0.1_windows_amd64.tar.gz","size":1657841,"state":"uploaded","updatedAt":"2020-03-08T06:20:36Z","url":"https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_amd64.tar.gz"}],"name":"","publishedAt":"2020-03-08T06:22:09Z","tagName":"v1.0.1","url":"https://github.com/tamada/goheatman/releases/tag/v1.0.1"},
-{"repoName":"tamada/lioss","assets":[{"apiUrl":"https://api.github.com/repos/tamada/lioss/releases/assets/27765753","contentType":"application/x-gzip","createdAt":"2020-10-31T09:05:28Z","downloadCount":8,"id":"MDEyOlJlbGVhc2VBc3NldDI3NzY1NzUz","label":"","name":"lioss-1.0.0_darwin_amd64.tar.gz","size":52537820,"state":"uploaded","updatedAt":"2020-10-31T09:09:05Z","url":"https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/lioss/releases/assets/27765817","contentType":"application/x-gzip","createdAt":"2020-10-31T09:09:05Z","downloadCount":7,"id":"MDEyOlJlbGVhc2VBc3NldDI3NzY1ODE3","label":"","name":"lioss-1.0.0_linux_386.tar.gz","size":52404108,"state":"uploaded","updatedAt":"2020-10-31T09:10:32Z","url":"https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/lioss/releases/assets/27765823","contentType":"application/x-gzip","createdAt":"2020-10-31T09:10:32Z","downloadCount":9,"id":"MDEyOlJlbGVhc2VBc3NldDI3NzY1ODIz","label":"","name":"lioss-1.0.0_linux_amd64.tar.gz","size":52520190,"state":"uploaded","updatedAt":"2020-10-31T09:10:50Z","url":"https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/lioss/releases/assets/27765836","contentType":"application/x-gzip","createdAt":"2020-10-31T09:10:50Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDI3NzY1ODM2","label":"","name":"lioss-1.0.0_windows_386.tar.gz","size":52531280,"state":"uploaded","updatedAt":"2020-10-31T09:11:04Z","url":"https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/lioss/releases/assets/27765837","contentType":"application/x-gzip","createdAt":"2020-10-31T09:11:04Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDI3NzY1ODM3","label":"","name":"lioss-1.0.0_windows_amd64.tar.gz","size":52613339,"state":"uploaded","updatedAt":"2020-10-31T09:11:18Z","url":"https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_windows_amd64.tar.gz"}],"name":"","publishedAt":"2020-10-31T09:12:34Z","tagName":"v1.0.0","url":"https://github.com/tamada/lioss/releases/tag/v1.0.0"},
-{"repoName":"tamada/omelette","assets":[{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962895","contentType":"application/x-gzip","createdAt":"2020-07-17T02:09:25Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyODk1","label":"","name":"omelette-1.1.1_darwin_386.tar.gz","size":1722872,"state":"uploaded","updatedAt":"2020-07-17T02:09:40Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_darwin_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962897","contentType":"application/x-gzip","createdAt":"2020-07-17T02:09:40Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyODk3","label":"","name":"omelette-1.1.1_darwin_amd64.tar.gz","size":1751975,"state":"uploaded","updatedAt":"2020-07-17T02:09:47Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962898","contentType":"application/x-gzip","createdAt":"2020-07-17T02:09:47Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyODk4","label":"","name":"omelette-1.1.1_linux_386.tar.gz","size":1723799,"state":"uploaded","updatedAt":"2020-07-17T02:09:55Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962899","contentType":"application/x-gzip","createdAt":"2020-07-17T02:09:55Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyODk5","label":"","name":"omelette-1.1.1_linux_amd64.tar.gz","size":1760837,"state":"uploaded","updatedAt":"2020-07-17T02:10:01Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962901","contentType":"application/x-gzip","createdAt":"2020-07-17T02:10:01Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyOTAx","label":"","name":"omelette-1.1.1_windows_386.tar.gz","size":1747073,"state":"uploaded","updatedAt":"2020-07-17T02:10:09Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/omelette/releases/assets/22962903","contentType":"application/x-gzip","createdAt":"2020-07-17T02:10:09Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDIyOTYyOTAz","label":"","name":"omelette-1.1.1_windows_amd64.tar.gz","size":1791209,"state":"uploaded","updatedAt":"2020-07-17T02:10:16Z","url":"https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_windows_amd64.tar.gz"}],"name":"","publishedAt":"2020-07-17T02:10:17Z","tagName":"v1.1.1","url":"https://github.com/tamada/omelette/releases/tag/v1.1.1"},
-{"repoName":"tamada/pochi","assets":[{"apiUrl":"https://api.github.com/repos/tamada/pochi/releases/assets/51632161","contentType":"application/zip","createdAt":"2021-12-13T05:24:16Z","downloadCount":27,"id":"RA_kwDOBO8FJ84DE9gh","label":"","name":"pochi-2.6.0.zip","size":23562006,"state":"uploaded","updatedAt":"2021-12-13T05:24:18Z","url":"https://github.com/tamada/pochi/releases/download/v2.6.0/pochi-2.6.0.zip"}],"name":"Release v2.6.0","publishedAt":"2021-12-13T05:24:16Z","tagName":"v2.6.0","url":"https://github.com/tamada/pochi/releases/tag/v2.6.0"},
-{"repoName":"tamada/rrh","assets":[{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103592","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:16Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNTky","label":"","name":"rrh-1.2.0_darwin_386.tar.gz","size":14431171,"state":"uploaded","updatedAt":"2020-04-24T02:32:30Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_darwin_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103596","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:30Z","downloadCount":15,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNTk2","label":"","name":"rrh-1.2.0_darwin_amd64.tar.gz","size":14652838,"state":"uploaded","updatedAt":"2020-04-24T02:32:33Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103599","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:33Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNTk5","label":"","name":"rrh-1.2.0_linux_386.tar.gz","size":14493430,"state":"uploaded","updatedAt":"2020-04-24T02:32:36Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103600","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:36Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNjAw","label":"","name":"rrh-1.2.0_linux_amd64.tar.gz","size":14798523,"state":"uploaded","updatedAt":"2020-04-24T02:32:39Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103601","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:39Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNjAx","label":"","name":"rrh-1.2.0_windows_386.tar.gz","size":14481598,"state":"uploaded","updatedAt":"2020-04-24T02:32:41Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/rrh/releases/assets/20103602","contentType":"application/x-gzip","createdAt":"2020-04-24T02:32:41Z","downloadCount":9,"id":"MDEyOlJlbGVhc2VBc3NldDIwMTAzNjAy","label":"","name":"rrh-1.2.0_windows_amd64.tar.gz","size":14846388,"state":"uploaded","updatedAt":"2020-04-24T02:32:44Z","url":"https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_windows_amd64.tar.gz"}],"name":"v1.2.0","publishedAt":"2020-04-24T02:32:52Z","tagName":"v1.2.0","url":"https://github.com/tamada/rrh/releases/tag/v1.2.0"},
-{"repoName":"tamada/scv","assets":[{"apiUrl":"https://api.github.com/repos/tamada/scv/releases/assets/40178763","contentType":"application/x-gzip","createdAt":"2021-07-12T23:34:36Z","downloadCount":5,"id":"MDEyOlJlbGVhc2VBc3NldDQwMTc4NzYz","label":"","name":"scv-1.0.0_darwin_amd64.tar.gz","size":1622912,"state":"uploaded","updatedAt":"2021-07-12T23:34:45Z","url":"https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/scv/releases/assets/40178773","contentType":"application/x-gzip","createdAt":"2021-07-12T23:34:45Z","downloadCount":3,"id":"MDEyOlJlbGVhc2VBc3NldDQwMTc4Nzcz","label":"","name":"scv-1.0.0_darwin_arm64.tar.gz","size":1580204,"state":"uploaded","updatedAt":"2021-07-12T23:34:47Z","url":"https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/scv/releases/assets/40178777","contentType":"application/x-gzip","createdAt":"2021-07-12T23:34:47Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDQwMTc4Nzc3","label":"","name":"scv-1.0.0_linux_amd64.tar.gz","size":1530563,"state":"uploaded","updatedAt":"2021-07-12T23:34:48Z","url":"https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/scv/releases/assets/40178779","contentType":"application/x-gzip","createdAt":"2021-07-12T23:34:48Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDQwMTc4Nzc5","label":"","name":"scv-1.0.0_windows_amd64.tar.gz","size":1594886,"state":"uploaded","updatedAt":"2021-07-12T23:34:49Z","url":"https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_windows_amd64.tar.gz"}],"name":"","publishedAt":"2021-07-12T23:34:50Z","tagName":"v1.0.0","url":"https://github.com/tamada/scv/releases/tag/v1.0.0"},
-{"repoName":"tamada/sibling","assets":[{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804443","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:23Z","downloadCount":6,"id":"RA_kwDOEBCDxM4GyISb","label":"","name":"sibling-1.3.0_darwin_amd64.tar.gz","size":2182238,"state":"uploaded","updatedAt":"2023-06-22T01:23:23Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804445","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:23Z","downloadCount":20,"id":"RA_kwDOEBCDxM4GyISd","label":"","name":"sibling-1.3.0_darwin_arm64.tar.gz","size":2100786,"state":"uploaded","updatedAt":"2023-06-22T01:23:24Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_darwin_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804446","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:24Z","downloadCount":1,"id":"RA_kwDOEBCDxM4GyISe","label":"","name":"sibling-1.3.0_linux_386.tar.gz","size":2101643,"state":"uploaded","updatedAt":"2023-06-22T01:23:24Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804448","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:25Z","downloadCount":7,"id":"RA_kwDOEBCDxM4GyISg","label":"","name":"sibling-1.3.0_linux_amd64.tar.gz","size":2201935,"state":"uploaded","updatedAt":"2023-06-22T01:23:25Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113997280","contentType":"application/x-gzip","createdAt":"2023-06-23T07:40:14Z","downloadCount":4,"id":"RA_kwDOEBCDxM4Gy3Xg","label":"","name":"sibling-1.3.0_linux_arm64.tar.gz","size":2290682,"state":"uploaded","updatedAt":"2023-06-23T07:40:17Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804449","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:25Z","downloadCount":1,"id":"RA_kwDOEBCDxM4GyISh","label":"","name":"sibling-1.3.0_windows_386.tar.gz","size":2187202,"state":"uploaded","updatedAt":"2023-06-22T01:23:26Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113804450","contentType":"application/octet-stream","createdAt":"2023-06-22T01:23:26Z","downloadCount":1,"id":"RA_kwDOEBCDxM4GyISi","label":"","name":"sibling-1.3.0_windows_amd64.tar.gz","size":2261792,"state":"uploaded","updatedAt":"2023-06-22T01:23:27Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/sibling/releases/assets/113997289","contentType":"application/x-gzip","createdAt":"2023-06-23T07:40:19Z","downloadCount":0,"id":"RA_kwDOEBCDxM4Gy3Xp","label":"","name":"sibling-1.3.0_windows_arm64.tar.gz","size":2326116,"state":"uploaded","updatedAt":"2023-06-23T07:40:19Z","url":"https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_arm64.tar.gz"}],"name":"Release v1.3.0","publishedAt":"2023-06-22T01:23:22Z","tagName":"v1.3.0","url":"https://github.com/tamada/sibling/releases/tag/v1.3.0"},
-{"repoName":"tamada/tjdoe","assets":[{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005275","contentType":"application/x-gzip","createdAt":"2019-12-26T08:41:33Z","downloadCount":2,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1Mjc1","label":"","name":"tjdoe-1.0.0_darwin_386.tar.gz","size":1510995,"state":"uploaded","updatedAt":"2019-12-26T08:41:41Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_darwin_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005330","contentType":"application/x-gzip","createdAt":"2019-12-26T08:50:05Z","downloadCount":3,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1MzMw","label":"","name":"tjdoe-1.0.0_darwin_amd64.tar.gz","size":1540897,"state":"uploaded","updatedAt":"2019-12-26T08:50:13Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005276","contentType":"application/x-gzip","createdAt":"2019-12-26T08:41:33Z","downloadCount":2,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1Mjc2","label":"","name":"tjdoe-1.0.0_linux_386.tar.gz","size":1495906,"state":"uploaded","updatedAt":"2019-12-26T08:41:43Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005277","contentType":"application/x-gzip","createdAt":"2019-12-26T08:41:34Z","downloadCount":5,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1Mjc3","label":"","name":"tjdoe-1.0.0_linux_amd64.tar.gz","size":1532340,"state":"uploaded","updatedAt":"2019-12-26T08:41:44Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005278","contentType":"application/x-gzip","createdAt":"2019-12-26T08:41:34Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1Mjc4","label":"","name":"tjdoe-1.0.0_windows_386.tar.gz","size":1525664,"state":"uploaded","updatedAt":"2019-12-26T08:41:44Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/tjdoe/releases/assets/17005279","contentType":"application/x-gzip","createdAt":"2019-12-26T08:41:34Z","downloadCount":2,"id":"MDEyOlJlbGVhc2VBc3NldDE3MDA1Mjc5","label":"","name":"tjdoe-1.0.0_windows_amd64.tar.gz","size":1574827,"state":"uploaded","updatedAt":"2019-12-26T08:41:45Z","url":"https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_windows_amd64.tar.gz"}],"name":"v1.0.0 The first release","publishedAt":"2019-12-26T07:00:18Z","tagName":"v1.0.0","url":"https://github.com/tamada/tjdoe/releases/tag/v1.0.0"},
-{"repoName":"tamada/ttt","assets":[{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986115","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:46Z","downloadCount":2,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTE1","label":"","name":"ttt-1.0.0_darwin_386.tar.gz","size":1577933,"state":"uploaded","updatedAt":"2019-11-06T08:18:55Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_darwin_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986116","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:47Z","downloadCount":15,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTE2","label":"","name":"ttt-1.0.0_darwin_amd64.tar.gz","size":1612164,"state":"uploaded","updatedAt":"2019-11-06T08:18:57Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986117","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:48Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTE3","label":"","name":"ttt-1.0.0_linux_386.tar.gz","size":1557316,"state":"uploaded","updatedAt":"2019-11-06T08:18:58Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986118","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:48Z","downloadCount":10,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTE4","label":"","name":"ttt-1.0.0_linux_amd64.tar.gz","size":1593840,"state":"uploaded","updatedAt":"2019-11-06T08:18:58Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986119","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:49Z","downloadCount":2,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTE5","label":"","name":"ttt-1.0.0_windows_386.tar.gz","size":1586891,"state":"uploaded","updatedAt":"2019-11-06T08:18:59Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/ttt/releases/assets/15986120","contentType":"application/x-gzip","createdAt":"2019-11-06T08:18:49Z","downloadCount":3,"id":"MDEyOlJlbGVhc2VBc3NldDE1OTg2MTIw","label":"","name":"ttt-1.0.0_windows_amd64.tar.gz","size":1635639,"state":"uploaded","updatedAt":"2019-11-06T08:18:59Z","url":"https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_windows_amd64.tar.gz"}],"name":"","publishedAt":"2019-11-06T08:13:00Z","tagName":"v1.0.0","url":"https://github.com/tamada/ttt/releases/tag/v1.0.0"},
-{"repoName":"tamada/urleap","assets":[{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092485","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:38Z","downloadCount":1,"id":"RA_kwDOJWtq9s4G-rCF","label":"","name":"urleap-0.2.5_darwin_amd64.tar.gz","size":3948493,"state":"uploaded","updatedAt":"2023-07-15T03:29:38Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092488","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:39Z","downloadCount":0,"id":"RA_kwDOJWtq9s4G-rCI","label":"","name":"urleap-0.2.5_darwin_arm64.tar.gz","size":3795388,"state":"uploaded","updatedAt":"2023-07-15T03:29:39Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092491","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:40Z","downloadCount":0,"id":"RA_kwDOJWtq9s4G-rCL","label":"","name":"urleap-0.2.5_linux_amd64.tar.gz","size":4059919,"state":"uploaded","updatedAt":"2023-07-15T03:29:40Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092494","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:40Z","downloadCount":0,"id":"RA_kwDOJWtq9s4G-rCO","label":"","name":"urleap-0.2.5_linux_arm64.tar.gz","size":3770239,"state":"uploaded","updatedAt":"2023-07-15T03:29:41Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092497","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:41Z","downloadCount":0,"id":"RA_kwDOJWtq9s4G-rCR","label":"","name":"urleap-0.2.5_windows_amd64.tar.gz","size":4037389,"state":"uploaded","updatedAt":"2023-07-15T03:29:42Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/urleap/releases/assets/117092500","contentType":"application/octet-stream","createdAt":"2023-07-15T03:29:42Z","downloadCount":0,"id":"RA_kwDOJWtq9s4G-rCU","label":"","name":"urleap-0.2.5_windows_arm64.tar.gz","size":3769828,"state":"uploaded","updatedAt":"2023-07-15T03:29:44Z","url":"https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_arm64.tar.gz"}],"name":"Release v0.2.5","publishedAt":"2023-07-15T03:29:37Z","tagName":"v0.2.5","url":"https://github.com/tamada/urleap/releases/tag/v0.2.5"},
-{"repoName":"tamada/wildcat","assets":[{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952369","contentType":"application/x-gzip","createdAt":"2021-04-28T06:43:01Z","downloadCount":14,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyMzY5","label":"","name":"wildcat-1.2.0_darwin_amd64.tar.gz","size":11440105,"state":"uploaded","updatedAt":"2021-04-28T06:43:28Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952434","contentType":"application/x-gzip","createdAt":"2021-04-28T06:43:28Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyNDM0","label":"","name":"wildcat-1.2.0_darwin_arm64.tar.gz","size":11304801,"state":"uploaded","updatedAt":"2021-04-28T06:43:37Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_arm64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952436","contentType":"application/x-gzip","createdAt":"2021-04-28T06:43:37Z","downloadCount":4,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyNDM2","label":"","name":"wildcat-1.2.0_linux_386.tar.gz","size":11420902,"state":"uploaded","updatedAt":"2021-04-28T06:43:44Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952443","contentType":"application/x-gzip","createdAt":"2021-04-28T06:43:44Z","downloadCount":6,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyNDQz","label":"","name":"wildcat-1.2.0_linux_amd64.tar.gz","size":11536078,"state":"uploaded","updatedAt":"2021-04-28T06:43:53Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_amd64.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952446","contentType":"application/x-gzip","createdAt":"2021-04-28T06:43:53Z","downloadCount":5,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyNDQ2","label":"","name":"wildcat-1.2.0_windows_386.tar.gz","size":11561003,"state":"uploaded","updatedAt":"2021-04-28T06:44:01Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_386.tar.gz"},{"apiUrl":"https://api.github.com/repos/tamada/wildcat/releases/assets/35952449","contentType":"application/x-gzip","createdAt":"2021-04-28T06:44:01Z","downloadCount":5,"id":"MDEyOlJlbGVhc2VBc3NldDM1OTUyNDQ5","label":"","name":"wildcat-1.2.0_windows_amd64.tar.gz","size":11634703,"state":"uploaded","updatedAt":"2021-04-28T06:44:11Z","url":"https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_amd64.tar.gz"}],"name":"","publishedAt":"2021-04-28T06:47:01Z","tagName":"v1.2.0","url":"https://github.com/tamada/wildcat/releases/tag/v1.2.0"},
-{"repoName":"tamada/9rules","assets":[{"apiUrl":"https://api.github.com/repos/tamada/9rules/releases/assets/26077177","contentType":"application/zip","createdAt":"2020-09-23T07:22:25Z","downloadCount":12,"id":"MDEyOlJlbGVhc2VBc3NldDI2MDc3MTc3","label":"","name":"9rules-1.1.1-bin.zip","size":21744474,"state":"uploaded","updatedAt":"2020-09-23T07:22:33Z","url":"https://github.com/tamada/9rules/releases/download/v1.1.1/9rules-1.1.1-bin.zip"},{"apiUrl":"https://api.github.com/repos/tamada/9rules/releases/assets/26077182","contentType":"application/zip","createdAt":"2020-09-23T07:22:33Z","downloadCount":7,"id":"MDEyOlJlbGVhc2VBc3NldDI2MDc3MTgy","label":"","name":"9rules-1.1.1-src.zip","size":5334625,"state":"uploaded","updatedAt":"2020-09-23T07:22:35Z","url":"https://github.com/tamada/9rules/releases/download/v1.1.1/9rules-1.1.1-src.zip"}],"name":"","publishedAt":"2020-09-23T07:22:55Z","tagName":"v1.1.1","url":"https://github.com/tamada/9rules/releases/tag/v1.1.1"}
+  {
+    "repoName": "tamada/totebag",
+    "tagName": "v0.3.0",
+    "name": "Release v0.3.0",
+    "publishedAt": "2024-05-14T04:12:58Z",
+    "url": "https://github.com/tamada/totebag/releases/tag/v0.3.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.3.0/totebag-0.3.0_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.3.0_darwin_amd64.tar.gz",
+        "size": 1227842
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.3.0/totebag-0.3.0_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.3.0_darwin_arm64.tar.gz",
+        "size": 1414240
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.3.0/totebag-0.3.0_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.3.0_linux_amd64.tar.gz",
+        "size": 2774138
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.3.0/totebag-0.3.0_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.3.0_linux_arm64.tar.gz",
+        "size": 2832213
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/gibo-wrapper",
+    "tagName": "v0.8.1",
+    "name": "Release v0.8.1",
+    "publishedAt": "2024-05-07T01:34:39Z",
+    "url": "https://github.com/tamada/gibo-wrapper/releases/tag/v0.8.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_darwin_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "gibo-wrapper-0.8.1_darwin_amd64.tar.gz",
+        "size": 453377
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_darwin_arm64.tar.gz",
+        "downloadCount": 4,
+        "name": "gibo-wrapper-0.8.1_darwin_arm64.tar.gz",
+        "size": 466908
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_linux_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "gibo-wrapper-0.8.1_linux_amd64.tar.gz",
+        "size": 1340948
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_linux_arm64.tar.gz",
+        "downloadCount": 3,
+        "name": "gibo-wrapper-0.8.1_linux_arm64.tar.gz",
+        "size": 1346706
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/peripherals",
+    "tagName": "v1.0.1",
+    "name": "Release v1.0.1",
+    "publishedAt": "2023-08-05T08:56:35Z",
+    "url": "https://github.com/tamada/peripherals/releases/tag/v1.0.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-darwin-amd64.tar.gz",
+        "size": 7159412
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-darwin-arm64.tar.gz",
+        "size": 6979736
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-linux-amd64.tar.gz",
+        "size": 7204691
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-linux-arm64.tar.gz",
+        "size": 6752247
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-386.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-windows-386.tar.gz",
+        "size": 7567419
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-windows-amd64.tar.gz",
+        "size": 7604397
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/urleap",
+    "tagName": "v0.2.5",
+    "name": "Release v0.2.5",
+    "publishedAt": "2023-07-15T03:29:37Z",
+    "url": "https://github.com/tamada/urleap/releases/tag/v0.2.5",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "urleap-0.2.5_darwin_amd64.tar.gz",
+        "size": 3948493
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_darwin_arm64.tar.gz",
+        "size": 3795388
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_linux_amd64.tar.gz",
+        "size": 4059919
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_linux_arm64.tar.gz",
+        "size": 3770239
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_windows_amd64.tar.gz",
+        "size": 4037389
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_windows_arm64.tar.gz",
+        "size": 3769828
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/sibling",
+    "tagName": "v1.3.0",
+    "name": "Release v1.3.0",
+    "publishedAt": "2023-06-22T01:23:22Z",
+    "url": "https://github.com/tamada/sibling/releases/tag/v1.3.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_darwin_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "sibling-1.3.0_darwin_amd64.tar.gz",
+        "size": 2182238
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_darwin_arm64.tar.gz",
+        "downloadCount": 20,
+        "name": "sibling-1.3.0_darwin_arm64.tar.gz",
+        "size": 2100786
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_386.tar.gz",
+        "downloadCount": 1,
+        "name": "sibling-1.3.0_linux_386.tar.gz",
+        "size": 2101643
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_amd64.tar.gz",
+        "downloadCount": 7,
+        "name": "sibling-1.3.0_linux_amd64.tar.gz",
+        "size": 2201935
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_linux_arm64.tar.gz",
+        "downloadCount": 4,
+        "name": "sibling-1.3.0_linux_arm64.tar.gz",
+        "size": 2290682
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_386.tar.gz",
+        "downloadCount": 1,
+        "name": "sibling-1.3.0_windows_386.tar.gz",
+        "size": 2187202
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "sibling-1.3.0_windows_amd64.tar.gz",
+        "size": 2261792
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v1.3.0/sibling-1.3.0_windows_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-1.3.0_windows_arm64.tar.gz",
+        "size": 2326116
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/btmeister",
+    "tagName": "v0.5.0",
+    "name": "Release v0.5.0",
+    "publishedAt": "2022-06-20T07:15:19Z",
+    "url": "https://github.com/tamada/btmeister/releases/tag/v0.5.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_darwin_amd64.tar.gz",
+        "downloadCount": 13,
+        "name": "btmeister-0.5.0_darwin_amd64.tar.gz",
+        "size": 1151984
+      },
+      {
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_darwin_arm64.tar.gz",
+        "downloadCount": 9,
+        "name": "btmeister-0.5.0_darwin_arm64.tar.gz",
+        "size": 1067018
+      },
+      {
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_linux_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "btmeister-0.5.0_linux_amd64.tar.gz",
+        "size": 2041333
+      },
+      {
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_linux_arm64.tar.gz",
+        "downloadCount": 3,
+        "name": "btmeister-0.5.0_linux_arm64.tar.gz",
+        "size": 1951736
+      },
+      {
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.5.0/btmeister-0.5.0_windows_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "btmeister-0.5.0_windows_amd64.tar.gz",
+        "size": 944740
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/pochi",
+    "tagName": "v2.6.0",
+    "name": "Release v2.6.0",
+    "publishedAt": "2021-12-13T05:24:16Z",
+    "url": "https://github.com/tamada/pochi/releases/tag/v2.6.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/pochi/releases/download/v2.6.0/pochi-2.6.0.zip",
+        "downloadCount": 27,
+        "name": "pochi-2.6.0.zip",
+        "size": 23562006
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/scv",
+    "tagName": "v1.0.0",
+    "name": "",
+    "publishedAt": "2021-07-12T23:34:50Z",
+    "url": "https://github.com/tamada/scv/releases/tag/v1.0.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 5,
+        "name": "scv-1.0.0_darwin_amd64.tar.gz",
+        "size": 1622912
+      },
+      {
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_arm64.tar.gz",
+        "downloadCount": 3,
+        "name": "scv-1.0.0_darwin_arm64.tar.gz",
+        "size": 1580204
+      },
+      {
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_linux_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "scv-1.0.0_linux_amd64.tar.gz",
+        "size": 1530563
+      },
+      {
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_windows_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "scv-1.0.0_windows_amd64.tar.gz",
+        "size": 1594886
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/wildcat",
+    "tagName": "v1.2.0",
+    "name": "",
+    "publishedAt": "2021-04-28T06:47:01Z",
+    "url": "https://github.com/tamada/wildcat/releases/tag/v1.2.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_amd64.tar.gz",
+        "downloadCount": 14,
+        "name": "wildcat-1.2.0_darwin_amd64.tar.gz",
+        "size": 11440105
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_arm64.tar.gz",
+        "downloadCount": 4,
+        "name": "wildcat-1.2.0_darwin_arm64.tar.gz",
+        "size": 11304801
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_386.tar.gz",
+        "downloadCount": 4,
+        "name": "wildcat-1.2.0_linux_386.tar.gz",
+        "size": 11420902
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "wildcat-1.2.0_linux_amd64.tar.gz",
+        "size": 11536078
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_386.tar.gz",
+        "downloadCount": 5,
+        "name": "wildcat-1.2.0_windows_386.tar.gz",
+        "size": 11561003
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_amd64.tar.gz",
+        "downloadCount": 5,
+        "name": "wildcat-1.2.0_windows_amd64.tar.gz",
+        "size": 11634703
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/lioss",
+    "tagName": "v1.0.0",
+    "name": "",
+    "publishedAt": "2020-10-31T09:12:34Z",
+    "url": "https://github.com/tamada/lioss/releases/tag/v1.0.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 8,
+        "name": "lioss-1.0.0_darwin_amd64.tar.gz",
+        "size": 52537820
+      },
+      {
+        "url": "https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_linux_386.tar.gz",
+        "downloadCount": 7,
+        "name": "lioss-1.0.0_linux_386.tar.gz",
+        "size": 52404108
+      },
+      {
+        "url": "https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_linux_amd64.tar.gz",
+        "downloadCount": 9,
+        "name": "lioss-1.0.0_linux_amd64.tar.gz",
+        "size": 52520190
+      },
+      {
+        "url": "https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_windows_386.tar.gz",
+        "downloadCount": 6,
+        "name": "lioss-1.0.0_windows_386.tar.gz",
+        "size": 52531280
+      },
+      {
+        "url": "https://github.com/tamada/lioss/releases/download/v1.0.0/lioss-1.0.0_windows_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "lioss-1.0.0_windows_amd64.tar.gz",
+        "size": 52613339
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/9rules",
+    "tagName": "v1.1.1",
+    "name": "",
+    "publishedAt": "2020-09-23T07:22:55Z",
+    "url": "https://github.com/tamada/9rules/releases/tag/v1.1.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/9rules/releases/download/v1.1.1/9rules-1.1.1-bin.zip",
+        "downloadCount": 12,
+        "name": "9rules-1.1.1-bin.zip",
+        "size": 21744474
+      },
+      {
+        "url": "https://github.com/tamada/9rules/releases/download/v1.1.1/9rules-1.1.1-src.zip",
+        "downloadCount": 7,
+        "name": "9rules-1.1.1-src.zip",
+        "size": 5334625
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/omelette",
+    "tagName": "v1.1.1",
+    "name": "",
+    "publishedAt": "2020-07-17T02:10:17Z",
+    "url": "https://github.com/tamada/omelette/releases/tag/v1.1.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_darwin_386.tar.gz",
+        "downloadCount": 4,
+        "name": "omelette-1.1.1_darwin_386.tar.gz",
+        "size": 1722872
+      },
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_darwin_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "omelette-1.1.1_darwin_amd64.tar.gz",
+        "size": 1751975
+      },
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_linux_386.tar.gz",
+        "downloadCount": 4,
+        "name": "omelette-1.1.1_linux_386.tar.gz",
+        "size": 1723799
+      },
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_linux_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "omelette-1.1.1_linux_amd64.tar.gz",
+        "size": 1760837
+      },
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_windows_386.tar.gz",
+        "downloadCount": 4,
+        "name": "omelette-1.1.1_windows_386.tar.gz",
+        "size": 1747073
+      },
+      {
+        "url": "https://github.com/tamada/omelette/releases/download/v1.1.1/omelette-1.1.1_windows_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "omelette-1.1.1_windows_amd64.tar.gz",
+        "size": 1791209
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/rrh",
+    "tagName": "v1.2.0",
+    "name": "v1.2.0",
+    "publishedAt": "2020-04-24T02:32:52Z",
+    "url": "https://github.com/tamada/rrh/releases/tag/v1.2.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_darwin_386.tar.gz",
+        "downloadCount": 6,
+        "name": "rrh-1.2.0_darwin_386.tar.gz",
+        "size": 14431171
+      },
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_darwin_amd64.tar.gz",
+        "downloadCount": 15,
+        "name": "rrh-1.2.0_darwin_amd64.tar.gz",
+        "size": 14652838
+      },
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_linux_386.tar.gz",
+        "downloadCount": 6,
+        "name": "rrh-1.2.0_linux_386.tar.gz",
+        "size": 14493430
+      },
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_linux_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "rrh-1.2.0_linux_amd64.tar.gz",
+        "size": 14798523
+      },
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_windows_386.tar.gz",
+        "downloadCount": 6,
+        "name": "rrh-1.2.0_windows_386.tar.gz",
+        "size": 14481598
+      },
+      {
+        "url": "https://github.com/tamada/rrh/releases/download/v1.2.0/rrh-1.2.0_windows_amd64.tar.gz",
+        "downloadCount": 9,
+        "name": "rrh-1.2.0_windows_amd64.tar.gz",
+        "size": 14846388
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/goheatman",
+    "tagName": "v1.0.1",
+    "name": "",
+    "publishedAt": "2020-03-08T06:22:09Z",
+    "url": "https://github.com/tamada/goheatman/releases/tag/v1.0.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_386.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_darwin_386.tar.gz",
+        "size": 1631981
+      },
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "heatman-1.0.1_darwin_amd64.tar.gz",
+        "size": 1652220
+      },
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_386.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_linux_386.tar.gz",
+        "size": 1604530
+      },
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "heatman-1.0.1_linux_amd64.tar.gz",
+        "size": 1630048
+      },
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_386.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_windows_386.tar.gz",
+        "size": 1625043
+      },
+      {
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_windows_amd64.tar.gz",
+        "size": 1657841
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/tjdoe",
+    "tagName": "v1.0.0",
+    "name": "v1.0.0 The first release",
+    "publishedAt": "2019-12-26T07:00:18Z",
+    "url": "https://github.com/tamada/tjdoe/releases/tag/v1.0.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_darwin_386.tar.gz",
+        "downloadCount": 2,
+        "name": "tjdoe-1.0.0_darwin_386.tar.gz",
+        "size": 1510995
+      },
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "tjdoe-1.0.0_darwin_amd64.tar.gz",
+        "size": 1540897
+      },
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_linux_386.tar.gz",
+        "downloadCount": 2,
+        "name": "tjdoe-1.0.0_linux_386.tar.gz",
+        "size": 1495906
+      },
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_linux_amd64.tar.gz",
+        "downloadCount": 5,
+        "name": "tjdoe-1.0.0_linux_amd64.tar.gz",
+        "size": 1532340
+      },
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_windows_386.tar.gz",
+        "downloadCount": 4,
+        "name": "tjdoe-1.0.0_windows_386.tar.gz",
+        "size": 1525664
+      },
+      {
+        "url": "https://github.com/tamada/tjdoe/releases/download/v1.0.0/tjdoe-1.0.0_windows_amd64.tar.gz",
+        "downloadCount": 2,
+        "name": "tjdoe-1.0.0_windows_amd64.tar.gz",
+        "size": 1574827
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/ttt",
+    "tagName": "v1.0.0",
+    "name": "",
+    "publishedAt": "2019-11-06T08:13:00Z",
+    "url": "https://github.com/tamada/ttt/releases/tag/v1.0.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_darwin_386.tar.gz",
+        "downloadCount": 2,
+        "name": "ttt-1.0.0_darwin_386.tar.gz",
+        "size": 1577933
+      },
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 15,
+        "name": "ttt-1.0.0_darwin_amd64.tar.gz",
+        "size": 1612164
+      },
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_linux_386.tar.gz",
+        "downloadCount": 4,
+        "name": "ttt-1.0.0_linux_386.tar.gz",
+        "size": 1557316
+      },
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_linux_amd64.tar.gz",
+        "downloadCount": 10,
+        "name": "ttt-1.0.0_linux_amd64.tar.gz",
+        "size": 1593840
+      },
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_windows_386.tar.gz",
+        "downloadCount": 2,
+        "name": "ttt-1.0.0_windows_386.tar.gz",
+        "size": 1586891
+      },
+      {
+        "url": "https://github.com/tamada/ttt/releases/download/v1.0.0/ttt-1.0.0_windows_amd64.tar.gz",
+        "downloadCount": 3,
+        "name": "ttt-1.0.0_windows_amd64.tar.gz",
+        "size": 1635639
+      }
+    ]
+  }
 ]

@@ -1,4 +1,4 @@
-VERSION="v0.8.1"
+VERSION="0.8.1"
 
 class GiboWrapper < Formula
   desc "gibo-wrapper acts like gibo to improve gibo by adding the following features"
@@ -30,7 +30,7 @@ class GiboWrapper < Formula
     bin.install "gibo-wrapper"
 
     bash_completion.install "completions/bash/gibo" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/_gibo"  if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_gibo" if build.with? "completions"
     fish_completion.install "completions/fish/gibo" if build.with? "completions"
   end
 
