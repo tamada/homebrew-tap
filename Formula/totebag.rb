@@ -40,5 +40,5 @@ class Totebag < Formula
 
   test do
     system "#{bin}/totebag --version"
-  done
+  end
 end

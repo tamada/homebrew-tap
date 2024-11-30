@@ -1,5 +1,38 @@
 [
   {
+    "repoName": "tamada/gibo-wrapper",
+    "tagName": "v0.9.0",
+    "name": "Release v0.9.0",
+    "publishedAt": "2024-11-30T01:00:45Z",
+    "url": "https://github.com/tamada/gibo-wrapper/releases/tag/v0.9.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
+        "size": 462156
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
+        "size": 478854
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "gibo-wrapper-0.9.0_linux_amd64.tar.gz",
+        "size": 558662
+      },
+      {
+        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "gibo-wrapper-0.9.0_linux_arm64.tar.gz",
+        "size": 578632
+      }
+    ]
+  },
+  {
     "repoName": "tamada/totebag",
     "tagName": "v0.3.0",
     "name": "Release v0.3.0",
@@ -29,39 +62,6 @@
         "downloadCount": 0,
         "name": "totebag-0.3.0_linux_arm64.tar.gz",
         "size": 2832213
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/gibo-wrapper",
-    "tagName": "v0.8.1",
-    "name": "Release v0.8.1",
-    "publishedAt": "2024-05-07T01:34:39Z",
-    "url": "https://github.com/tamada/gibo-wrapper/releases/tag/v0.8.1",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_darwin_amd64.tar.gz",
-        "downloadCount": 3,
-        "name": "gibo-wrapper-0.8.1_darwin_amd64.tar.gz",
-        "size": 453377
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_darwin_arm64.tar.gz",
-        "downloadCount": 4,
-        "name": "gibo-wrapper-0.8.1_darwin_arm64.tar.gz",
-        "size": 466908
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_linux_amd64.tar.gz",
-        "downloadCount": 3,
-        "name": "gibo-wrapper-0.8.1_linux_amd64.tar.gz",
-        "size": 1340948
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.8.1/gibo-wrapper-0.8.1_linux_arm64.tar.gz",
-        "downloadCount": 3,
-        "name": "gibo-wrapper-0.8.1_linux_arm64.tar.gz",
-        "size": 1346706
       }
     ]
   },
