@@ -1,34 +1,27 @@
-VERSION="1.3.0"
-PRODUCT="sibling"
+VERSION="v2.0.0-beta-3"
 
 class Sibling < Formula
   desc "get next/previous sibling directory name."
   homepage "https://github.com/tamada/sibling"
   version VERSION
-  license "WTFPL"
-
-  option "without-completions", "Disable bash completions"
-  depends_on "bash-completion@2" => :optional
-
+  license "WTFPL License"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/#{PRODUCT}/releases/download/v#{VERSION}/#{PRODUCT}-#{VERSION}_darwin_amd64.tar.gz"
-    sha256 "57a1c8231290b34e43fd4bcba01c17a0abcc8f62fcab708c323f01463a73cac9"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_darwin_amd64.tar.gz"
+    sha256 "b2233ffa0642e52c293affee78e1bb7090c433c9ab330a078d58993528d42c73"
   end
-
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/#{PRODUCT}/releases/download/v#{VERSION}/#{PRODUCT}-#{VERSION}_darwin_arm64.tar.gz"
-    sha256 "1a4ef68c4ed4ccb43f4dedfb730eda08fde402d9fb47e19fc6f09e4f636f1698"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_darwin_arm64.tar.gz"
+    sha256 "295b01b5b1026b3dd9e06412c054b5e22843524f7260292e673b116e9fe2fa8e"
   end
-
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/#{PRODUCT}/releases/download/v#{VERSION}/#{PRODUCT}-#{VERSION}_linux_amd64.tar.gz"
-    sha256 "7e4bcc19151499e857eb28fcf9f89648f6f97ccde26e48cd18a3823ab99c21ad"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_linux_amd64.tar.gz"
+    sha256 "75fba5964c1438206372f034c8f043f5130f49ed68e8b775b7b2a161ef6c2104"
+  end
+  if OS.linux? && Hardware::CPU.arm?
+    url "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_linux_arm64.tar.gz"
+    sha256 "26e33d6bd961997454d3eff8eadc6d0c24fc02cdd695b732c0b5023f81eb0325"
   end
 
-  if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/#{PRODUCT}/releases/download/v#{VERSION}/#{PRODUCT}-#{VERSION}_linux_arm64.tar.gz"
-    sha256 "5adbd8b33d468bae3a6a0807da49fe02c45ded01e67d82390d05819d4d7d950d"
-  end
 
   def install
     bin.install "sibling"
