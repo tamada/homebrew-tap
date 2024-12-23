@@ -6,7 +6,7 @@ Homebrew recipes for my products.
 
 | Products | Url | Formula | Description | Version | Release date |
 |----------|-----|---------|-------------|---------|--------------|
-| sibling | [:octocat:](https://github.com/tamada/sibling)[:spider_web:](https://tamada.github.io/sibling/)| `tamada/tap/sibling` | get next/previous sibling directory name. |v2.0.0-beta-3 | 2024-12-05 |
+| sibling | [:octocat:](https://github.com/tamada/sibling)[:spider_web:](https://tamada.github.io/sibling/)| `tamada/tap/sibling` | get next/previous sibling directory name. |v2.0.0-beta-6 | 2024-12-23 |
 | gibo-wrapper | [:octocat:](https://github.com/tamada/gibo-wrapper)[:spider_web:](https://tamada.github.io/gibo-wrapper/)| `tamada/tap/gibo-wrapper` | gibo-wrapper acts like gibo and improves gibo by adding some features. |v0.9.0 | 2024-11-30 |
 | totebag | [:octocat:](https://github.com/tamada/totebag)[:spider_web:](https://tamada.github.io/totebag/)| `tamada/tap/totebag` | A tool for archiving files and directories and extracting several archive formats. |v0.3.0 | 2024-05-14 |
 | peripherals | [:octocat:](https://github.com/tamada/peripherals)[:spider_web:](https://tamada.github.io/peripherals/)| `tamada/tap/peripherals` | Peripheral Utility Commands for the Shell Environment |v1.0.1 | 2023-08-05 |

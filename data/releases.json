@@ -1,34 +1,34 @@
 [
   {
     "repoName": "tamada/sibling",
-    "tagName": "v2.0.0-beta-3",
-    "name": "Release v2.0.0-beta-3",
-    "publishedAt": "2024-12-05T02:10:35Z",
-    "url": "https://github.com/tamada/sibling/releases/tag/v2.0.0-beta-3",
+    "tagName": "v2.0.0-beta-6",
+    "name": "Release v2.0.0-beta-6",
+    "publishedAt": "2024-12-23T05:04:13Z",
+    "url": "https://github.com/tamada/sibling/releases/tag/v2.0.0-beta-6",
     "assets": [
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-6/sibling-2.0.0-beta-6_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.0-beta-3_darwin_amd64.tar.gz",
-        "size": 449968
+        "name": "sibling-2.0.0-beta-6_darwin_amd64.tar.gz",
+        "size": 450108
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-6/sibling-2.0.0-beta-6_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.0-beta-3_darwin_arm64.tar.gz",
-        "size": 467777
+        "name": "sibling-2.0.0-beta-6_darwin_arm64.tar.gz",
+        "size": 467633
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-6/sibling-2.0.0-beta-6_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.0-beta-3_linux_amd64.tar.gz",
-        "size": 529419
+        "name": "sibling-2.0.0-beta-6_linux_amd64.tar.gz",
+        "size": 529403
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-3/sibling-2.0.0-beta-3_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.0-beta-6/sibling-2.0.0-beta-6_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.0-beta-3_linux_arm64.tar.gz",
-        "size": 547876
+        "name": "sibling-2.0.0-beta-6_linux_arm64.tar.gz",
+        "size": 548007
       }
     ]
   },
@@ -41,25 +41,25 @@
     "assets": [
       {
         "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
         "size": 462156
       },
       {
         "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 3,
         "name": "gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
         "size": 478854
       },
       {
         "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_amd64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "gibo-wrapper-0.9.0_linux_amd64.tar.gz",
         "size": 558662
       },
       {
         "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_arm64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "gibo-wrapper-0.9.0_linux_arm64.tar.gz",
         "size": 578632
       }
