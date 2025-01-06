@@ -2,37 +2,105 @@
 
 Homebrew recipes for my products.
 
-## Available products
-
-| Products | Url | Formula | Description | Version | Release date |
-|----------|-----|---------|-------------|---------|--------------|
-| sibling | [:octocat:](https://github.com/tamada/sibling)[:spider_web:](https://tamada.github.io/sibling/)| `tamada/tap/sibling` | get next/previous sibling directory name. |v2.0.0-beta-6 | 2024-12-23 |
-| gibo-wrapper | [:octocat:](https://github.com/tamada/gibo-wrapper)[:spider_web:](https://tamada.github.io/gibo-wrapper/)| `tamada/tap/gibo-wrapper` | gibo-wrapper acts like gibo and improves gibo by adding some features. |v0.9.0 | 2024-11-30 |
-| totebag | [:octocat:](https://github.com/tamada/totebag)[:spider_web:](https://tamada.github.io/totebag/)| `tamada/tap/totebag` | A tool for archiving files and directories and extracting several archive formats. |v0.3.0 | 2024-05-14 |
-| peripherals | [:octocat:](https://github.com/tamada/peripherals)[:spider_web:](https://tamada.github.io/peripherals/)| `tamada/tap/peripherals` | Peripheral Utility Commands for the Shell Environment |v1.0.1 | 2023-08-05 |
-| urleap | [:octocat:](https://github.com/tamada/urleap)[:spider_web:](https://tamada.github.io/urleap/)| `tamada/tap/urleap` | URL shortener via bit.ly |v0.2.5 | 2023-07-15 |
-| btmeister | [:octocat:](https://github.com/tamada/btmeister)[:spider_web:](https://tamada.github.io/btmeister/)| `tamada/tap/btmeister` | Detecting the build tools in use |v0.5.0 | 2022-06-20 |
-| pochi | [:octocat:](https://github.com/tamada/pochi)[:spider_web:](https://tamada.github.io/pochi/)| `tamada/tap/pochi` | Detecting the software theft, the birthmark toolkit for the JVM platform |v2.6.0 | 2021-12-13 |
-| scv | [:octocat:](https://github.com/tamada/scv)[:spider_web:](https://tamada.github.io/scv/)| `tamada/tap/scv` | Similarities and distances calculator among vectors |v1.0.0 | 2021-07-12 |
-| wildcat | [:octocat:](https://github.com/tamada/wildcat)[:spider_web:](https://tamada.github.io/wildcat/)| `tamada/tap/wildcat` | Another implementation of wc (word count) |v1.2.0 | 2021-04-28 |
-| lioss | [:octocat:](https://github.com/tamada/lioss)[:spider_web:](https://tamada.github.io/lioss/)| `tamada/tap/lioss` | Identifying OSS license names from LICENSE files |v1.0.0 | 2020-10-31 |
-| 9rules | [:octocat:](https://github.com/tamada/9rules)[:spider_web:](https://tamada.github.io/9rules/)| `tamada/tap/9rules` | Checking tool of small object programming for the Java language. |v1.1.1 | 2020-09-23 |
-| omelette | [:octocat:](https://github.com/tamada/omelette)[:spider_web:](https://tamada.github.io/omelette/)| `tamada/tap/omelette` | An agent for running unit tests on the CLI environemnt for the Java platform |v1.1.1 | 2020-07-17 |
-| rrh | [:octocat:](https://github.com/tamada/rrh)[:spider_web:](https://tamada.github.io/rrh/)| `tamada/tap/rrh` | Remote Repositories Head/Repositories Ready to Hack |v1.2.0 | 2020-04-24 |
-| goheatman | [:octocat:](https://github.com/tamada/goheatman)[:spider_web:](https://tamada.github.io/goheatman/)| `tamada/tap/goheatman` | Create heat map image from given csv file |v1.0.1 | 2020-03-08 |
-| tjdoe | [:octocat:](https://github.com/tamada/tjdoe)[:spider_web:](https://tamada.github.io/tjdoe/)| `tamada/tap/tjdoe` | anonymizes the programs of the assignments in the programming courses and their score for grades. |v1.0.0 | 2019-12-26 |
-| ttt | [:octocat:](https://github.com/tamada/ttt)[:spider_web:](https://tamada.github.io/ttt/)| `tamada/tap/ttt` |  |v1.0.0 | 2019-11-06 |
-| qrg | [:octocat:](https://github.com/tamada/qrg)| `tamada/tap/qrg` | QR code generator for Go lang || |
-
-## Archived products
-
-| Products | Url | Formula | Description | Version | Release date |
-|----------|-----|---------|-------------|---------|--------------|
-| uniq2    | [:octocat:]() [:spider_web:](https://tamada.github.io/uniq2/) | `tamada/tap/uniq2` | Eliminating duplicate lines from file. | v1.0.0 | 2019-11-06 |
-
-## How to install the above tools
+## How to install the following tools
 
 At first, execute `brew tap tamada/tap`, then ready to install the above tools.
 Then, type `brew install <formula>`.
 
 Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
+
+## Available products
+- [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
+  
+  - **Formula:** `tamada/tap/sibling`
+  - **Description:** get the next/previous sibling directory name.
+  - **Releases:**v2.0.0-beta-7 (2024-12-31)
+- [gibo-wrapper](https://github.com/tamada/gibo-wrapper)([:spider_web:](https://tamada.github.io/gibo-wrapper/))
+  
+  - **Formula:** `tamada/tap/gibo-wrapper`
+  - **Description:** gibo-wrapper acts like gibo and improves gibo by adding some features.
+  - **Releases:**v0.9.0 (2024-11-30)
+- [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
+  
+  - **Formula:** `tamada/tap/totebag`
+  - **Description:** A tool for archiving files and directories and extracting several archive formats.
+  - **Releases:**v0.3.0 (2024-05-14)
+- [peripherals](https://github.com/tamada/peripherals)([:spider_web:](https://tamada.github.io/peripherals/))
+  
+  - **Formula:** `tamada/tap/peripherals`
+  - **Description:** Peripheral Utility Commands for the Shell Environment
+  - **Releases:**v1.0.1 (2023-08-05)
+- [urleap](https://github.com/tamada/urleap)([:spider_web:](https://tamada.github.io/urleap/))
+  
+  - **Formula:** `tamada/tap/urleap`
+  - **Description:** URL shortener via bit.ly
+  - **Releases:**v0.2.5 (2023-07-15)
+- [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
+  
+  - **Formula:** `tamada/tap/btmeister`
+  - **Description:** Detecting the build tools in use
+  - **Releases:**v0.5.0 (2022-06-20)
+- [pochi](https://github.com/tamada/pochi)([:spider_web:](https://tamada.github.io/pochi/))
+  
+  - **Formula:** `tamada/tap/pochi`
+  - **Description:** Detecting the software theft, the birthmark toolkit for the JVM platform
+  - **Releases:**v2.6.0 (2021-12-13)
+- [scv](https://github.com/tamada/scv)([:spider_web:](https://tamada.github.io/scv/))
+  
+  - **Formula:** `tamada/tap/scv`
+  - **Description:** Similarities and distances calculator among vectors
+  - **Releases:**v1.0.0 (2021-07-12)
+- [wildcat](https://github.com/tamada/wildcat)([:spider_web:](https://tamada.github.io/wildcat/))
+  
+  - **Formula:** `tamada/tap/wildcat`
+  - **Description:** Another implementation of wc (word count)
+  - **Releases:**v1.2.0 (2021-04-28)
+- [lioss](https://github.com/tamada/lioss)([:spider_web:](https://tamada.github.io/lioss/))
+  
+  - **Formula:** `tamada/tap/lioss`
+  - **Description:** Identifying OSS license names from LICENSE files
+  - **Releases:**v1.0.0 (2020-10-31)
+- [9rules](https://github.com/tamada/9rules)([:spider_web:](https://tamada.github.io/9rules/))
+  
+  - **Formula:** `tamada/tap/9rules`
+  - **Description:** Checking tool of small object programming for the Java language.
+  - **Releases:**v1.1.1 (2020-09-23)
+- [omelette](https://github.com/tamada/omelette)([:spider_web:](https://tamada.github.io/omelette/))
+  
+  - **Formula:** `tamada/tap/omelette`
+  - **Description:** An agent for running unit tests on the CLI environment for the Java platform
+  - **Releases:**v1.1.1 (2020-07-17)
+- [rrh](https://github.com/tamada/rrh)([:spider_web:](https://tamada.github.io/rrh/))
+  
+  - **Formula:** `tamada/tap/rrh`
+  - **Description:** Remote Repositories Head/Repositories Ready to Hack
+  - **Releases:**v1.2.0 (2020-04-24)
+- [goheatman](https://github.com/tamada/goheatman)([:spider_web:](https://tamada.github.io/goheatman/))
+  
+  - **Formula:** `tamada/tap/goheatman`
+  - **Description:** Create heat map image from given csv file
+  - **Releases:**v1.0.1 (2020-03-08)
+- [tjdoe](https://github.com/tamada/tjdoe)([:spider_web:](https://tamada.github.io/tjdoe/))
+  
+  - **Formula:** `tamada/tap/tjdoe`
+  - **Description:** anonymizes the programs of the assignments in the programming courses and their score for grades.
+  - **Releases:**v1.0.0 (2019-12-26)
+- [ttt](https://github.com/tamada/ttt)([:spider_web:](https://tamada.github.io/ttt/))
+  
+  - **Formula:** `tamada/tap/ttt`
+  - **Description:** 
+  - **Releases:**v1.0.0 (2019-11-06)
+- [qrg](https://github.com/tamada/qrg)
+  - **Formula:** `tamada/tap/qrg`
+  - **Description:** QR code generator for Go lang
+  - **Releases:**
+
+## Archived products
+
+- [uniq2](https://github.com/tamada/uniq2) ([:spider_web:](https://tamada.github.io/uniq2/))
+  - **Formula:** `tamada/tap/uniq2`
+  - **Description:** Eliminating duplicate lines from a file.
+  - **Releases:**
+    v1.0.0 (2019-11-06)
+  - **Archived At**: 2023-09-17
+    - Transfer into the part of [tamada/peripherals](https://github.com/tamada/peripherals) repository.

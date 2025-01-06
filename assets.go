@@ -1,4 +1,4 @@
-package updater
+package formula_updater
 
 import (
 	"bytes"

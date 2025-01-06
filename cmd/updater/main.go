@@ -15,11 +15,22 @@ import (
 	"time"
 
 	"github.com/gookit/color"
-	"github.com/tamada/homebrew-tap/updater"
+	updater "github.com/tamada/homebrew-tap/formula_updater"
 )
 
 func helpMessage(prog string) string {
-	return fmt.Sprintf(`%s <formula>`, prog)
+	return `Usage: formula_updater [OPTIONS] <formula>
+Description:
+    This command updates the latest release version of the specified tool.
+	Update the homebrew recipes located in Formula folder for downloading the latest releases and calculating SHA256 of them.
+	This command also update README.md file.
+
+Options:
+    -h, --help  Show this help message
+
+Example:
+    formula_updater tamada/sibling
+	This commands update the latest release version of sibling and update Formula/sibling.rb`
 }
 
 func findResult(results []*updater.Project, name string) *updater.Project {
@@ -244,7 +255,25 @@ func writeReleaseJson(releases []*updater.Release) error {
 	return err
 }
 
+func parseArgs(args []string) ([]string, bool) {
+	helpFlag := false
+	result := []string{}
+	for _, arg := range args {
+		if arg == "-h" || arg == "--help" {
+			helpFlag = true
+		} else {
+			result = append(result, arg)
+		}
+	}
+	return result, helpFlag
+}
+
 func goMain(args []string) int {
+	args, helpFlag := parseArgs(args)
+	if helpFlag {
+		fmt.Println(helpMessage(os.Args[0]))
+		return 0
+	}
 	projects, err := readProjects(args)
 	if err != nil {
 		fmt.Println(color.Red.Sprintf("Error: %s", err.Error()))

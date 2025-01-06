@@ -44,7 +44,7 @@
     {
         "owner": "tamada",
         "name": "omelette",
-        "description": "An agent for running unit tests on the CLI environemnt for the Java platform",
+        "description": "An agent for running unit tests on the CLI environment for the Java platform",
         "license": "WTFPL License",
         "url": "https://tamada.github.io/omelette/"
     },
@@ -87,7 +87,7 @@
     {
         "owner": "tamada",
         "name": "sibling",
-        "description": "get next/previous sibling directory name.",
+        "description": "get the next/previous sibling directory name.",
         "license": "WTFPL License",
         "url": "https://tamada.github.io/sibling/"
     },
