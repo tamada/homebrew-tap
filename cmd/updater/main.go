@@ -22,15 +22,16 @@ func helpMessage(prog string) string {
 	return `Usage: formula_updater [OPTIONS] <formula>
 Description:
     This command updates the latest release version of the specified tool.
-	Update the homebrew recipes located in Formula folder for downloading the latest releases and calculating SHA256 of them.
-	This command also update README.md file.
+    Update the homebrew recipes located in Formula folder by downloading 
+    the latest releases and calculating SHA256 of them.  This command also
+    update README.md file.
 
 Options:
     -h, --help  Show this help message
 
 Example:
-    formula_updater tamada/sibling
-	This commands update the latest release version of sibling and update Formula/sibling.rb`
+        formula_updater tamada/sibling
+    This commands update the latest release version of sibling and update Formula/sibling.rb`
 }
 
 func findResult(results []*updater.Project, name string) *updater.Project {
