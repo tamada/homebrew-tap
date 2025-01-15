@@ -1,5 +1,5 @@
 {{- $r := .Release -}}
-VERSION="{{ $r.TagName }}"
+VERSION="{{ toVersion $r.TagName }}"
 
 class Btmeister < Formula
   desc "Detecting the build tools in use"
@@ -63,8 +63,8 @@ class Btmeister < Formula
     prefix.install "README.md"
     prefix.install "LICENSE"
 
-    bash_completion.install "completions/bash/btmeister" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/_btmeister" if build.with? "completions"
-    fish_completion.install "completions/fish/btmeister" if build.with? "completions"
+    bash_completion.install "assets/completions/bash/btmeister" if build.with? "completions"
+    zsh_completion.install  "assets/completions/zsh/_btmeister" if build.with? "completions"
+    fish_completion.install "assets/completions/fish/btmeister" if build.with? "completions"
   end
 end

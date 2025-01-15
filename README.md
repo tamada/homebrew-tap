@@ -10,6 +10,11 @@ Then, type `brew install <formula>`.
 Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
 
 ## Available products
+- [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
+  
+  - **Formula:** `tamada/tap/btmeister`
+  - **Description:** Detecting the build tools in use
+  - **Releases:**v0.7.1 (2025-01-15)
 - [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
   
   - **Formula:** `tamada/tap/sibling`
@@ -35,11 +40,6 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `tamada/tap/urleap`
   - **Description:** URL shortener via bit.ly
   - **Releases:**v0.2.5 (2023-07-15)
-- [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
-  
-  - **Formula:** `tamada/tap/btmeister`
-  - **Description:** Detecting the build tools in use
-  - **Releases:**v0.5.0 (2022-06-20)
 - [pochi](https://github.com/tamada/pochi)([:spider_web:](https://tamada.github.io/pochi/))
   
   - **Formula:** `tamada/tap/pochi`
