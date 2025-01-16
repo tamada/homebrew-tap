@@ -29,7 +29,7 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:**v0.3.0 (2024-05-14)
+  - **Releases:**v0.6.0 (2024-08-16)
 - [peripherals](https://github.com/tamada/peripherals)([:spider_web:](https://tamada.github.io/peripherals/))
   
   - **Formula:** `tamada/tap/peripherals`
