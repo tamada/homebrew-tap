@@ -10,19 +10,18 @@ Then, type `brew install <formula>`.
 Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
 
 ## Available products
-
-{{- range $p := . }}
+{{ range $p := . }}
 - [{{ $p.Name }}]({{ printf "https://github.com/%s" $p.RepoName }}) 
   {{- if ne $p.Url "" -}}
-    ([:spider_web:]({{ $p.Url }}))
-  {{ end }}
+    {{/* spacing */}} ([:spider_web:]({{ $p.Url }}))
+  {{ end -}}
   - **Formula:** `{{ $p.Owner }}/tap/{{ $p.Name }}`
   - **Description:** {{ $p.Description }}
-  - **Releases:**
+  - **Releases:** {{/* for spacing */}}
   {{- if $p.Release -}}
     {{ $p.Release.TagName }} ({{ formatDate $p.Release.PublishedAt }})
   {{- end -}}
-{{- end }}
+{{ end }}
 
 ## Archived products
 
