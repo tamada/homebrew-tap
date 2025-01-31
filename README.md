@@ -14,7 +14,7 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 - [btmeister](https://github.com/tamada/btmeister) ([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
-  - **Releases:** v0.7.1 (2025-01-15)
+  - **Releases:** v0.7.4 (2025-01-31)
 - [sibling](https://github.com/tamada/sibling) ([:spider_web:](https://tamada.github.io/sibling/))
   - **Formula:** `tamada/tap/sibling`
   - **Description:** get the next/previous sibling directory name.

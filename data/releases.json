@@ -1,40 +1,40 @@
 [
   {
     "repoName": "tamada/btmeister",
-    "tagName": "v0.7.1",
-    "name": "Release v0.7.1",
-    "publishedAt": "2025-01-15T13:58:24Z",
-    "url": "https://github.com/tamada/btmeister/releases/tag/v0.7.1",
+    "tagName": "v0.7.4",
+    "name": "Release v0.7.4",
+    "publishedAt": "2025-01-31T11:47:39Z",
+    "url": "https://github.com/tamada/btmeister/releases/tag/v0.7.4",
     "assets": [
       {
-        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "btmeister-0.7.1_darwin_amd64.tar.gz",
-        "size": 1757041
+        "name": "btmeister-0.7.4_darwin_amd64.tar.gz",
+        "size": 1753475
       },
       {
-        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "btmeister-0.7.1_darwin_arm64.tar.gz",
-        "size": 1556038
+        "name": "btmeister-0.7.4_darwin_arm64.tar.gz",
+        "size": 1558521
       },
       {
-        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "btmeister-0.7.1_linux_amd64.tar.gz",
-        "size": 1853793
+        "name": "btmeister-0.7.4_linux_amd64.tar.gz",
+        "size": 1851554
       },
       {
-        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "btmeister-0.7.1_linux_arm64.tar.gz",
-        "size": 1725285
+        "name": "btmeister-0.7.4_linux_arm64.tar.gz",
+        "size": 1734755
       },
       {
-        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_windows_amd64.tar.gz",
+        "url": "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_windows_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "btmeister-0.7.1_windows_amd64.tar.gz",
-        "size": 1549179
+        "name": "btmeister-0.7.4_windows_amd64.tar.gz",
+        "size": 1533652
       }
     ]
   },

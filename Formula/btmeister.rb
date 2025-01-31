@@ -1,4 +1,4 @@
-VERSION="0.7.1"
+VERSION="0.7.4"
 
 class Btmeister < Formula
   desc "Detecting the build tools in use"
@@ -6,20 +6,20 @@ class Btmeister < Formula
   version VERSION
   license "MIT license"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_darwin_amd64.tar.gz"
-    sha256 "50d167c57255bb3096af568cb4522d68e7dbf4b3b8dbc45a82868fbaae4a5731"
+    url "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_darwin_amd64.tar.gz"
+    sha256 "5a2ed8666a78ef6672a913b03ce86fbc81c90fcd118ed754c6b93800b99f2325"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_darwin_arm64.tar.gz"
-    sha256 "6f51b99f11d7559ccb8b5cec78b6fe1b92407bea43773c000c577d0f6d3d736a"
+    url "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_darwin_arm64.tar.gz"
+    sha256 "d10c7a09c81c9bbd81a67a7f68c2d66f2320ff5b9152fecfcda4b7a29602bed3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_linux_amd64.tar.gz"
-    sha256 "d52ec7330b19c37b0e05cdbd60e7539741a24cfad85b667a88e7693b7565db01"
+    url "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_linux_amd64.tar.gz"
+    sha256 "f5ee46ee28ea51114d760fa6f5037350c29e111cb721ffdadb1f155dcb20f2c2"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/btmeister/releases/download/v0.7.1/btmeister-0.7.1_linux_arm64.tar.gz"
-    sha256 "303801deaf35101a7ed8b5aa0dc5853840a500360e83fb7c90afd60409d3551a"
+    url "https://github.com/tamada/btmeister/releases/download/v0.7.4/btmeister-0.7.4_linux_arm64.tar.gz"
+    sha256 "8df68f38bfd4f6151467ad62e2ce7f3e7b093dc826cd9ba85b890d5352196e92"
   end
 
   option "without-completions", "Disable bash completions"
@@ -31,8 +31,8 @@ class Btmeister < Formula
     prefix.install "README.md"
     prefix.install "LICENSE"
 
-    bash_completion.install "completions/bash/btmeister" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/_btmeister" if build.with? "completions"
-    fish_completion.install "completions/fish/btmeister" if build.with? "completions"
+    bash_completion.install "assets/completions/bash/btmeister" if build.with? "completions"
+    zsh_completion.install  "assets/completions/zsh/_btmeister" if build.with? "completions"
+    fish_completion.install "assets/completions/fish/btmeister" if build.with? "completions"
   end
 end
