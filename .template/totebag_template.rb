@@ -60,9 +60,9 @@ class Totebag < Formula
   def install
     bin.install "{{ .Name }}"
 
-    bash_completion.install "completions/bash/{{ .Name }}" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/_{{ .Name }}" if build.with? "completions"
-    fish_completion.install "completions/fish/{{ .Name }}" if build.with? "completions"
+    bash_completion.install "assets/completions/bash/{{ .Name }}" if build.with? "completions"
+    zsh_completion.install  "assets/completions/zsh/_{{ .Name }}" if build.with? "completions"
+    fish_completion.install "assets/completions/fish/{{ .Name }}" if build.with? "completions"
   end
 
   test do
