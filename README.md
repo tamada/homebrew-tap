@@ -11,6 +11,10 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 ## Available products
 
+- [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
+  - **Formula:** `tamada/tap/totebag`
+  - **Description:** A tool for archiving files and directories and extracting several archive formats.
+  - **Releases:** v0.7.8 (2025-02-05)
 - [btmeister](https://github.com/tamada/btmeister) ([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
@@ -23,10 +27,6 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `tamada/tap/gibo-wrapper`
   - **Description:** gibo-wrapper acts like gibo and improves gibo by adding some features.
   - **Releases:** v0.9.0 (2024-11-30)
-- [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
-  - **Formula:** `tamada/tap/totebag`
-  - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:** v0.6.0 (2024-08-16)
 - [peripherals](https://github.com/tamada/peripherals) ([:spider_web:](https://tamada.github.io/peripherals/))
   - **Formula:** `tamada/tap/peripherals`
   - **Description:** Peripheral Utility Commands for the Shell Environment

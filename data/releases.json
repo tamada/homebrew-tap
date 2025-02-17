@@ -1,5 +1,38 @@
 [
   {
+    "repoName": "tamada/totebag",
+    "tagName": "v0.7.8",
+    "name": "Release v0.7.8",
+    "publishedAt": "2025-02-05T10:19:44Z",
+    "url": "https://github.com/tamada/totebag/releases/tag/v0.7.8",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.7.8_darwin_amd64.tar.gz",
+        "size": 2254993
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.7.8_darwin_arm64.tar.gz",
+        "size": 2550246
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.7.8_linux_amd64.tar.gz",
+        "size": 2713165
+      },
+      {
+        "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "totebag-0.7.8_linux_arm64.tar.gz",
+        "size": 2900838
+      }
+    ]
+  },
+  {
     "repoName": "tamada/btmeister",
     "tagName": "v0.7.4",
     "name": "Release v0.7.4",
@@ -101,39 +134,6 @@
         "downloadCount": 1,
         "name": "gibo-wrapper-0.9.0_linux_arm64.tar.gz",
         "size": 578632
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/totebag",
-    "tagName": "v0.6.0",
-    "name": "Release v0.6.0",
-    "publishedAt": "2024-08-16T04:17:04Z",
-    "url": "https://github.com/tamada/totebag/releases/tag/v0.6.0",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.6.0/totebag-0.6.0_darwin_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "totebag-0.6.0_darwin_amd64.tar.gz",
-        "size": 1363261
-      },
-      {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.6.0/totebag-0.6.0_darwin_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "totebag-0.6.0_darwin_arm64.tar.gz",
-        "size": 1567211
-      },
-      {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.6.0/totebag-0.6.0_linux_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "totebag-0.6.0_linux_amd64.tar.gz",
-        "size": 1759026
-      },
-      {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.6.0/totebag-0.6.0_linux_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "totebag-0.6.0_linux_arm64.tar.gz",
-        "size": 1820120
       }
     ]
   },
