@@ -8,25 +8,25 @@
     "assets": [
       {
         "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_darwin_amd64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "totebag-0.7.8_darwin_amd64.tar.gz",
         "size": 2254993
       },
       {
         "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_darwin_arm64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 4,
         "name": "totebag-0.7.8_darwin_arm64.tar.gz",
         "size": 2550246
       },
       {
         "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_linux_amd64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "totebag-0.7.8_linux_amd64.tar.gz",
         "size": 2713165
       },
       {
         "url": "https://github.com/tamada/totebag/releases/download/v0.7.8/totebag-0.7.8_linux_arm64.tar.gz",
-        "downloadCount": 0,
+        "downloadCount": 1,
         "name": "totebag-0.7.8_linux_arm64.tar.gz",
         "size": 2900838
       }

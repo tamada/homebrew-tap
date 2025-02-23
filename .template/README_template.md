@@ -14,12 +14,14 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 - [{{ $p.Name }}]({{ printf "https://github.com/%s" $p.RepoName }}) 
   {{- if ne $p.Url "" -}}
     {{/* spacing */}} ([:spider_web:]({{ $p.Url }}))
-  {{ end -}}
+  {{- end }}
   - **Formula:** `{{ $p.Owner }}/tap/{{ $p.Name }}`
   - **Description:** {{ $p.Description }}
   - **Releases:** {{/* for spacing */}}
   {{- if $p.Release -}}
     {{ $p.Release.TagName }} ({{ formatDate $p.Release.PublishedAt }})
+  {{- else -}}
+    <!-- for spacing -->
   {{- end -}}
 {{ end }}
 

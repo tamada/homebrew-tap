@@ -75,9 +75,10 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `tamada/tap/ttt`
   - **Description:** 
   - **Releases:** v1.0.0 (2019-11-06)
-- [qrg](https://github.com/tamada/qrg)- **Formula:** `tamada/tap/qrg`
+- [qrg](https://github.com/tamada/qrg)
+  - **Formula:** `tamada/tap/qrg`
   - **Description:** QR code generator for Go lang
-  - **Releases:** 
+  - **Releases:** <!-- for spacing -->
 
 ## Archived products
 
