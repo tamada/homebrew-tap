@@ -58,7 +58,8 @@ class Gixor < Formula
   {{- end }}
 
   def install
-    bin.install "gibo-wrapper"
+    bin.install "gixor"
+    bin.install "gixor" => "git-ignore"
 
     bash_completion.install "completions/bash/gibo" if build.with? "completions"
     zsh_completion.install  "completions/zsh/_gibo" if build.with? "completions"
@@ -66,13 +67,6 @@ class Gixor < Formula
   end
 
   test do
-    system "#{bin}/gibo-wrapper --version"
-  end
-
-  def caveats
-    <<~EOS
-      Put the following alias setting into your shell configuration file.
-          alias gibo='gibo-wrapper $@'
-    EOS
+    system "#{bin}/gixor --version"
   end
 end

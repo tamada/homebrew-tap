@@ -11,6 +11,10 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 ## Available products
 
+- [gixor](https://github.com/tamada/gixor) ([:spider_web:](https://tamada.github.io/gixor/))
+  - **Formula:** `tamada/tap/gixor`
+  - **Description:** 
+  - **Releases:** v0.2.8 (2025-03-04)
 - [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
@@ -78,7 +82,7 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 - [qrg](https://github.com/tamada/qrg)
   - **Formula:** `tamada/tap/qrg`
   - **Description:** QR code generator for Go lang
-  - **Releases:** <!-- for spacing -->
+  - **Releases:** 
 
 ## Archived products
 

@@ -1,6 +1,13 @@
 [
     {
         "owner": "tamada",
+        "name": "gixor",
+        "description": "Git Ignore Managenemnt System for Multiple Repositories.",
+        "license": "MIT license",
+        "url": "https://tamada.github.io/gixor/"
+    },
+    {
+        "owner": "tamada",
         "name": "gibo-wrapper",
         "description": "gibo-wrapper acts like gibo and improves gibo by adding some features.",
         "license": "Unlicensed license",

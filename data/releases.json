@@ -1,5 +1,32 @@
 [
   {
+    "repoName": "tamada/gixor",
+    "tagName": "v0.2.8",
+    "name": "Release v0.2.8",
+    "publishedAt": "2025-03-04T05:29:22Z",
+    "url": "https://github.com/tamada/gixor/releases/tag/v0.2.8",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "gixor-0.2.8_darwin_amd64.tar.gz",
+        "size": 3437810
+      },
+      {
+        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "gixor-0.2.8_darwin_arm64.tar.gz",
+        "size": 3200879
+      },
+      {
+        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "gixor-0.2.8_linux_arm64.tar.gz",
+        "size": 4111430
+      }
+    ]
+  },
+  {
     "repoName": "tamada/totebag",
     "tagName": "v0.7.8",
     "name": "Release v0.7.8",
