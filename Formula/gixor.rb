@@ -25,9 +25,9 @@ class Gixor < Formula
     bin.install "gixor"
     system "ln -s \"#{bin}/gixor\" #{bin}/git-ignore"
 
-    bash_completion.install "assets/completions/bash/gixo" if build.with? "completions"
-    zsh_completion.install  "assets/completions/zsh/_gixo" if build.with? "completions"
-    fish_completion.install "assets/completions/fish/gixo" if build.with? "completions"
+    bash_completion.install "assets/completions/bash/gixor" if build.with? "completions"
+    zsh_completion.install  "assets/completions/zsh/_gixor" if build.with? "completions"
+    fish_completion.install "assets/completions/fish/gixor" if build.with? "completions"
   end
 
   test do
