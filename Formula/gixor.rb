@@ -1,4 +1,4 @@
-VERSION="0.2.8"
+VERSION="0.3.0"
 
 class Gixor < Formula
   desc "gitignore management system for the multiple repositories"
@@ -7,18 +7,18 @@ class Gixor < Formula
 
   homepage "https://github.com/tamada/gixor"
   version VERSION
-  license "Unlicensed license"
+  license "MIT license"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_amd64.tar.gz"
-    sha256 "10b0e80e24df9a7eb21c59aeae436f9d250402e53576641437861b6349b09a08"
+    url "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_darwin_amd64.tar.gz"
+    sha256 "7060c812b33f47328f1f17a62e3e80a72d1cb704f0b5fb35e3e40c31625558f9"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_arm64.tar.gz"
-    sha256 "2779ebe9dbcef8cf53c530c1c390d67bca77de6c7503ee3e040f17764a725b25"
+    url "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_darwin_arm64.tar.gz"
+    sha256 "8d57cc1de3c92065e890b12bc29871561e1da482ca1fc5eec00e6e3445548b80"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_linux_arm64.tar.gz"
-    sha256 "cf34ab13122a24adb03f79473860169d6e18da9442cfa862e2ea899f9da72c06"
+    url "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_linux_arm64.tar.gz"
+    sha256 "c21e879e3df0a5e9d3b5716c882fe14727584049863fbae5cd914a509f339002"
   end
 
   def install

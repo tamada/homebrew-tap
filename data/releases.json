@@ -1,28 +1,28 @@
 [
   {
     "repoName": "tamada/gixor",
-    "tagName": "v0.2.8",
-    "name": "Release v0.2.8",
-    "publishedAt": "2025-03-04T05:29:22Z",
-    "url": "https://github.com/tamada/gixor/releases/tag/v0.2.8",
+    "tagName": "v0.3.0",
+    "name": "Release v0.3.0",
+    "publishedAt": "2025-03-15T10:11:27Z",
+    "url": "https://github.com/tamada/gixor/releases/tag/v0.3.0",
     "assets": [
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.2.8_darwin_amd64.tar.gz",
-        "size": 3437810
+        "name": "gixor-0.3.0_darwin_amd64.tar.gz",
+        "size": 3464650
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.2.8_darwin_arm64.tar.gz",
-        "size": 3200879
+        "name": "gixor-0.3.0_darwin_arm64.tar.gz",
+        "size": 3224696
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.2.8/gixor-0.2.8_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.3.0/gixor-0.3.0_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.2.8_linux_arm64.tar.gz",
-        "size": 4111430
+        "name": "gixor-0.3.0_linux_arm64.tar.gz",
+        "size": 4136398
       }
     ]
   },

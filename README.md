@@ -13,8 +13,8 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 - [gixor](https://github.com/tamada/gixor) ([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
-  - **Description:** 
-  - **Releases:** v0.2.8 (2025-03-04)
+  - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
+  - **Releases:** v0.3.0 (2025-03-15)
 - [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
