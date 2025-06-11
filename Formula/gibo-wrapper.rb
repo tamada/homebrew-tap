@@ -34,6 +34,8 @@ class GiboWrapper < Formula
     fish_completion.install "completions/fish/gibo" if build.with? "completions"
   end
 
+  deprecate! date: "2025-05-15", replacement_formula: "gixor", because: :repo_archived
+
   test do
     system "#{bin}/gibo-wrapper --version"
   end
