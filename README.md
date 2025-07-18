@@ -11,6 +11,10 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 ## Available products
 
+- [sibling](https://github.com/tamada/sibling) ([:spider_web:](https://tamada.github.io/sibling/))
+  - **Formula:** `tamada/tap/sibling`
+  - **Description:** get the next/previous sibling directory name.
+  - **Releases:** v2.0.2 (2025-07-18)
 - [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
@@ -23,10 +27,6 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
   - **Releases:** v0.7.4 (2025-01-31)
-- [sibling](https://github.com/tamada/sibling) ([:spider_web:](https://tamada.github.io/sibling/))
-  - **Formula:** `tamada/tap/sibling`
-  - **Description:** get the next/previous sibling directory name.
-  - **Releases:** v2.0.0-beta-7 (2024-12-31)
 - [gibo-wrapper](https://github.com/tamada/gibo-wrapper) ([:spider_web:](https://tamada.github.io/gibo-wrapper/))
   - **Formula:** `tamada/tap/gibo-wrapper`
   - **Description:** gibo-wrapper acts like gibo and improves gibo by adding some features.
