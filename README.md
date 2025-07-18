@@ -11,14 +11,14 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 ## Available products
 
+- [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
+  - **Formula:** `tamada/tap/totebag`
+  - **Description:** A tool for archiving files and directories and extracting several archive formats.
+  - **Releases:** v0.7.10 (2025-07-18)
 - [gixor](https://github.com/tamada/gixor) ([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
   - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
   - **Releases:** v0.3.0 (2025-03-15)
-- [totebag](https://github.com/tamada/totebag) ([:spider_web:](https://tamada.github.io/totebag/))
-  - **Formula:** `tamada/tap/totebag`
-  - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:** v0.7.8 (2025-02-05)
 - [btmeister](https://github.com/tamada/btmeister) ([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
