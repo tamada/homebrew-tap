@@ -1572,6 +1572,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
+ "tempfile",
  "tera",
  "thiserror 1.0.69",
 ]

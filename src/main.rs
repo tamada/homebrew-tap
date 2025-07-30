@@ -3,7 +3,6 @@ use clap::Parser;
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::Path;
-use std::time::SystemTime;
 use duct::cmd;
 use tera::{Context, Tera, Value, try_get_value};
 use sha2::{Digest, Sha256};
@@ -27,7 +26,7 @@ struct Release {
     tag_name: String,
     name: String,
     #[serde(rename = "publishedAt")]
-    published_at: SystemTime,
+    published_at: DateTime<Utc>,
     url: String,
     assets: Vec<Asset>,
 }
@@ -110,9 +109,16 @@ fn update_formula<'a>(project: &'a Project, r: &'a Release, tera: &Tera) -> Resu
     Ok((project, r))
 }
 
-fn update_readme(projects: &[(Project, Release)], tera: &Tera) -> Result<()> {
+fn update_readme(projects: Vec<(&Project, &Release)>, tera: &Tera) -> Result<()> {
+    let mut vecp = vec![];
+    let mut vecr = vec![];
+    for (p, r) in projects {
+        vecp.push(p);
+        vecr.push(r);
+    }
     let mut context = Context::new();
-    context.insert("projects", projects);
+    context.insert("projects", &vecp);
+    context.insert("releases", &vecr);
     let rendered = tera.render("README_template.md", &context)?;
     fs::write("README.md", rendered)?;
     Ok(())
@@ -142,8 +148,8 @@ fn make_sha256_fn() -> impl tera::Function {
 
 fn make_format_date_fn() -> impl tera::Function {
     move |args: &HashMap<String, Value>| -> tera::Result<Value> {
-        let date = try_get_value!("format_date", "date", i64, args.get("date").unwrap());
-        let dt = DateTime::<Utc>::from(SystemTime::UNIX_EPOCH + std::time::Duration::from_secs(date as u64));
+        let date_str = try_get_value!("format_date", "date", String, args.get("date").unwrap());
+        let dt = date_str.parse::<DateTime<Utc>>().unwrap();
         Ok(serde_json::to_value(dt.format("%Y-%m-%d").to_string()).unwrap())
     }
 }
@@ -237,12 +243,63 @@ fn main() -> Result<()> {
                 Err(e) => Err(e),
             }
         }).collect::<Vec<Result<_>>>();
-    let result = vec_result_to_result_vec(result);
 
-    update_readme(result, &tera)?;
+    match vec_result_to_result_vec(result) {
+        Ok(result) => update_readme(result, &tera)?,
+        Err(e) => eprintln!("Error updating README: {}", e),
+    };
 
-    let updated_releases: Vec<Release> = projects.iter().filter_map(|p| p.release.clone()).collect();
+    let updated_releases: Vec<Release> = projects.iter().filter_map(|(_p, r)| Some(r.clone())).collect();
     write_releases("data/releases.json", &updated_releases)?;
 
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use tempfile::NamedTempFile;
+    use std::io::Write;
+
+    #[test]
+    fn test_read_projects() -> Result<()> {
+        let content = r#"[
+            {
+                "owner": "test_owner",
+                "name": "test_repo",
+                "description": "test description",
+                "url": "https://example.com",
+                "license": "MIT",
+                "ignore-fetch-release": false
+            }
+        ]"#;
+        let mut file = NamedTempFile::new()?;
+        write!(file.as_file_mut(), "{}", content)?;
+        let projects = read_projects(file.path())?;
+        assert_eq!(projects.len(), 1);
+        assert_eq!(projects[0].owner, "test_owner");
+        assert_eq!(projects[0].name, "test_repo");
+        Ok(())
+    }
+
+    #[test]
+    fn test_read_releases() -> Result<()> {
+        let content = r#"[
+            {
+                "repoName": "test_owner/test_repo",
+                "tagName": "v1.0.0",
+                "name": "v1.0.0",
+                "publishedAt": "2025-07-31T12:00:00Z",
+                "url": "https://example.com/release",
+                "assets": []
+            }
+        ]"#;
+        let mut file = NamedTempFile::new()?;
+        write!(file.as_file_mut(), "{}", content)?;
+        let releases = read_releases(file.path())?;
+        assert_eq!(releases.len(), 1);
+        assert_eq!(releases[0].repo_name, "test_owner/test_repo");
+        assert_eq!(releases[0].tag_name, "v1.0.0");
+        Ok(())
+    }
 }
