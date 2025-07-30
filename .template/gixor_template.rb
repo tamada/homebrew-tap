@@ -1,61 +1,61 @@
-{{- $r := .Release -}}
-VERSION="{{ toVersion $r.TagName }}"
+{% set r = project.release %}
+VERSION="{{ r.tag_name | to_version }}"
 
 class Gixor < Formula
   desc "gitignore management system for the multiple repositories"
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
 
-  homepage "https://github.com/{{ .RepoName }}"
+  homepage "https://github.com/{{ project.repo_name }}"
   version VERSION
-  license "{{ .License }}"
+  license "{{ project.license }}"
 
-  {{- $DARWIN_AMD64 := "" -}}
-  {{- $DARWIN_ARM64 := "" -}}
-  {{- $LINUX_AMD64 := "" -}}
-  {{- $LINUX_ARM64 := "" -}}
-  {{- range $asset := $r.Assets -}}
-    {{- if isAsset $asset "darwin" "amd64" -}}
-      {{- $DARWIN_AMD64 = $asset.Url -}}
-    {{- end }}
-    {{- if isAsset $asset "darwin" "arm64" -}}
-      {{- $DARWIN_ARM64 = $asset.Url -}}
-    {{- end }}
-    {{- if isAsset $asset "linux" "amd64" -}}
-      {{- $LINUX_AMD64 = $asset.Url -}}
-    {{- end }}
-    {{- if isAsset $asset "linux" "arm64" -}}
-      {{- $LINUX_ARM64 = $asset.Url -}}
-    {{- end }}
-  {{- end }}
+  {% set DARWIN_AMD64 = "" %}
+  {% set DARWIN_ARM64 = "" %}
+  {% set LINUX_AMD64 = "" %}
+  {% set LINUX_ARM64 = "" %}
+  {% for asset in r.assets %}
+    {% if "darwin" in asset.name and "amd64" in asset.name %}
+      {% set DARWIN_AMD64 = asset.url %}
+    {% endif %}
+    {% if "darwin" in asset.name and "arm64" in asset.name %}
+      {% set DARWIN_ARM64 = asset.url %}
+    {% endif %}
+    {% if "linux" in asset.name and "amd64" in asset.name %}
+      {% set LINUX_AMD64 = asset.url %}
+    {% endif %}
+    {% if "linux" in asset.name and "arm64" in asset.name %}
+      {% set LINUX_ARM64 = asset.url %}
+    {% endif %}
+  {% endfor %}
 
-  {{- if ne $DARWIN_AMD64 "" }}
+  {% if DARWIN_AMD64 %}
   if OS.mac? && Hardware::CPU.intel?
-    url "{{ $DARWIN_AMD64 }}"
-    sha256 "{{ sha256 $DARWIN_AMD64 }}"
+    url "{{ DARWIN_AMD64 }}"
+    sha256 "{{ DARWIN_AMD64 | sha256 }}"
   end
-  {{- end }}
+  {% endif %}
 
-  {{- if ne $DARWIN_ARM64 "" }}
+  {% if DARWIN_ARM64 %}
   if OS.mac? && Hardware::CPU.arm?
-    url "{{ $DARWIN_ARM64 }}"
-    sha256 "{{ sha256 $DARWIN_ARM64 }}"
+    url "{{ DARWIN_ARM64 }}"
+    sha256 "{{ DARWIN_ARM64 | sha256 }}"
   end
-  {{- end }}
+  {% endif %}
 
-  {{- if ne $LINUX_AMD64 "" }}
+  {% if LINUX_AMD64 %}
   if OS.linux? && Hardware::CPU.intel?
-    url "{{ $LINUX_AMD64 }}"
-    sha256 "{{ sha256 $LINUX_AMD64 }}"
+    url "{{ LINUX_AMD64 }}"
+    sha256 "{{ LINUX_AMD64 | sha256 }}"
   end
-  {{- end }}
+  {% endif %}
 
-  {{- if ne $LINUX_ARM64 "" }}
+  {% if LINUX_ARM64 %}
   if OS.linux? && Hardware::CPU.arm?
-    url "{{ $LINUX_ARM64 }}"
-    sha256 "{{ sha256 $LINUX_ARM64 }}"
+    url "{{ LINUX_ARM64 }}"
+    sha256 "{{ LINUX_ARM64 | sha256 }}"
   end
-  {{- end }}
+  {% endif %}
 
   def install
     bin.install "gixor"
@@ -69,4 +69,5 @@ class Gixor < Formula
   test do
     system "#{bin}/gixor --version"
   end
+end
 end
