@@ -1,9 +1,9 @@
-{% set r = project.release %}
-VERSION="{{ r.tag_name }}"
+{% set r = release %}
+VERSION="{{ r.tagName }}"
 
 class Rrh < Formula
   desc "Repositories, Ready to Hack/Remote Repositories Head/Red Riding Hood"
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

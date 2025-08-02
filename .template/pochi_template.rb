@@ -1,13 +1,13 @@
-{% set r = project.release %}
-VERSION="{{ r.tag_name }}"
+{% set r = release %}
+VERSION="{{ r.tagName }}"
 {% set release = r.assets | filter(attribute="name", value="zip") | first %}
 
 class Pochi < Formula
   desc "Java birthmark toolkit, detecting the software theft by native characteristics of the programs."
   homepage "https://tamada.github.io/pochi"
 
-  url "{{ release.url }}"
-  sha256 "{{ release.url | sha256 }}"
+  url "{{ r.url }}"
+  sha256 "{{ r.url | sha256 }}"
 
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional

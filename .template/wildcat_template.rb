@@ -1,9 +1,9 @@
-{% set r = project.release %}
+{% set r = release %}
 VERSION="{{ r.tag_name }}"
 
 class Wildcat < Formula
   desc "Another implementation of wc (word count)"
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

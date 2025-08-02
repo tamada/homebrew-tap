@@ -10,21 +10,29 @@ Then, type `brew install <formula>`.
 Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
 
 ## Available products
-{{ range $p := . }}
-- [{{ $p.Name }}]({{ printf "https://github.com/%s" $p.RepoName }}) 
-  {{- if ne $p.Url "" -}}
-    {{/* spacing */}} ([:spider_web:]({{ $p.Url }}))
-  {{- end }}
-  - **Formula:** `{{ $p.Owner }}/tap/{{ $p.Name }}`
-  - **Description:** {{ $p.Description }}
-  - **Releases:** {{/* for spacing */}}
-  {{- if $p.Release -}}
-    {{ $p.Release.TagName }} ({{ formatDate $p.Release.PublishedAt }})
-  {{- end -}}
-{{ end }}
+
+{# spacing #}
+{%- for p in projects %}
+- [{{ p.name }}](https://github.com/{{ p.owner }}/{{ p.name }}) 
+  {%- if p.url != "" -%}
+  {#- spacing -#} ([:spider_web:]({{ p.url }}))
+  {%- endif %}
+  - **Formula:** `{{ p.owner }}/tap/{{ p.name }}`
+  - **Description:** {{ p.description }}
+  - **Releases:** {# spacing -#}
+  {%- if releases[loop.index] -%}
+    {{ releases[loop.index].tagName }} ({{ releases[loop.index].publishedAt | format_date }})
+  {%- endif %}
+{%- endfor %}
 
 ## Archived products
 
+- [gibo-wrapper](https://github.com/tamada/gibo-wrapper)([:spider_web:](https://tamada.github.io/gibo-wrapper/))
+  - **Formula:** `tamada/tap/gibo-wrapper`
+  - **Description:** gibo-wrapper acts like gibo and improves gibo by adding some features.
+  - **Releases:** v0.7.10 (2025-07-18), the final release.
+  - **Archived At**: 2025-07-18
+    - Transfer into the [tamada/gixor](https://github.com/tamada/gixor)
 - [uniq2](https://github.com/tamada/uniq2) ([:spider_web:](https://tamada.github.io/uniq2/))
   - **Formula:** `tamada/tap/uniq2`
   - **Description:** Eliminating duplicate lines from a file.

@@ -1,9 +1,9 @@
-{% set r = project.release %}
-VERSION="{{ r.tag_name }}"
+{% set r = release %}
+VERSION="{{ r.tagName }}"
 
 class Peripherals < Formula
   desc "peripheral utility commands for the shell."
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

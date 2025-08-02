@@ -7,7 +7,7 @@ class GiboWrapper < Formula
   depends_on "bash-completion@2" => :optional
   depends_on "gibo"
 
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

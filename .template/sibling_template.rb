@@ -1,9 +1,9 @@
-{% set r = project.release %}
+{% set r = release %}
 VERSION="{{ r.tag_name }}"
 
 class Sibling < Formula
   desc "get next/previous sibling directory name."
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

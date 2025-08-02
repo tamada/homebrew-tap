@@ -8,13 +8,6 @@
     },
     {
         "owner": "tamada",
-        "name": "gibo-wrapper",
-        "description": "gibo-wrapper acts like gibo and improves gibo by adding some features.",
-        "license": "Unlicensed license",
-        "url": "https://tamada.github.io/gibo-wrapper/"
-    },
-    {
-        "owner": "tamada",
         "name": "totebag",
         "description": "A tool for archiving files and directories and extracting several archive formats.",
         "license": "MIT license",

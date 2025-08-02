@@ -1,45 +1,44 @@
 use anyhow::Result;
-use clap::Parser;
+use clap::{Parser, ValueEnum};
+use indicatif::ProgressStyle;
 use serde::{Deserialize, Serialize};
-use std::fs;
-use std::path::Path;
+use std::{fs, path::Path};
 use duct::cmd;
-use tera::{Context, Tera, Value, try_get_value};
+use tera::{Context, Tera, Value};
 use sha2::{Digest, Sha256};
 use std::collections::HashMap;
 use chrono::{DateTime, Utc};
+use futures_util::StreamExt;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
 struct Asset {
     url: String,
-    #[serde(rename = "downloadCount")]
     download_count: i64,
     name: String,
     size: i64,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
+#[serde(rename_all = "camelCase")]
 struct Release {
-    #[serde(rename = "repoName")]
     repo_name: String,
-    #[serde(rename = "tagName")]
     tag_name: String,
     name: String,
-    #[serde(rename = "publishedAt")]
     published_at: DateTime<Utc>,
     url: String,
     assets: Vec<Asset>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 struct Project {
     owner: String,
     name: String,
     description: String,
     url: String,
     license: String,
-    #[serde(rename = "ignore-fetch-release")]
-    ignore_fetch_release: bool,
+    ignore_fetch_release: Option<bool>,
 }
 
 impl Project {
@@ -47,31 +46,56 @@ impl Project {
         self.repo_name() == repo_name
     }
 
+    pub fn ignore_fetch_release(&self) -> bool {
+        self.ignore_fetch_release.unwrap_or(false)
+    }
+
     pub fn repo_name(&self) -> String {
         format!("{}/{}", self.owner, self.name)
     }
 }
 
+#[derive(Debug, Serialize, Deserialize, ValueEnum, Clone)]
+enum LogLevel {
+    Trace,
+    Debug,
+    Info,
+    Warn,
+    Error,
+}
+
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    #[arg(default_value = "")]
+    #[arg(default_value = "", help = "Name of the project to update. If empty, all projects will be updated.")]
     names: Vec<String>,
 
-    #[arg(short, long, default_value_t = false, alias = "silent")]
-    quiet: bool,
+    #[arg(short, long, default_value = "warn", help = "Set the logging level.")]
+    level: LogLevel,
+}
+
+fn read_from<T>(input: &mut dyn std::io::Read) -> Result<T>
+where
+    T: serde::de::DeserializeOwned,
+{
+    let data: T = serde_json::from_reader(input)?;
+    Ok(data)
+}
+
+fn read_items<P: AsRef<Path>, T>(path: P) -> Result<T> 
+where
+    T: serde::de::DeserializeOwned,
+{
+    let content = fs::read_to_string(path)?;
+    read_from(&mut content.as_bytes())
 }
 
 fn read_projects<P: AsRef<Path>>(path: P) -> Result<Vec<Project>> {
-    let content = fs::read_to_string(path)?;
-    let projects: Vec<Project> = serde_json::from_str(&content)?;
-    Ok(projects)
+    read_items(path)
 }
 
 fn read_releases<P: AsRef<Path>>(path: P) -> Result<Vec<Release>> {
-    let content = fs::read_to_string(path)?;
-    let releases: Vec<Release> = serde_json::from_str(&content)?;
-    Ok(releases)
+    read_items(path)
 }
 
 fn is_auth_ok() -> Result<()> {
@@ -90,6 +114,7 @@ fn is_auth_ok() -> Result<()> {
 }
 
 fn get_latest(repo_name: String) -> Result<Release> {
+    log::info!("Fetching latest release for repository: {}", repo_name);
     is_auth_ok()?;
     let args = vec!["release", "view", "-R", &repo_name, "--json", "assets,publishedAt,tagName,url,name"];
     let output = cmd("gh", args).read()?;
@@ -97,10 +122,13 @@ fn get_latest(repo_name: String) -> Result<Release> {
     Ok(release)
 }
 
-fn update_formula<'a>(project: &'a Project, r: &'a Release, tera: &Tera) -> Result<(&'a Project, &'a Release)> {
+fn update_formula<'a>(project: &'a Project, r: &'a Option<Release>, tera: &Tera) -> Result<(&'a Project, &'a Option<Release>)> {
+    log::info!("Updating formula for project: {}", project.name);
     let mut context = Context::new();
     context.insert("project", project);
-    context.insert("release", r);
+    if let Some(release) = r {
+        context.insert("release", release);
+    };
 
     let template_name = format!("{}_template.rb", project.name);
     let to = format!("Formula/{}.rb", project.name);
@@ -109,7 +137,8 @@ fn update_formula<'a>(project: &'a Project, r: &'a Release, tera: &Tera) -> Resu
     Ok((project, r))
 }
 
-fn update_readme(projects: Vec<(&Project, &Release)>, tera: &Tera) -> Result<()> {
+fn update_readme(projects: &Vec<(Project, Option<Release>)>, tera: &Tera) -> Result<()> {
+    log::info!("Updating README.md with project and release information");
     let mut vecp = vec![];
     let mut vecr = vec![];
     for (p, r) in projects {
@@ -130,35 +159,77 @@ fn write_releases<P: AsRef<Path>>(path: P, releases: &[Release]) -> Result<()> {
     Ok(())
 }
 
-fn sha256(url: &str) -> Result<String> {
-    let response = reqwest::blocking::get(url)?;
-    let content = response.bytes()?;
+async fn sha256(url: &str) -> Result<String> {
+    let response = reqwest::Client::new()
+        .get(url)
+        .send()
+        .await
+        .or(Err(anyhow::anyhow!("Failed to fetch URL: {}", url)))?;
+    let total_size = response.content_length()
+        .ok_or_else(|| anyhow::anyhow!("Failed to get content length for URL: {}", url))?;
+    let mut stream = response.bytes_stream();
     let mut hasher = Sha256::new();
-    hasher.update(&content);
+    if log::log_enabled!(log::Level::Info) {
+        let pb = indicatif::ProgressBar::new(total_size);
+        pb.set_style(ProgressStyle::default_bar()
+            .template("{msg}\n{spinner:.green} [{elapsed_precise}] [{wide_bar:.cyan/blue}] {bytes}/{total_bytes} ({bytes_per_sec}, {eta})")?
+            .progress_chars("#>-")
+        );
+        pb.set_message(format!("Downloading {}", url));
+        while let Some(item) = stream.next().await {
+            let chunk = item.or(Err(anyhow::anyhow!("Error while downloading file")))?;
+            hasher.update(&chunk);
+            let current_pos = pb.position() + chunk.len() as u64;
+            let now = if current_pos < total_size {
+                current_pos
+            } else {
+                total_size
+            };
+            pb.set_position(now);
+        }
+        pb.finish_with_message("Download done");
+    } else {
+        while let Some(item) = stream.next().await {
+            let chunk = item.or(Err(anyhow::anyhow!("Error while downloading file")))?;
+            hasher.update(&chunk);
+        }
+    }
     let result = hasher.finalize();
     Ok(format!("{:x}", result))
 }
 
-fn make_sha256_fn() -> impl tera::Function {
-    move |args: &HashMap<String, Value>| -> tera::Result<Value> {
-        let url = try_get_value!("sha256", "url", String, args.get("url").unwrap());
-        Ok(serde_json::to_value(sha256(&url).unwrap_or_default()).unwrap())
+async fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+    match value.as_str() {
+        Some(c) => {
+            match sha256(c).await {
+                Ok(hash) => {
+                    serde_json::to_value(hash)
+                        .map_err(|e| tera::Error::msg(format!("Failed to convert sha256 hash to value: {}", e)))
+                },
+                Err(e) => {
+                    Err(tera::Error::msg(format!("Failed to compute sha256: {}", e)))
+                },
+            }
+        },
+        None => Err(tera::Error::msg("Expected a string value for sha256 filter")),
     }
 }
 
-fn make_format_date_fn() -> impl tera::Function {
-    move |args: &HashMap<String, Value>| -> tera::Result<Value> {
-        let date_str = try_get_value!("format_date", "date", String, args.get("date").unwrap());
-        let dt = date_str.parse::<DateTime<Utc>>().unwrap();
-        Ok(serde_json::to_value(dt.format("%Y-%m-%d").to_string()).unwrap())
-    }
+fn make_sha256_filter<'a, 'b>(value: &'a Value, args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+    futures::executor::block_on(make_sha256(value, args))
 }
 
-fn make_to_version_fn() -> impl tera::Function {
-    move |args: &HashMap<String, Value>| -> tera::Result<Value> {
-        let tag_name = try_get_value!("to_version", "tag_name", String, args.get("tag_name").unwrap());
-        Ok(serde_json::to_value(tag_name.trim_start_matches('v')).unwrap())
-    }
+fn make_format_date<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+    let date_str = value.as_str().unwrap();
+    let dt = date_str.parse::<DateTime<Utc>>().unwrap();
+    serde_json::to_value(dt.format("%Y-%m-%d").to_string())
+        .map_err(|e| tera::Error::msg(format!("Failed to format date: {}", e)))
+}
+
+fn make_to_version<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+    let tag_name = value.as_str().unwrap();
+    serde_json::to_value(tag_name.trim_start_matches('v'))
+        .map_err(|e| tera::Error::msg(format!("Failed to convert tag name to version: {}", e)))
 }
 
 fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Release> {
@@ -166,28 +237,24 @@ fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Rele
         .ok_or_else(|| anyhow::anyhow!("Release not found for repository: {}", repo_name))
 }
 
-fn read_projects_and_releases() -> Result<Vec<(Project, Release)>> {
+fn read_projects_and_releases() -> Result<Vec<(Project, Option<Release>)>> {
     let projects = read_projects("data/projects.json")?;
     let releases = read_releases("data/releases.json")?;
 
     let r = projects.into_iter()
         .map(|p| {
             match find_release(&p.repo_name(), &releases) {
-                Ok(r) => Ok((p, r.clone())),
+                Ok(r) => Ok((p, Some(r.clone()))),
                 Err(e) => {
-                    if !p.ignore_fetch_release {
-                        let r = get_latest(p.repo_name())?;
-                        Ok((p, r))
-                    } else {
-                        Err(e)
-                    }
+                    log::warn!("warning: {}", e);
+                    Ok((p, None))
                 }
             }
         }).collect::<Result<Vec<_>>>()?;
     Ok(r)
 }
 
-fn find_project_and_release<'a>(name: &str, projects: &'a [(Project, Release)]) -> Result<&'a (Project, Release)> {
+fn find_project_and_release<'a>(name: &str, projects: &'a [(Project, Option<Release>)]) -> Result<&'a (Project, Option<Release>)> {
     projects.iter().find(|(p, _)| p.is_match_repo(name))
         .ok_or_else(|| anyhow::anyhow!("Project not found for name: {}", name))
 }
@@ -225,34 +292,63 @@ pub fn single_err_or_errs_array<T>(errs: Vec<anyhow::Error>) -> Result<T> {
     }
 }
 
-fn main() -> Result<()> {
-    let mut tera = Tera::new(".template/*")?;
-    tera.register_function("sha256", make_sha256_fn());
-    tera.register_function("formatDate", make_format_date_fn());
-    tera.register_function("toVersion", make_to_version_fn());
-
-    let args = Args::parse();
-    let projects = read_projects_and_releases()?;
-
-    let result = args.names.into_iter()
-        .map(|name| {
-            match find_project_and_release(&name, &projects) {
-                Ok((p, r)) => {
-                    update_formula(p, r, &tera)
-                },
-                Err(e) => Err(e),
-            }
-        }).collect::<Vec<Result<_>>>();
-
-    match vec_result_to_result_vec(result) {
-        Ok(result) => update_readme(result, &tera)?,
-        Err(e) => eprintln!("Error updating README: {}", e),
+fn init_logger(level: LogLevel) -> Result<()> {
+    let log_level = match level {
+        LogLevel::Trace => log::LevelFilter::Trace,
+        LogLevel::Debug => log::LevelFilter::Debug,
+        LogLevel::Info => log::LevelFilter::Info,
+        LogLevel::Warn => log::LevelFilter::Warn,
+        LogLevel::Error => log::LevelFilter::Error,
     };
 
-    let updated_releases: Vec<Release> = projects.iter().filter_map(|(_p, r)| Some(r.clone())).collect();
-    write_releases("data/releases.json", &updated_releases)?;
-
+    let mut builder = env_logger::Builder::new();
+    builder.filter(None, log_level);
+    builder.init();
     Ok(())
+}
+
+fn init_tera() -> Result<Tera> {
+    let mut tera = Tera::new(".template/*")?;
+    tera.register_filter("sha256", make_sha256_filter);
+    tera.register_filter("format_date", make_format_date);
+    tera.register_filter("to_version", make_to_version);
+    Ok(tera)
+}
+
+fn update_recipes(names: Vec<String>, projects: &[(Project, Option<Release>)], tera: &mut Tera) -> Result<()> {
+    log::info!("Updating recipes for projects: {:?}", names);
+    let r = names.into_iter()
+        .map(|name| {
+            match find_project_and_release(&name, &projects) {
+                Ok((p, r)) => 
+                    update_formula(p, r, &tera),
+                Err(e) => Err(e),
+            }
+        }).filter_map(|result| result.err())
+        .collect::<Vec<_>>();
+    if r.is_empty() {
+        Ok(())
+    } else {
+        Err(anyhow::anyhow!("Failed to update some recipes: {:?}", r, ))
+    }
+}
+
+fn main() -> Result<()> {
+    let args = Args::parse();
+    init_logger(args.level)?;
+
+    let mut tera = init_tera()?;
+    let projects = read_projects_and_releases()?;
+
+    match update_recipes(args.names.clone(), &projects, &mut tera) {
+        Ok(_) => {
+            update_readme(&projects, &mut tera)?;
+            let updated_releases: Vec<Release> = projects.iter().filter_map(|(_p, r)| r.clone()).collect();
+            write_releases("data/releases.json", &updated_releases)?;
+            Ok(())
+        },
+        Err(e) => Err(e),
+    }
 }
 
 #[cfg(test)]

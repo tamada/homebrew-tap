@@ -1,4 +1,4 @@
-{% set r = project.release %}
+{% set r = release %}
 VERSION="{{ r.tag_name }}"
 
 class Urleap < Formula
@@ -6,7 +6,7 @@ class Urleap < Formula
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
 
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 

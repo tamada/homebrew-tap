@@ -1,12 +1,12 @@
-{% set r = project.release %}
-VERSION="{{ r.tag_name | to_version }}"
+{% set r = release %}
+VERSION="{{ r.tagName | to_version }}"
 
 class Gixor < Formula
   desc "gitignore management system for the multiple repositories"
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional
 
-  homepage "https://github.com/{{ project.repo_name }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
   version VERSION
   license "{{ project.license }}"
 
