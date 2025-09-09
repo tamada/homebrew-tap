@@ -354,7 +354,7 @@ fn main() -> Result<()> {
     let mut tera = init_tera()?;
     let projects = read_projects_and_releases()?;
 
-    match update_recipes(args.names.clone(), &projects, &mut tera) {
+    match update_recipes(args.names, &projects, &mut tera) {
         Ok(_) => {
             update_readme(&projects, &mut tera)?;
             let updated_releases: Vec<Release> = projects.iter().filter_map(|(_p, r)| r.clone()).collect();

@@ -10,7 +10,6 @@ Then, type `brew install <formula>`.
 Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
 
 ## Available products
-
 {# spacing #}
 {%- for p in projects %}
 - [{{ p.name }}](https://github.com/{{ p.owner }}/{{ p.name }}) 
