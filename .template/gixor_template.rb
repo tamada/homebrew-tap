@@ -70,4 +70,3 @@ class Gixor < Formula
     system "#{bin}/gixor --version"
   end
 end
-end

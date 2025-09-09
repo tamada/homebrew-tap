@@ -118,7 +118,8 @@ fn get_latest(repo_name: String) -> Result<Release> {
     is_auth_ok()?;
     let args = vec!["release", "view", "-R", &repo_name, "--json", "assets,publishedAt,tagName,url,name"];
     let output = cmd("gh", args).read()?;
-    let release: Release = serde_json::from_str(&output)?;
+    let mut release: Release = serde_json::from_str(&output)?;
+    release.repo_name = repo_name;
     Ok(release)
 }
 
@@ -220,16 +221,26 @@ fn make_sha256_filter<'a, 'b>(value: &'a Value, args: &'b HashMap<String, Value>
 }
 
 fn make_format_date<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
-    let date_str = value.as_str().unwrap();
-    let dt = date_str.parse::<DateTime<Utc>>().unwrap();
+    let date_str = match value.as_str() {
+        Some(s) => s,
+        None => return Err(tera::Error::msg("Expected a string value for date formatting")),
+    };
+    let dt = match date_str.parse::<DateTime<Utc>>() {
+        Ok(dt) => dt,
+        Err(e) => return Err(tera::Error::msg(format!("Failed to parse date string '{}': {}", date_str, e))),
+    };
     serde_json::to_value(dt.format("%Y-%m-%d").to_string())
         .map_err(|e| tera::Error::msg(format!("Failed to format date: {}", e)))
 }
 
 fn make_to_version<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
-    let tag_name = value.as_str().unwrap();
-    serde_json::to_value(tag_name.trim_start_matches('v'))
-        .map_err(|e| tera::Error::msg(format!("Failed to convert tag name to version: {}", e)))
+    match value.as_str() {
+        Some(tag_name) => {
+            serde_json::to_value(tag_name.trim_start_matches('v'))
+                .map_err(|e| tera::Error::msg(format!("Failed to convert tag name to version: {}", e)))
+        },
+        None => Err(tera::Error::msg("Expected a string value for to_version filter")),
+    }
 }
 
 fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Release> {
@@ -287,8 +298,11 @@ pub fn single_err_or_errs_array<T>(errs: Vec<anyhow::Error>) -> Result<T> {
     if errs.len() == 1 {
         Err(errs.into_iter().next().unwrap())
     } else {
-        Err(errs.iter().chain(std::iter::once(&anyhow::anyhow!("Multiple errors occurred:")))
-            .fold(anyhow::anyhow!(""), |acc, e| acc.context(e.to_string())))
+        let mut msg = String::from("Multiple errors occurred:\n");
+        for (i, err) in errs.iter().enumerate() {
+            msg.push_str(&format!("  {}: {}\n", i + 1, err));
+        }
+        Err(anyhow::anyhow!(msg))
     }
 }
 
@@ -329,7 +343,7 @@ fn update_recipes(names: Vec<String>, projects: &[(Project, Option<Release>)], t
     if r.is_empty() {
         Ok(())
     } else {
-        Err(anyhow::anyhow!("Failed to update some recipes: {:?}", r, ))
+        Err(anyhow::anyhow!("Failed to update some recipes: {:?}", r))
     }
 }
 
