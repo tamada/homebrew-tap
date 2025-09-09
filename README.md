@@ -11,6 +11,10 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
 
 ## Available products
 
+- [gixor](https://github.com/tamada/gixor) ([:spider_web:](https://tamada.github.io/gixor/))
+  - **Formula:** `tamada/tap/gixor`
+  - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
+  - **Releases:** v0.3.4 (2025-09-09)
 - [sibling](https://github.com/tamada/sibling) ([:spider_web:](https://tamada.github.io/sibling/))
   - **Formula:** `tamada/tap/sibling`
   - **Description:** get the next/previous sibling directory name.
@@ -19,10 +23,6 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
   - **Releases:** v0.7.10 (2025-07-18)
-- [gixor](https://github.com/tamada/gixor) ([:spider_web:](https://tamada.github.io/gixor/))
-  - **Formula:** `tamada/tap/gixor`
-  - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
-  - **Releases:** v0.3.0 (2025-03-15)
 - [btmeister](https://github.com/tamada/btmeister) ([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
