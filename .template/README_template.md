@@ -19,8 +19,8 @@ Or, execute `brew install tamada/tap/<formula>` command for installing the tool 
   - **Formula:** `{{ p.owner }}/tap/{{ p.name }}`
   - **Description:** {{ p.description }}
   - **Releases:** {# spacing -#}
-  {%- if releases[loop.index] -%}
-    {{ releases[loop.index].tagName }} ({{ releases[loop.index].publishedAt | format_date }})
+  {%- if releases[loop.index0] -%}
+    {{ releases[loop.index0].tagName }} ({{ releases[loop.index0].publishedAt | format_date }})
   {%- endif %}
 {%- endfor %}
 

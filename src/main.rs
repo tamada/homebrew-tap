@@ -191,6 +191,7 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera) -> Result<&'a Artifac
     let mut context = Context::new();
     context.insert("project", &artifact.project);
     if let Some(release) = &artifact.release {
+        log::info!("Release of the project: {:?}", release);
         context.insert("release", release);
     };
 
@@ -218,12 +219,34 @@ fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera) -> Result<()> {
 }
 
 fn write_releases<P: AsRef<Path>>(path: P, releases: &[Release]) -> Result<()> {
+    log::info!("Writing releases to {}", path.as_ref().display());
     let content = serde_json::to_string_pretty(releases)?;
     fs::write(path, content)?;
     Ok(())
 }
 
-async fn sha256(url: &str) -> Result<String> {
+fn sha256(url: &str) -> Result<String> {
+    log::info!("Calculating sha256 for URL: {}", url);
+    let response = match reqwest::blocking::get(url) {
+        Ok(resp) => resp,
+        Err(e) => return Err(anyhow::anyhow!("Failed to fetch URL: {}: {}", url, e)),
+    };
+    if !response.status().is_success() {
+        return Err(anyhow::anyhow!("Failed to fetch URL: {}: HTTP {}", url, response.status()));
+    }
+    response.bytes()
+        .map_err(|e| anyhow::anyhow!("Failed to read response body from URL: {}: {}", url, e))
+        .and_then(|bytes| {
+            let mut hasher = Sha256::new();
+            hasher.update(&bytes);
+            let result = hasher.finalize();
+            Ok(format!("{:x}", result))
+        })
+
+}
+
+async fn sha2562(url: &str) -> Result<String> {
+    log::info!("Calculating sha256 for URL: {}", url);
     let response = reqwest::Client::new()
         .get(url)
         .send()
@@ -265,7 +288,7 @@ async fn sha256(url: &str) -> Result<String> {
 async fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
     match value.as_str() {
         Some(c) => {
-            match sha256(c).await {
+            match sha256(c) {
                 Ok(hash) => {
                     serde_json::to_value(hash)
                         .map_err(|e| tera::Error::msg(format!("Failed to convert sha256 hash to value: {}", e)))
