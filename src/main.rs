@@ -2,13 +2,16 @@ use anyhow::Result;
 use clap::{Parser, ValueEnum};
 use indicatif::ProgressStyle;
 use serde::{Deserialize, Serialize};
-use std::{fs, path::Path};
+use std::fs;
+use std::path::Path;
+use std::collections::HashMap;
 use duct::cmd;
 use tera::{Context, Tera, Value};
 use sha2::{Digest, Sha256};
-use std::collections::HashMap;
 use chrono::{DateTime, Utc};
 use futures_util::StreamExt;
+
+mod cli;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -30,7 +33,7 @@ struct Release {
     assets: Vec<Asset>,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
 struct Project {
     owner: String,
@@ -55,6 +58,26 @@ impl Project {
     }
 }
 
+#[derive(Clone, Debug)]
+struct Artifact {
+    pub project: Project,
+    pub release: Option<Release>,
+}
+
+impl Artifact {
+    pub fn new(project: Project) -> Self {
+        Self { project, release: None }
+    }
+
+    pub fn new_with_release(project: Project, release: Release) -> Self {
+        Self { project, release: Some(release) }
+    }
+
+    pub fn is_match_repo(&self, repo_name: &str) -> bool {
+        self.project.is_match_repo(repo_name)
+    }
+}
+
 #[derive(Debug, Serialize, Deserialize, ValueEnum, Clone)]
 enum LogLevel {
     Trace,
@@ -62,16 +85,6 @@ enum LogLevel {
     Info,
     Warn,
     Error,
-}
-
-#[derive(Parser, Debug)]
-#[command(author, version, about, long_about = None)]
-struct Args {
-    #[arg(default_value = "", help = "Name of the project to update. If empty, all projects will be updated.")]
-    names: Vec<String>,
-
-    #[arg(short, long, default_value = "warn", help = "Set the logging level.")]
-    level: LogLevel,
 }
 
 fn read_from<T>(input: &mut dyn std::io::Read) -> Result<T>
@@ -123,28 +136,78 @@ fn get_latest(repo_name: String) -> Result<Release> {
     Ok(release)
 }
 
-fn update_formula<'a>(project: &'a Project, r: &'a Option<Release>, tera: &Tera) -> Result<(&'a Project, &'a Option<Release>)> {
-    log::info!("Updating formula for project: {}", project.name);
+fn find_target_artifacts<'a>(artifacts: &'a [Artifact], names: &Vec<String>) -> Result<Vec<&'a Artifact>> {
+    let mut errs = vec![];
+    let mut result = vec![];
+    for name in names {
+        match find_project_and_release(name, artifacts) {
+            Ok(artifact) => 
+                result.push(artifact),
+            Err(e) => errs.push(e),
+        }
+    }
+    if !errs.is_empty() {
+        single_err_or_errs_array(errs)
+    } else {
+        Ok(result)
+    }
+}
+
+fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>) -> Result<Vec<Artifact>> {
+    let targets = find_target_artifacts(artifacts, names)?;
+    let mut results = vec![];
+    let mut errs = vec![];
+    for target in targets {
+        if target.project.ignore_fetch_release() {
+            log::info!("Skipping fetch for repository: {} (ignore-fetch-release is true)", target.project.repo_name());
+            continue;
+        }
+        match get_latest(target.project.repo_name()) {
+            Ok(new_release) => {
+                let release = if let Some(current_release) = &target.release {
+                    if current_release.tag_name != new_release.tag_name {
+                        log::info!("New release found for {}: {} -> {}", target.project.repo_name(), current_release.tag_name, new_release.tag_name);
+                        new_release
+                    } else {
+                        log::info!("No new release for {}: still at {}", target.project.repo_name(), current_release.tag_name);
+                        current_release.clone()
+                    }
+                } else {
+                    log::info!("Initial release found for {}: {}", target.project.repo_name(), new_release.tag_name);
+                    new_release
+                };
+                // Update the release in the artifact
+                let updated_artifact = Artifact::new_with_release(target.project.clone(), release);
+                results.push(updated_artifact);
+            },
+            Err(e) => errs.push(e),
+        }
+    }
+    Ok(results)
+}
+
+fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera) -> Result<&'a Artifact> {
+    log::info!("Updating formula for project: {}", artifact.project.name);
     let mut context = Context::new();
-    context.insert("project", project);
-    if let Some(release) = r {
+    context.insert("project", &artifact.project);
+    if let Some(release) = &artifact.release {
         context.insert("release", release);
     };
 
-    let template_name = format!("{}_template.rb", project.name);
-    let to = format!("Formula/{}.rb", project.name);
+    let template_name = format!("{}_template.rb", artifact.project.name);
+    let to = format!("Formula/{}.rb", artifact.project.name);
     let rendered = tera.render(&template_name, &context)?;
     fs::write(to, rendered)?;
-    Ok((project, r))
+    Ok(artifact)
 }
 
-fn update_readme(projects: &Vec<(Project, Option<Release>)>, tera: &Tera) -> Result<()> {
+fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera) -> Result<()> {
     log::info!("Updating README.md with project and release information");
     let mut vecp = vec![];
     let mut vecr = vec![];
-    for (p, r) in projects {
-        vecp.push(p);
-        vecr.push(r);
+    for artifact in artifacts {
+        vecp.push(&artifact.project);
+        vecr.push(artifact.release.as_ref());
     }
     let mut context = Context::new();
     context.insert("projects", &vecp);
@@ -248,28 +311,27 @@ fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Rele
         .ok_or_else(|| anyhow::anyhow!("Release not found for repository: {}", repo_name))
 }
 
-fn read_projects_and_releases() -> Result<Vec<(Project, Option<Release>)>> {
+fn read_artifacts() -> Result<Vec<Artifact>> {
     let projects = read_projects("data/projects.json")?;
     let releases = read_releases("data/releases.json")?;
 
     let r = projects.into_iter()
         .map(|p| {
             match find_release(&p.repo_name(), &releases) {
-                Ok(r) => Ok((p, Some(r.clone()))),
+                Ok(r) => Ok(Artifact::new_with_release(p, r.clone())),
                 Err(e) => {
                     log::warn!("warning: {}", e);
-                    Ok((p, None))
+                    Ok(Artifact::new(p))
                 }
             }
         }).collect::<Result<Vec<_>>>()?;
     Ok(r)
 }
 
-fn find_project_and_release<'a>(name: &str, projects: &'a [(Project, Option<Release>)]) -> Result<&'a (Project, Option<Release>)> {
-    projects.iter().find(|(p, _)| p.is_match_repo(name))
+fn find_project_and_release<'a>(name: &str, projects: &'a [Artifact]) -> Result<&'a Artifact> {
+    projects.iter().find(|p| p.is_match_repo(name))
         .ok_or_else(|| anyhow::anyhow!("Project not found for name: {}", name))
 }
-
 
 /// Convert `Vec<Result<T>>` to `Result<Vec<T>>`
 /// If `Vec<Result<T>>` has the multiple errors,
@@ -329,13 +391,13 @@ fn init_tera() -> Result<Tera> {
     Ok(tera)
 }
 
-fn update_recipes(names: Vec<String>, projects: &[(Project, Option<Release>)], tera: &mut Tera) -> Result<()> {
+fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera) -> Result<()> {
     log::info!("Updating recipes for projects: {:?}", names);
     let r = names.into_iter()
         .map(|name| {
             match find_project_and_release(&name, &projects) {
-                Ok((p, r)) => 
-                    update_formula(p, r, &tera),
+                Ok(p) => 
+                    update_formula(&p, &tera),
                 Err(e) => Err(e),
             }
         }).filter_map(|result| result.err())
@@ -348,16 +410,25 @@ fn update_recipes(names: Vec<String>, projects: &[(Project, Option<Release>)], t
 }
 
 fn main() -> Result<()> {
-    let args = Args::parse();
+    let args = cli::Args::parse();
     init_logger(args.level)?;
 
     let mut tera = init_tera()?;
-    let projects = read_projects_and_releases()?;
+    let artifacts = read_artifacts()?;
 
-    match update_recipes(args.names, &projects, &mut tera) {
+    let new_artifact = fetch_new_releases(&artifacts, &args.names)?;
+    let mut updated = vec![];
+    for artifact in artifacts {
+        match new_artifact.iter().find(|a| a.is_match_repo(&artifact.project.repo_name())) {
+            Some(a) => updated.push(a.clone()),
+            None => updated.push(artifact.clone()),
+        }
+    }
+
+    match update_recipes(args.names, &updated, &mut tera) {
         Ok(_) => {
-            update_readme(&projects, &mut tera)?;
-            let updated_releases: Vec<Release> = projects.iter().filter_map(|(_p, r)| r.clone()).collect();
+            update_readme(&updated, &mut tera)?;
+            let updated_releases: Vec<Release> = updated.iter().filter_map(|a| a.release.clone()).collect();
             write_releases("data/releases.json", &updated_releases)?;
             Ok(())
         },
