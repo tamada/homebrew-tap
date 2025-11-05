@@ -7,7 +7,7 @@ Homebrew recipes for my products.
 At first, execute `brew tap tamada/tap`, then ready to install the above tools.
 Then, type `brew install <formula>`.
 
-Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
+Or run the `brew install tamada/tap/<formula>` command to install the tool in your environment.
 
 ## Available products
 {# spacing #}

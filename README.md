@@ -7,14 +7,14 @@ Homebrew recipes for my products.
 At first, execute `brew tap tamada/tap`, then ready to install the above tools.
 Then, type `brew install <formula>`.
 
-Or, execute `brew install tamada/tap/<formula>` command for installing the tool in your environment.
+Or run the brew install tamada/tap/<formula> command to install the tool in your environment.
 
 ## Available products
 
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
-  - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
-  - **Releases:** v0.3.4 (2025-09-09)
+  - **Description:** Git Ignore Managenement System for Multiple Repositories.
+  - **Releases:** v0.4.0 (2025-11-04)
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
