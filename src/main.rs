@@ -1,6 +1,5 @@
 use anyhow::Result;
 use clap::{Parser, ValueEnum};
-use indicatif::ProgressStyle;
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::Path;
@@ -9,7 +8,6 @@ use duct::cmd;
 use tera::{Context, Tera, Value};
 use sha2::{Digest, Sha256};
 use chrono::{DateTime, Utc};
-use futures_util::StreamExt;
 
 mod cli;
 
@@ -25,6 +23,7 @@ struct Asset {
 #[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
 struct Release {
+    #[serde(default)]
     repo_name: String,
     tag_name: String,
     name: String,
@@ -127,16 +126,25 @@ fn is_auth_ok() -> Result<()> {
 }
 
 fn get_latest(repo_name: String) -> Result<Release> {
+    log::debug!("get_latest: repo_name = {}", repo_name);
     log::info!("Fetching latest release for repository: {}", repo_name);
     is_auth_ok()?;
     let args = vec!["release", "view", "-R", &repo_name, "--json", "assets,publishedAt,tagName,url,name"];
     let output = cmd("gh", args).read()?;
-    let mut release: Release = serde_json::from_str(&output)?;
+    let mut release: Release = match serde_json::from_str(&output) {
+        Ok(r) => r,
+        Err(e) => {
+            println!("gh output: {}, error = {}", output, e);
+            return Err(anyhow::anyhow!("Failed to parse release JSON for {}: {}", repo_name, e));
+        }
+    };
     release.repo_name = repo_name;
+    log::debug!("get_latest: release = {:?}", release);
     Ok(release)
 }
 
 fn find_target_artifacts<'a>(artifacts: &'a [Artifact], names: &Vec<String>) -> Result<Vec<&'a Artifact>> {
+    log::debug!("find_target_artifacts: names = {:?}", names);
     let mut errs = vec![];
     let mut result = vec![];
     for name in names {
@@ -154,6 +162,7 @@ fn find_target_artifacts<'a>(artifacts: &'a [Artifact], names: &Vec<String>) -> 
 }
 
 fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>) -> Result<Vec<Artifact>> {
+    log::debug!("fetch_new_releases: names = {:?}", names);
     let targets = find_target_artifacts(artifacts, names)?;
     let mut results = vec![];
     let mut errs = vec![];
@@ -242,47 +251,6 @@ fn sha256(url: &str) -> Result<String> {
             let result = hasher.finalize();
             Ok(format!("{:x}", result))
         })
-
-}
-
-async fn sha2562(url: &str) -> Result<String> {
-    log::info!("Calculating sha256 for URL: {}", url);
-    let response = reqwest::Client::new()
-        .get(url)
-        .send()
-        .await
-        .or(Err(anyhow::anyhow!("Failed to fetch URL: {}", url)))?;
-    let total_size = response.content_length()
-        .ok_or_else(|| anyhow::anyhow!("Failed to get content length for URL: {}", url))?;
-    let mut stream = response.bytes_stream();
-    let mut hasher = Sha256::new();
-    if log::log_enabled!(log::Level::Info) {
-        let pb = indicatif::ProgressBar::new(total_size);
-        pb.set_style(ProgressStyle::default_bar()
-            .template("{msg}\n{spinner:.green} [{elapsed_precise}] [{wide_bar:.cyan/blue}] {bytes}/{total_bytes} ({bytes_per_sec}, {eta})")?
-            .progress_chars("#>-")
-        );
-        pb.set_message(format!("Downloading {}", url));
-        while let Some(item) = stream.next().await {
-            let chunk = item.or(Err(anyhow::anyhow!("Error while downloading file")))?;
-            hasher.update(&chunk);
-            let current_pos = pb.position() + chunk.len() as u64;
-            let now = if current_pos < total_size {
-                current_pos
-            } else {
-                total_size
-            };
-            pb.set_position(now);
-        }
-        pb.finish_with_message("Download done");
-    } else {
-        while let Some(item) = stream.next().await {
-            let chunk = item.or(Err(anyhow::anyhow!("Error while downloading file")))?;
-            hasher.update(&chunk);
-        }
-    }
-    let result = hasher.finalize();
-    Ok(format!("{:x}", result))
 }
 
 async fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
