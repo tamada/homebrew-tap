@@ -18,10 +18,8 @@ pub(crate) struct Args {
 
 impl Args {
     pub(crate) fn init(self) -> Result<(Vec<String>, Config)> {
-        match init_logger(self.level) {
-            Ok(_) => Ok((self.names, self.config)),
-            Err(e) => Err(e),
-        }
+        init_logger(self.level)?;
+        Ok((self.names, self.config))
     }
 }
 
