@@ -165,7 +165,7 @@ fn should_update(config: &cli::Config, project: &Project) -> bool {
     if config.force_update {
         true
     } else {
-        project.ignore_fetch_release() || config.disable_update
+        !project.ignore_fetch_release() && !config.disable_update
     }
 }
 
