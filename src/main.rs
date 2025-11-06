@@ -161,41 +161,57 @@ fn find_target_artifacts<'a>(artifacts: &'a [Artifact], names: &Vec<String>) -> 
     }
 }
 
-fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>) -> Result<Vec<Artifact>> {
+fn should_update(config: &cli::Config, project: &Project) -> bool {
+    if config.force_update {
+        true
+    } else {
+        !project.ignore_fetch_release() && !config.disable_update
+    }
+}
+
+fn fetch_new_release_of_artifact(target: &Artifact) -> Result<Artifact> {
+    match get_latest(target.project.repo_name()) {
+        Ok(new_release) => {
+            let release = if let Some(current_release) = &target.release {
+                if current_release.tag_name != new_release.tag_name {
+                    log::info!("New release found for {}: {} -> {}", target.project.repo_name(), current_release.tag_name, new_release.tag_name);
+                    new_release
+                } else {
+                    log::info!("No new release for {}: still at {}", target.project.repo_name(), current_release.tag_name);
+                    current_release.clone()
+                }
+            } else {
+                log::info!("Initial release found for {}: {}", target.project.repo_name(), new_release.tag_name);
+                new_release
+            };
+            // Update the release in the artifact
+            let updated_artifact = Artifact::new_with_release(target.project.clone(), release);
+            Ok(updated_artifact)
+        },
+        Err(e) => Err(e),
+    }
+}
+
+fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>, config: &cli::Config) -> Result<Vec<Artifact>> {
     log::debug!("fetch_new_releases: names = {:?}", names);
     let targets = find_target_artifacts(artifacts, names)?;
     let mut results = vec![];
     let mut errs = vec![];
     for target in targets {
-        if target.project.ignore_fetch_release() {
+        if !should_update(config, &target.project) {
             log::info!("Skipping fetch for repository: {} (ignore-fetch-release is true)", target.project.repo_name());
-            continue;
-        }
-        match get_latest(target.project.repo_name()) {
-            Ok(new_release) => {
-                let release = if let Some(current_release) = &target.release {
-                    if current_release.tag_name != new_release.tag_name {
-                        log::info!("New release found for {}: {} -> {}", target.project.repo_name(), current_release.tag_name, new_release.tag_name);
-                        new_release
-                    } else {
-                        log::info!("No new release for {}: still at {}", target.project.repo_name(), current_release.tag_name);
-                        current_release.clone()
-                    }
-                } else {
-                    log::info!("Initial release found for {}: {}", target.project.repo_name(), new_release.tag_name);
-                    new_release
-                };
-                // Update the release in the artifact
-                let updated_artifact = Artifact::new_with_release(target.project.clone(), release);
-                results.push(updated_artifact);
-            },
-            Err(e) => errs.push(e),
+        } else {
+            log::info!("Fetching latest release for repository: {}", target.project.repo_name());
+            match fetch_new_release_of_artifact(target) {
+                Ok(artifact) => results.push(artifact),
+                Err(e) => errs.push(e),
+            }
         }
     }
     Ok(results)
 }
 
-fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera) -> Result<&'a Artifact> {
+fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config) -> Result<&'a Artifact> {
     log::info!("Updating formula for project: {}", artifact.project.name);
     let mut context = Context::new();
     context.insert("project", &artifact.project);
@@ -207,11 +223,17 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera) -> Result<&'a Artifac
     let template_name = format!("{}_template.rb", artifact.project.name);
     let to = format!("Formula/{}.rb", artifact.project.name);
     let rendered = tera.render(&template_name, &context)?;
-    fs::write(to, rendered)?;
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::Recipe) {
+            println!("----- dry-run mode: {} -----\n{}", to, rendered);
+        } 
+    } else {
+        fs::write(to, rendered)?;
+    }
     Ok(artifact)
 }
 
-fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera) -> Result<()> {
+fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -> Result<()> {
     log::info!("Updating README.md with project and release information");
     let mut vecp = vec![];
     let mut vecr = vec![];
@@ -223,14 +245,26 @@ fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera) -> Result<()> {
     context.insert("projects", &vecp);
     context.insert("releases", &vecr);
     let rendered = tera.render("README_template.md", &context)?;
-    fs::write("README.md", rendered)?;
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::Readme) {
+            println!("----- dry-run mode: README.md -----\n{}", rendered);
+        }
+    } else {
+        fs::write("README.md", rendered)?;
+    }
     Ok(())
 }
 
-fn write_releases<P: AsRef<Path>>(path: P, releases: &[Release]) -> Result<()> {
+fn write_releases<P: AsRef<Path>>(path: P, releases: &[Release], config: &cli::Config) -> Result<()> {
     log::info!("Writing releases to {}", path.as_ref().display());
     let content = serde_json::to_string_pretty(releases)?;
-    fs::write(path, content)?;
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::ProjectJson) {
+            println!("----- dry-run mode: {} -----\n{}", path.as_ref().display(), content);
+        }
+    } else {
+        fs::write(path, content)?;
+    }
     Ok(())
 }
 
@@ -253,7 +287,7 @@ fn sha256(url: &str) -> Result<String> {
         })
 }
 
-async fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
     match value.as_str() {
         Some(c) => {
             match sha256(c) {
@@ -271,7 +305,8 @@ async fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>
 }
 
 fn make_sha256_filter<'a, 'b>(value: &'a Value, args: &'b HashMap<String, Value>) -> tera::Result<Value> {
-    futures::executor::block_on(make_sha256(value, args))
+    // futures::executor::block_on(make_sha256(value, args))
+    make_sha256(value, args)
 }
 
 fn make_format_date<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
@@ -359,21 +394,6 @@ pub fn single_err_or_errs_array<T>(errs: Vec<anyhow::Error>) -> Result<T> {
     }
 }
 
-fn init_logger(level: LogLevel) -> Result<()> {
-    let log_level = match level {
-        LogLevel::Trace => log::LevelFilter::Trace,
-        LogLevel::Debug => log::LevelFilter::Debug,
-        LogLevel::Info => log::LevelFilter::Info,
-        LogLevel::Warn => log::LevelFilter::Warn,
-        LogLevel::Error => log::LevelFilter::Error,
-    };
-
-    let mut builder = env_logger::Builder::new();
-    builder.filter(None, log_level);
-    builder.init();
-    Ok(())
-}
-
 fn init_tera() -> Result<Tera> {
     let mut tera = Tera::new(".template/*")?;
     tera.register_filter("sha256", make_sha256_filter);
@@ -382,13 +402,13 @@ fn init_tera() -> Result<Tera> {
     Ok(tera)
 }
 
-fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera) -> Result<()> {
+fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera, config: &cli::Config) -> Result<()> {
     log::info!("Updating recipes for projects: {:?}", names);
     let r = names.into_iter()
         .map(|name| {
             match find_project_and_release(&name, &projects) {
                 Ok(p) => 
-                    update_formula(&p, &tera),
+                    update_formula(&p, &tera, config),
                 Err(e) => Err(e),
             }
         }).filter_map(|result| result.err())
@@ -402,12 +422,12 @@ fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera) ->
 
 fn main() -> Result<()> {
     let args = cli::Args::parse();
-    init_logger(args.level)?;
+    let (names, config) = args.init()?;
 
     let mut tera = init_tera()?;
     let artifacts = read_artifacts()?;
 
-    let new_artifact = fetch_new_releases(&artifacts, &args.names)?;
+    let new_artifact = fetch_new_releases(&artifacts, &names, &config)?;
     let mut updated = vec![];
     for artifact in artifacts {
         match new_artifact.iter().find(|a| a.is_match_repo(&artifact.project.repo_name())) {
@@ -416,11 +436,11 @@ fn main() -> Result<()> {
         }
     }
 
-    match update_recipes(args.names, &updated, &mut tera) {
+    match update_recipes(names, &updated, &mut tera, &config) {
         Ok(_) => {
-            update_readme(&updated, &mut tera)?;
+            update_readme(&updated, &mut tera, &config)?;
             let updated_releases: Vec<Release> = updated.iter().filter_map(|a| a.release.clone()).collect();
-            write_releases("data/releases.json", &updated_releases)?;
+            write_releases("data/releases.json", &updated_releases, &config)?;
             Ok(())
         },
         Err(e) => Err(e),
