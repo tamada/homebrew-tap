@@ -9,15 +9,16 @@ class Wildcat < Formula
   {%- for asset in release.assets %}
     {%- if "darwin" in asset.name and "amd64" in asset.name %}
   if OS.mac? && Hardware::CPU.intel?
-    {%- endif %}
-    {%- if "darwin" in asset.name and "arm64" in asset.name %}
+    {%- elif "darwin" in asset.name and "arm64" in asset.name %}
   if OS.mac? && Hardware::CPU.arm?
-    {%- endif %}
-    {%- if "linux" in asset.name and "amd64" in asset.name %}
-  if OS.linux? && Hardware::CPU.intel?
-    {%- endif %}
-    {%- if "linux" in asset.name and "arm64" in asset.name %}
+    {%- elif "linux" in asset.name and "arm64" in asset.name %}
   if OS.linux? && Hardware::CPU.arm?
+    {%- elif "windows" in asset.name and "arm64" in asset.name %}
+  if OS.windows? && Hardware::CPU.arm?
+    {%- elif "linux" in asset.name %}
+  if OS.linux? && Hardware::CPU.intel?
+    {%- else %}
+  if OS.windows? && Hardware::CPU.intel?
     {%- endif %}
     url "{{ asset.url }}"
     sha256 "{{ asset.url | sha256 }}"
