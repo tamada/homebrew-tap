@@ -1,67 +1,34 @@
 [
   {
     "repoName": "tamada/gixor",
-    "tagName": "v0.3.4",
-    "name": "Release v0.3.4",
-    "publishedAt": "2025-09-09T13:10:31Z",
-    "url": "https://github.com/tamada/gixor/releases/tag/v0.3.4",
+    "tagName": "v0.4.1",
+    "name": "Release v0.4.1",
+    "publishedAt": "2025-11-05T06:40:31Z",
+    "url": "https://github.com/tamada/gixor/releases/tag/v0.4.1",
     "assets": [
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.3.4/gixor-0.3.4_darwin_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "gixor-0.3.4_darwin_amd64.tar.gz",
-        "size": 3363471
-      },
-      {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.3.4/gixor-0.3.4_darwin_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "gixor-0.3.4_darwin_arm64.tar.gz",
-        "size": 3571399
-      },
-      {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.3.4/gixor-0.3.4_linux_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "gixor-0.3.4_linux_amd64.tar.gz",
-        "size": 4322826
-      },
-      {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.3.4/gixor-0.3.4_linux_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "gixor-0.3.4_linux_arm64.tar.gz",
-        "size": 4680944
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/sibling",
-    "tagName": "v2.0.2",
-    "name": "Release v2.0.2",
-    "publishedAt": "2025-07-18T08:31:44Z",
-    "url": "https://github.com/tamada/sibling/releases/tag/v2.0.2",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.2_darwin_amd64.tar.gz",
-        "size": 477660
+        "name": "gixor-0.4.1_darwin_amd64.tar.gz",
+        "size": 3360361
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.2_darwin_arm64.tar.gz",
-        "size": 459935
+        "name": "gixor-0.4.1_darwin_arm64.tar.gz",
+        "size": 3570303
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.2_linux_amd64.tar.gz",
-        "size": 551467
+        "name": "gixor-0.4.1_linux_amd64.tar.gz",
+        "size": 4269188
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "sibling-2.0.2_linux_arm64.tar.gz",
-        "size": 532024
+        "name": "gixor-0.4.1_linux_arm64.tar.gz",
+        "size": 4678816
       }
     ]
   },
@@ -138,218 +105,47 @@
     ]
   },
   {
-    "repoName": "tamada/gibo-wrapper",
-    "tagName": "v0.9.0",
-    "name": "Release v0.9.0",
-    "publishedAt": "2024-11-30T01:00:45Z",
-    "url": "https://github.com/tamada/gibo-wrapper/releases/tag/v0.9.0",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "gibo-wrapper-0.9.0_darwin_amd64.tar.gz",
-        "size": 462156
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
-        "downloadCount": 3,
-        "name": "gibo-wrapper-0.9.0_darwin_arm64.tar.gz",
-        "size": 478854
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "gibo-wrapper-0.9.0_linux_amd64.tar.gz",
-        "size": 558662
-      },
-      {
-        "url": "https://github.com/tamada/gibo-wrapper/releases/download/v0.9.0/gibo-wrapper-0.9.0_linux_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "gibo-wrapper-0.9.0_linux_arm64.tar.gz",
-        "size": 578632
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/peripherals",
+    "repoName": "tamada/goheatman",
     "tagName": "v1.0.1",
-    "name": "Release v1.0.1",
-    "publishedAt": "2023-08-05T08:56:35Z",
-    "url": "https://github.com/tamada/peripherals/releases/tag/v1.0.1",
+    "name": "",
+    "publishedAt": "2020-03-08T06:22:09Z",
+    "url": "https://github.com/tamada/goheatman/releases/tag/v1.0.1",
     "assets": [
       {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-darwin-amd64.tar.gz",
-        "size": 7159412
-      },
-      {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-darwin-arm64.tar.gz",
-        "size": 6979736
-      },
-      {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-linux-amd64.tar.gz",
-        "size": 7204691
-      },
-      {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-linux-arm64.tar.gz",
-        "size": 6752247
-      },
-      {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-386.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-windows-386.tar.gz",
-        "size": 7567419
-      },
-      {
-        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "peripherals-1.0.1-windows-amd64.tar.gz",
-        "size": 7604397
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/urleap",
-    "tagName": "v0.2.5",
-    "name": "Release v0.2.5",
-    "publishedAt": "2023-07-15T03:29:37Z",
-    "url": "https://github.com/tamada/urleap/releases/tag/v0.2.5",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_386.tar.gz",
         "downloadCount": 1,
-        "name": "urleap-0.2.5_darwin_amd64.tar.gz",
-        "size": 3948493
+        "name": "heatman-1.0.1_darwin_386.tar.gz",
+        "size": 1631981
       },
       {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "urleap-0.2.5_darwin_arm64.tar.gz",
-        "size": 3795388
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "heatman-1.0.1_darwin_amd64.tar.gz",
+        "size": 1652220
       },
       {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "urleap-0.2.5_linux_amd64.tar.gz",
-        "size": 4059919
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_386.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_linux_386.tar.gz",
+        "size": 1604530
       },
       {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "urleap-0.2.5_linux_arm64.tar.gz",
-        "size": 3770239
-      },
-      {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "urleap-0.2.5_windows_amd64.tar.gz",
-        "size": 4037389
-      },
-      {
-        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "urleap-0.2.5_windows_arm64.tar.gz",
-        "size": 3769828
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/pochi",
-    "tagName": "v2.6.0",
-    "name": "Release v2.6.0",
-    "publishedAt": "2021-12-13T05:24:16Z",
-    "url": "https://github.com/tamada/pochi/releases/tag/v2.6.0",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/pochi/releases/download/v2.6.0/pochi-2.6.0.zip",
-        "downloadCount": 27,
-        "name": "pochi-2.6.0.zip",
-        "size": 23562006
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/scv",
-    "tagName": "v1.0.0",
-    "name": "",
-    "publishedAt": "2021-07-12T23:34:50Z",
-    "url": "https://github.com/tamada/scv/releases/tag/v1.0.0",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_amd64.tar.gz",
-        "downloadCount": 5,
-        "name": "scv-1.0.0_darwin_amd64.tar.gz",
-        "size": 1622912
-      },
-      {
-        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_amd64.tar.gz",
         "downloadCount": 3,
-        "name": "scv-1.0.0_darwin_arm64.tar.gz",
-        "size": 1580204
+        "name": "heatman-1.0.1_linux_amd64.tar.gz",
+        "size": 1630048
       },
       {
-        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_linux_amd64.tar.gz",
-        "downloadCount": 4,
-        "name": "scv-1.0.0_linux_amd64.tar.gz",
-        "size": 1530563
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_386.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_windows_386.tar.gz",
+        "size": 1625043
       },
       {
-        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_windows_amd64.tar.gz",
-        "downloadCount": 4,
-        "name": "scv-1.0.0_windows_amd64.tar.gz",
-        "size": 1594886
-      }
-    ]
-  },
-  {
-    "repoName": "tamada/wildcat",
-    "tagName": "v1.2.0",
-    "name": "",
-    "publishedAt": "2021-04-28T06:47:01Z",
-    "url": "https://github.com/tamada/wildcat/releases/tag/v1.2.0",
-    "assets": [
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_amd64.tar.gz",
-        "downloadCount": 14,
-        "name": "wildcat-1.2.0_darwin_amd64.tar.gz",
-        "size": 11440105
-      },
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_arm64.tar.gz",
-        "downloadCount": 4,
-        "name": "wildcat-1.2.0_darwin_arm64.tar.gz",
-        "size": 11304801
-      },
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_386.tar.gz",
-        "downloadCount": 4,
-        "name": "wildcat-1.2.0_linux_386.tar.gz",
-        "size": 11420902
-      },
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_amd64.tar.gz",
-        "downloadCount": 6,
-        "name": "wildcat-1.2.0_linux_amd64.tar.gz",
-        "size": 11536078
-      },
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_386.tar.gz",
-        "downloadCount": 5,
-        "name": "wildcat-1.2.0_windows_386.tar.gz",
-        "size": 11561003
-      },
-      {
-        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_amd64.tar.gz",
-        "downloadCount": 5,
-        "name": "wildcat-1.2.0_windows_amd64.tar.gz",
-        "size": 11634703
+        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "heatman-1.0.1_windows_amd64.tar.gz",
+        "size": 1657841
       }
     ]
   },
@@ -459,6 +255,66 @@
     ]
   },
   {
+    "repoName": "tamada/peripherals",
+    "tagName": "v1.0.1",
+    "name": "Release v1.0.1",
+    "publishedAt": "2023-08-05T08:56:35Z",
+    "url": "https://github.com/tamada/peripherals/releases/tag/v1.0.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-darwin-amd64.tar.gz",
+        "size": 7159412
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-darwin-arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-darwin-arm64.tar.gz",
+        "size": 6979736
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-linux-amd64.tar.gz",
+        "size": 7204691
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-linux-arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-linux-arm64.tar.gz",
+        "size": 6752247
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-386.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-windows-386.tar.gz",
+        "size": 7567419
+      },
+      {
+        "url": "https://github.com/tamada/peripherals/releases/download/v1.0.1/peripherals-1.0.1-windows-amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "peripherals-1.0.1-windows-amd64.tar.gz",
+        "size": 7604397
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/pochi",
+    "tagName": "v2.6.0",
+    "name": "Release v2.6.0",
+    "publishedAt": "2021-12-13T05:24:16Z",
+    "url": "https://github.com/tamada/pochi/releases/tag/v2.6.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/pochi/releases/download/v2.6.0/pochi-2.6.0.zip",
+        "downloadCount": 27,
+        "name": "pochi-2.6.0.zip",
+        "size": 23562006
+      }
+    ]
+  },
+  {
     "repoName": "tamada/rrh",
     "tagName": "v1.2.0",
     "name": "v1.2.0",
@@ -504,47 +360,68 @@
     ]
   },
   {
-    "repoName": "tamada/goheatman",
-    "tagName": "v1.0.1",
+    "repoName": "tamada/scv",
+    "tagName": "v1.0.0",
     "name": "",
-    "publishedAt": "2020-03-08T06:22:09Z",
-    "url": "https://github.com/tamada/goheatman/releases/tag/v1.0.1",
+    "publishedAt": "2021-07-12T23:34:50Z",
+    "url": "https://github.com/tamada/scv/releases/tag/v1.0.0",
     "assets": [
       {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_386.tar.gz",
-        "downloadCount": 1,
-        "name": "heatman-1.0.1_darwin_386.tar.gz",
-        "size": 1631981
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 5,
+        "name": "scv-1.0.0_darwin_amd64.tar.gz",
+        "size": 1622912
       },
       {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_darwin_amd64.tar.gz",
-        "downloadCount": 4,
-        "name": "heatman-1.0.1_darwin_amd64.tar.gz",
-        "size": 1652220
-      },
-      {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_386.tar.gz",
-        "downloadCount": 1,
-        "name": "heatman-1.0.1_linux_386.tar.gz",
-        "size": 1604530
-      },
-      {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_darwin_arm64.tar.gz",
         "downloadCount": 3,
-        "name": "heatman-1.0.1_linux_amd64.tar.gz",
-        "size": 1630048
+        "name": "scv-1.0.0_darwin_arm64.tar.gz",
+        "size": 1580204
       },
       {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_386.tar.gz",
-        "downloadCount": 1,
-        "name": "heatman-1.0.1_windows_386.tar.gz",
-        "size": 1625043
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_linux_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "scv-1.0.0_linux_amd64.tar.gz",
+        "size": 1530563
       },
       {
-        "url": "https://github.com/tamada/goheatman/releases/download/v1.0.1/heatman-1.0.1_windows_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "heatman-1.0.1_windows_amd64.tar.gz",
-        "size": 1657841
+        "url": "https://github.com/tamada/scv/releases/download/v1.0.0/scv-1.0.0_windows_amd64.tar.gz",
+        "downloadCount": 4,
+        "name": "scv-1.0.0_windows_amd64.tar.gz",
+        "size": 1594886
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/sibling",
+    "tagName": "v2.0.2",
+    "name": "Release v2.0.2",
+    "publishedAt": "2025-07-18T08:31:44Z",
+    "url": "https://github.com/tamada/sibling/releases/tag/v2.0.2",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-2.0.2_darwin_amd64.tar.gz",
+        "size": 477660
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-2.0.2_darwin_arm64.tar.gz",
+        "size": 459935
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-2.0.2_linux_amd64.tar.gz",
+        "size": 551467
+      },
+      {
+        "url": "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-2.0.2_linux_arm64.tar.gz",
+        "size": 532024
       }
     ]
   },
@@ -635,6 +512,96 @@
         "downloadCount": 3,
         "name": "ttt-1.0.0_windows_amd64.tar.gz",
         "size": 1635639
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/urleap",
+    "tagName": "v0.2.5",
+    "name": "Release v0.2.5",
+    "publishedAt": "2023-07-15T03:29:37Z",
+    "url": "https://github.com/tamada/urleap/releases/tag/v0.2.5",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "urleap-0.2.5_darwin_amd64.tar.gz",
+        "size": 3948493
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_darwin_arm64.tar.gz",
+        "size": 3795388
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_linux_amd64.tar.gz",
+        "size": 4059919
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_linux_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_linux_arm64.tar.gz",
+        "size": 3770239
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_windows_amd64.tar.gz",
+        "size": 4037389
+      },
+      {
+        "url": "https://github.com/tamada/urleap/releases/download/v0.2.5/urleap-0.2.5_windows_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "urleap-0.2.5_windows_arm64.tar.gz",
+        "size": 3769828
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/wildcat",
+    "tagName": "v1.2.0",
+    "name": "",
+    "publishedAt": "2021-04-28T06:47:01Z",
+    "url": "https://github.com/tamada/wildcat/releases/tag/v1.2.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_amd64.tar.gz",
+        "downloadCount": 14,
+        "name": "wildcat-1.2.0_darwin_amd64.tar.gz",
+        "size": 11440105
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_darwin_arm64.tar.gz",
+        "downloadCount": 4,
+        "name": "wildcat-1.2.0_darwin_arm64.tar.gz",
+        "size": 11304801
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_386.tar.gz",
+        "downloadCount": 4,
+        "name": "wildcat-1.2.0_linux_386.tar.gz",
+        "size": 11420902
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_amd64.tar.gz",
+        "downloadCount": 6,
+        "name": "wildcat-1.2.0_linux_amd64.tar.gz",
+        "size": 11536078
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_386.tar.gz",
+        "downloadCount": 5,
+        "name": "wildcat-1.2.0_windows_386.tar.gz",
+        "size": 11561003
+      },
+      {
+        "url": "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_amd64.tar.gz",
+        "downloadCount": 5,
+        "name": "wildcat-1.2.0_windows_amd64.tar.gz",
+        "size": 11634703
       }
     ]
   }
