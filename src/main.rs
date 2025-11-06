@@ -194,7 +194,7 @@ fn fetch_new_release_of_artifact(target: &Artifact) -> Result<Artifact> {
 
 fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>, config: &cli::Config) -> Result<Vec<Artifact>> {
     log::debug!("fetch_new_releases: names = {:?}", names);
-    let targets = find_target_artifacts(artifacts, &names)?;
+    let targets = find_target_artifacts(artifacts, names)?;
     let mut results = vec![];
     let mut errs = vec![];
     for target in targets {
@@ -223,8 +223,10 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config)
     let template_name = format!("{}_template.rb", artifact.project.name);
     let to = format!("Formula/{}.rb", artifact.project.name);
     let rendered = tera.render(&template_name, &context)?;
-    if config.dry_run && config.is_show_target(cli::ShowMode::Recipe) {
-        println!("----- dry-run mode: {} -----\n{}", to, rendered);
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::Recipe) {
+            println!("----- dry-run mode: {} -----\n{}", to, rendered);
+        } 
     } else {
         fs::write(to, rendered)?;
     }
@@ -243,8 +245,10 @@ fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -
     context.insert("projects", &vecp);
     context.insert("releases", &vecr);
     let rendered = tera.render("README_template.md", &context)?;
-    if config.dry_run && config.is_show_target(cli::ShowMode::Readme) {
-        println!("----- dry-run mode: README.md -----\n{}", rendered);
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::Readme) {
+            println!("----- dry-run mode: README.md -----\n{}", rendered);
+        }
     } else {
         fs::write("README.md", rendered)?;
     }
@@ -254,8 +258,10 @@ fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -
 fn write_releases<P: AsRef<Path>>(path: P, releases: &[Release], config: &cli::Config) -> Result<()> {
     log::info!("Writing releases to {}", path.as_ref().display());
     let content = serde_json::to_string_pretty(releases)?;
-    if config.dry_run && config.is_show_target(cli::ShowMode::ProjectJson) {
-        println!("----- dry-run mode: {} -----\n{}", path.as_ref().display(), content);
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::ProjectJson) {
+            println!("----- dry-run mode: {} -----\n{}", path.as_ref().display(), content);
+        }
     } else {
         fs::write(path, content)?;
     }
