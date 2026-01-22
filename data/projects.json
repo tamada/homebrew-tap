@@ -2,7 +2,7 @@
     {
         "owner": "tamada",
         "name": "gixor",
-        "description": "Git Ignore Managenement System for Multiple Repositories.",
+        "description": "Git Ignore Management System for Multiple Repositories.",
         "license": "MIT license",
         "url": "https://tamada.github.io/gixor/"
     },
