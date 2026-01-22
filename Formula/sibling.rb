@@ -1,4 +1,4 @@
-VERSION="v2.0.2"
+VERSION="v2.0.3"
 
 class Sibling < Formula
   desc "get next/previous sibling directory name."
@@ -6,22 +6,21 @@ class Sibling < Formula
   version VERSION
   license "WTFPL License"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_amd64.tar.gz"
-    sha256 "6f1588cee3bf383a8536279958820259a25f744732e9efaf2884b795729ab836"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_darwin_amd64.tar.gz"
+    sha256 "639f7d2b3ae2f29a58f7395af44eef060ae188255eee3735972139f975f2135b"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_darwin_arm64.tar.gz"
-    sha256 "929834328b4ebc48da50c69af425add44dd5f1e1c80a3ffd35cda50730ebc541"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_darwin_arm64.tar.gz"
+    sha256 "0065c348d10c8d31b753386c5b87f3da6303ddbe4b6039bd1bf3b81a19e3c2c8"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_amd64.tar.gz"
-    sha256 "7fd99726a3f74ecabeee126f84e3023ba548f1f430c94afa6b1ed3aafce8880c"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_linux_amd64.tar.gz"
+    sha256 "f33b5417b09f381744333ac0572cbd9f0f36a04e6dfa40a8b4fc18ef018a22bb"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/sibling/releases/download/v2.0.2/sibling-2.0.2_linux_arm64.tar.gz"
-    sha256 "4943720882e09f4e49b9a33bd1f7dfce99599e87b0de6466dd96d4fe595f47a4"
+    url "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_linux_arm64.tar.gz"
+    sha256 "162f49cc55b79df1acfdec34aec6b5f92b2b252a2097884a59b009c72500c923"
   end
-
 
   def install
     bin.install "sibling"

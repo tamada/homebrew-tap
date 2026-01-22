@@ -13,7 +13,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
-  - **Description:** Git Ignore Managenemnt System for Multiple Repositories.
+  - **Description:** Git Ignore Management System for Multiple Repositories.
   - **Releases:** v0.4.1 (2025-11-05)
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
@@ -62,7 +62,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
   - **Formula:** `tamada/tap/sibling`
   - **Description:** get the next/previous sibling directory name.
-  - **Releases:** v2.0.2 (2025-07-18)
+  - **Releases:** v2.0.3 (2026-01-22)
 - [tjdoe](https://github.com/tamada/tjdoe)([:spider_web:](https://tamada.github.io/tjdoe/))
   - **Formula:** `tamada/tap/tjdoe`
   - **Description:** anonymizes the programs of the assignments in the programming courses and their score for grades.
