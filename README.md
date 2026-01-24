@@ -18,7 +18,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:** v0.7.10 (2025-07-18)
+  - **Releases:** v0.8.9 (2026-01-24)
 - [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
