@@ -34,34 +34,34 @@
   },
   {
     "repoName": "tamada/totebag",
-    "tagName": "v0.8.9",
-    "name": "Release v0.8.9",
-    "publishedAt": "2026-01-24T07:00:12Z",
-    "url": "https://github.com/tamada/totebag/releases/tag/v0.8.9",
+    "tagName": "v0.8.11",
+    "name": "Release v0.8.11",
+    "publishedAt": "2026-01-25T05:26:27Z",
+    "url": "https://github.com/tamada/totebag/releases/tag/v0.8.11",
     "assets": [
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.9/totebag-0.8.9_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "totebag-0.8.9_darwin_amd64.tar.gz",
-        "size": 2770054
+        "name": "totebag-0.8.11_darwin_amd64.tar.gz",
+        "size": 2797235
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.9/totebag-0.8.9_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "totebag-0.8.9_darwin_arm64.tar.gz",
-        "size": 2603552
+        "name": "totebag-0.8.11_darwin_arm64.tar.gz",
+        "size": 2629940
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.9/totebag-0.8.9_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "totebag-0.8.9_linux_amd64.tar.gz",
-        "size": 3177836
+        "name": "totebag-0.8.11_linux_amd64.tar.gz",
+        "size": 3218606
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.9/totebag-0.8.9_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "totebag-0.8.9_linux_arm64.tar.gz",
-        "size": 2433286
+        "name": "totebag-0.8.11_linux_arm64.tar.gz",
+        "size": 2460500
       }
     ]
   },
