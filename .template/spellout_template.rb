@@ -30,9 +30,9 @@ class Spellout < Formula
   def install
     bin.install "spellout"
 
-    bash_completion.install "assets/completions/bash/spellout" if build.with? "completions"
-    zsh_completion.install  "assets/completions/zsh/_spellout" if build.with? "completions"
-    fish_completion.install "assets/completions/fish/spellout" if build.with? "completions"
+    bash_completion.install "completions/bash/spellout" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_spellout" if build.with? "completions"
+    fish_completion.install "completions/fish/spellout" if build.with? "completions"
   end
 
   test do
