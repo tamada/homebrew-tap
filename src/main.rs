@@ -233,12 +233,19 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config)
     Ok(artifact)
 }
 
-fn update_readme(artifacts: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -> Result<()> {
+fn update_readme(artifacts_orig: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -> Result<()> {
     log::info!("Updating README.md with project and release information");
     let mut vecp = vec![];
     let mut vecr = vec![];
-    for artifact in artifacts {
-        vecp.push(&artifact.project);
+    let mut artifacts = artifacts_orig.clone();
+    artifacts.sort_by(|a, b| {
+        let repo_a = a.release.as_ref().map(|r| r.published_at);
+        let repo_b = b.release.as_ref().map(|r| r.published_at);
+        repo_a.cmp(&repo_b)
+    });
+    artifacts.reverse();
+    for artifact in artifacts.iter() {
+        vecp.push(artifact.project.clone());
         vecr.push(artifact.release.as_ref());
     }
     let mut context = Context::new();
