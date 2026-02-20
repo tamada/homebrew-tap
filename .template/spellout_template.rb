@@ -29,7 +29,6 @@ class Spellout < Formula
 
   def install
     bin.install "spellout"
-    system "ln -s \"#{bin}/spellout\" #{bin}/spellout"
 
     bash_completion.install "assets/completions/bash/spellout" if build.with? "completions"
     zsh_completion.install  "assets/completions/zsh/_spellout" if build.with? "completions"
