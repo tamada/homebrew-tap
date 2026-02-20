@@ -1,0 +1,59 @@
+[
+    {
+        "owner": "tamada",
+        "name": "lioss",
+        "description": "Identifying OSS license names from LICENSE files",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/lioss/"
+    },
+    {
+        "owner": "tamada",
+        "name": "omelette",
+        "description": "An agent for running unit tests on the CLI environment for the Java platform",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/omelette/"
+    },
+    {
+        "owner": "tamada",
+        "name": "rrh",
+        "description": "Remote Repositories Head/Repositories Ready to Hack",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/rrh/"
+    },
+    {
+        "owner": "tamada",
+        "name": "scv",
+        "description": "Similarities and distances calculator among vectors",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/scv/"
+    },
+    {
+        "owner": "tamada",
+        "name": "tjdoe",
+        "description": "anonymizes the programs of the assignments in the programming courses and their score for grades.",
+        "license": "Apache-2.0 License",
+        "url": "https://tamada.github.io/tjdoe/"
+    },
+    {
+        "owner": "tamada",
+        "name": "ttt",
+        "description": "",
+        "license": "WTFPL License",
+        "url": "https://tamada.github.io/ttt/"
+    },
+    {
+        "owner": "tamada",
+        "name": "urleap",
+        "description": "URL shortener via bit.ly",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/urleap/"
+    },
+    {
+        "owner": "tamada",
+        "name": "qrg",
+        "description": "QR code generator for Go lang",
+        "license": "WTFPL License",
+        "url": "",
+        "ignore-fetch-release": true
+    }
+]
