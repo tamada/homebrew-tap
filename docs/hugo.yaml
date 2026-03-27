@@ -1,0 +1,35 @@
+title: Homebrew Taps
+baseurl: https://tamada.github.io/homebrew-tap/
+defaultContentLanguage: "en"
+languageCode: "en-us"
+theme: ["github.com/tamada/hugo_theme_mod", "github.com/nunocoracao/blowfish/v2"]
+
+params:
+  logo: "icons/logo.jpg"
+  description: "Homebrew Taps for managing custom Homebrew formulas."
+  dateFormat: "2006-01-02"
+  copyright: "Copyright &copy; 2020 by Haruaki Tamada. Made with [Hugo](https://gohugo.io/). Deployed to [GitHub Pages](https://pages.github.com/)."
+
+menu:
+  main:
+    - name: "🏠 Home"
+      pageRef: "/"
+      weight: 10
+    - name: "🚀 Products"
+      pageRef: "/products"
+      weight: 20
+    - name: "🦏 Updater"
+      pageRef: "/formula_updater"
+      weight: 30
+    - identifier: "github"
+      pre: "github"
+      url: "https://github.com/tamada/homebrew-tap"
+      weight: 500
+    - identifier: "haruaki-tamada"
+      pre: "haruaki-tamada"
+      url: "https://tamada.github.io/"
+      weight: 400
+
+module:
+  imports:
+    path: "github.com/tamada/hugo_theme_mod"

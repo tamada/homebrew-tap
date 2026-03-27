@@ -1,0 +1,17 @@
+{{- $releases := resources.Get "releases.json" -}}
+
+{{- if $releases -}}
+    {{- $data := $releases | transform.Unmarshal -}}
+    {{- $sortedData := sort $data "publishedAt" "desc" -}}
+
+    <dl>
+    {{- range $sortedData -}}
+        <dt><a href="{{ .url }}">{{ .repoName }}</a> ({{ .tagName }} at {{ .publishedAt | time.Format "2006-01-02" }})</dt>
+        {{- range .assets -}}
+        <dd><a href="{{ .url }}">{{ .name }}</a> ({{ lang.FormatNumber 0 .size }} bytes)</dd>
+        {{- end -}}
+    {{- end -}}
+    </dl>
+{{- else -}}
+    {{- errorf "JSON file not found: \"releases.json\"" -}}
+{{- end -}}
