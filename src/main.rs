@@ -290,7 +290,7 @@ fn sha256(url: &str) -> Result<String> {
             let mut hasher = Sha256::new();
             hasher.update(&bytes);
             let result = hasher.finalize();
-            Ok(format!("{:x}", result))
+            Ok(format!("{}", base16ct::lower::encode_string(&result)))
         })
 }
 

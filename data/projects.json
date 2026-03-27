@@ -29,10 +29,10 @@
     },
     {
         "owner": "tamada",
-        "name": "goheatman",
+        "name": "heatman",
         "description": "Create heat map image from given csv file",
-        "license": "WTFPL License",
-        "url": "https://tamada.github.io/goheatman/"
+        "license": "MIT License",
+        "url": "https://tamada.github.io/heatman/"
     },
     {
         "owner": "tamada",

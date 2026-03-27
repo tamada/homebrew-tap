@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
+  - **Formula:** `tamada/tap/heatman`
+  - **Description:** Create heat map image from given csv file
+  - **Releases:** v0.1.0 (2026-03-26)
 - [spellout](https://github.com/tamada/spellout)([:spider_web:](https://tamada.github.io/spellout/))
   - **Formula:** `tamada/tap/spellout`
   - **Description:** A phonetic code encoder/decoder written in Rust.
@@ -47,10 +51,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/9rules`
   - **Description:** Checking tool of small object programming for the Java language.
   - **Releases:** v1.1.1 (2020-09-23)
-- [goheatman](https://github.com/tamada/goheatman)([:spider_web:](https://tamada.github.io/goheatman/))
-  - **Formula:** `tamada/tap/goheatman`
-  - **Description:** Create heat map image from given csv file
-  - **Releases:** v1.0.1 (2020-03-08)
 
 ## Archived products
 
