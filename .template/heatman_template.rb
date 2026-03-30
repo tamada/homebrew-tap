@@ -35,9 +35,9 @@ class Heatman < Formula
   def install
     bin.install "heatman"
 
-    bash_completion.install "assets/completions/bash/heatman" if build.with? "completions"
-    zsh_completion.install  "assets/completions/zsh/_heatman" if build.with? "completions"
-    fish_completion.install "assets/completions/fish/heatman" if build.with? "completions"
+    bash_completion.install "completions/bash/heatman" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_heatman" if build.with? "completions"
+    fish_completion.install "completions/fish/heatman" if build.with? "completions"
   end
 
   test do
