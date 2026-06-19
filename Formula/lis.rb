@@ -29,7 +29,7 @@ class Lis < Formula
     bin.install "lis"
 
     bash_completion.install "completions/bash/lis" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/lis" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_lis" if build.with? "completions"
     fish_completion.install "completions/fish/lis" if build.with? "completions"
   end
 

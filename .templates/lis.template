@@ -31,7 +31,7 @@ class Lis < Formula
     bin.install "{{ project.name }}"
 
     bash_completion.install "completions/bash/{{ project.name }}" if build.with? "completions"
-    zsh_completion.install  "completions/zsh/{{ project.name }}" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_{{ project.name }}" if build.with? "completions"
     fish_completion.install "completions/fish/{{ project.name }}" if build.with? "completions"
   end
 
