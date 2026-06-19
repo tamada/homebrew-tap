@@ -39,6 +39,9 @@ pub(crate) struct Config {
 
     #[arg(long, default_value_t = false, help = "Do not update the recipe of the given formula and README file.")]
     pub(crate) keep_recipe: bool,
+
+    #[arg(long, default_value_t = false, help = "Register the given artifact")]
+    pub(crate) register: bool,
 }
 
 impl Config {

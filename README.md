@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [lis](https://github.com/tamada/lis)([:spider_web:](https://tamada.github.io/lis))
+  - **Formula:** `tamada/tap/lis`
+  - **Description:** Minimal and alternative ls implementation in Rust.
+  - **Releases:** v0.0.11 (2026-06-19)
 - [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
   - **Formula:** `tamada/tap/heatman`
   - **Description:** Create heat map image from given csv file

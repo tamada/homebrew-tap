@@ -1,6 +1,13 @@
 [
     {
         "owner": "tamada",
+        "name": "lis",
+        "description": "Minimal and alternative ls implementation in Rust.",
+        "license": "CC-0",
+        "url": "https://tamada.github.io/lis"
+    },
+    {
+        "owner": "tamada",
         "name": "spellout",
         "description": "A phonetic code encoder/decoder written in Rust.",
         "license": "MIT license",

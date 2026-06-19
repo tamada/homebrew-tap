@@ -1,5 +1,38 @@
 [
   {
+    "repoName": "tamada/lis",
+    "tagName": "v0.0.11",
+    "name": "Release v0.0.11",
+    "publishedAt": "2026-06-19T03:22:04Z",
+    "url": "https://github.com/tamada/lis/releases/tag/v0.0.11",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/lis/releases/download/v0.0.11/lis-0.0.11_amd64_darwin.tar.gz",
+        "downloadCount": 0,
+        "name": "lis-0.0.11_amd64_darwin.tar.gz",
+        "size": 1504552
+      },
+      {
+        "url": "https://github.com/tamada/lis/releases/download/v0.0.11/lis-0.0.11_amd64_linux.tar.gz",
+        "downloadCount": 0,
+        "name": "lis-0.0.11_amd64_linux.tar.gz",
+        "size": 1468533
+      },
+      {
+        "url": "https://github.com/tamada/lis/releases/download/v0.0.11/lis-0.0.11_arm64_darwin.tar.gz",
+        "downloadCount": 0,
+        "name": "lis-0.0.11_arm64_darwin.tar.gz",
+        "size": 1430604
+      },
+      {
+        "url": "https://github.com/tamada/lis/releases/download/v0.0.11/lis-0.0.11_arm64_linux.tar.gz",
+        "downloadCount": 0,
+        "name": "lis-0.0.11_arm64_linux.tar.gz",
+        "size": 1355225
+      }
+    ]
+  },
+  {
     "repoName": "tamada/spellout",
     "tagName": "v0.1.1",
     "name": "Release v0.1.1",

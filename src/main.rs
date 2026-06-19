@@ -4,12 +4,12 @@ use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::Path;
 use std::collections::HashMap;
-use duct::cmd;
 use tera::{Context, Tera, Value};
 use sha2::{Digest, Sha256};
 use chrono::{DateTime, Utc};
 
 mod cli;
+mod github;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "camelCase")]
@@ -110,39 +110,6 @@ fn read_releases<P: AsRef<Path>>(path: P) -> Result<Vec<Release>> {
     read_items(path)
 }
 
-fn is_auth_ok() -> Result<()> {
-    let args = vec!["auth", "status"];
-    let output = cmd("gh", args).run()?;
-    if !output.status.success() {
-        let code = output.status.code().unwrap_or(-1);
-        if code == 1 {
-            return Err(anyhow::anyhow!("GitHub CLI is not authenticated. Please run `gh auth login` to authenticate."));
-        } else {
-            return Err(anyhow::anyhow!("GitHub CLI authentication check failed with exit code: {}", code));
-        }
-    } else {
-        Ok(())
-    }
-}
-
-fn get_latest(repo_name: String) -> Result<Release> {
-    log::debug!("get_latest: repo_name = {}", repo_name);
-    log::info!("Fetching latest release for repository: {}", repo_name);
-    is_auth_ok()?;
-    let args = vec!["release", "view", "-R", &repo_name, "--json", "assets,publishedAt,tagName,url,name"];
-    let output = cmd("gh", args).read()?;
-    let mut release: Release = match serde_json::from_str(&output) {
-        Ok(r) => r,
-        Err(e) => {
-            println!("gh output: {}, error = {}", output, e);
-            return Err(anyhow::anyhow!("Failed to parse release JSON for {}: {}", repo_name, e));
-        }
-    };
-    release.repo_name = repo_name;
-    log::debug!("get_latest: release = {:?}", release);
-    Ok(release)
-}
-
 fn find_target_artifacts<'a>(artifacts: &'a [Artifact], names: &Vec<String>) -> Result<Vec<&'a Artifact>> {
     log::debug!("find_target_artifacts: names = {:?}", names);
     let mut errs = vec![];
@@ -170,7 +137,7 @@ fn should_update(config: &cli::Config, project: &Project) -> bool {
 }
 
 fn fetch_new_release_of_artifact(target: &Artifact) -> Result<Artifact> {
-    match get_latest(target.project.repo_name()) {
+    match github::get_latest(target.project.repo_name()) {
         Ok(new_release) => {
             let release = if let Some(current_release) = &target.release {
                 if current_release.tag_name != new_release.tag_name {
@@ -220,7 +187,7 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config)
         context.insert("release", release);
     };
 
-    let template_name = format!("{}_template.rb", artifact.project.name);
+    let template_name = format!("{}.template", artifact.project.name);
     let to = format!("Formula/{}.rb", artifact.project.name);
     let rendered = tera.render(&template_name, &context)?;
     if config.dry_run {
@@ -251,7 +218,7 @@ fn update_readme(artifacts_orig: &Vec<Artifact>, tera: &Tera, config: &cli::Conf
     let mut context = Context::new();
     context.insert("projects", &vecp);
     context.insert("releases", &vecr);
-    let rendered = tera.render("README_template.md", &context)?;
+    let rendered = tera.render("README.template", &context)?;
     if config.dry_run {
         if config.is_show_target(cli::ShowMode::Readme) {
             println!("----- dry-run mode: README.md -----\n{}", rendered);
@@ -339,6 +306,57 @@ fn make_to_version<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) 
     }
 }
 
+fn make_to_class_name<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+    fn digit_word(ch: char) -> Option<&'static str> {
+        match ch {
+            '0' => Some("Zero"),
+            '1' => Some("One"),
+            '2' => Some("Two"),
+            '3' => Some("Three"),
+            '4' => Some("Four"),
+            '5' => Some("Five"),
+            '6' => Some("Six"),
+            '7' => Some("Seven"),
+            '8' => Some("Eight"),
+            '9' => Some("Nine"),
+            _ => None,
+        }
+    }
+
+    let name = value
+        .as_str()
+        .ok_or_else(|| tera::Error::msg("Expected a string value for to_class_name filter"))?;
+
+    let class_name = name
+        .split(|c: char| !c.is_ascii_alphanumeric())
+        .filter(|part| !part.is_empty())
+        .map(|part| {
+            let mut chars = part.chars();
+            match chars.next() {
+                Some(first) if first.is_ascii_digit() => {
+                    let mut result = String::from(digit_word(first).unwrap_or(""));
+                    result.push_str(chars.as_str().to_ascii_lowercase().as_str());
+                    result
+                },
+                Some(first) => {
+                    let mut result = String::new();
+                    result.push(first.to_ascii_uppercase());
+                    result.push_str(chars.as_str().to_ascii_lowercase().as_str());
+                    result
+                },
+                None => String::new(),
+            }
+        })
+        .collect::<String>();
+
+    if class_name.is_empty() {
+        Err(tera::Error::msg("Failed to derive a class name from the project name"))
+    } else {
+        serde_json::to_value(class_name)
+            .map_err(|e| tera::Error::msg(format!("Failed to convert class name to value: {}", e)))
+    }
+}
+
 fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Release> {
     releases.iter().find(|r| r.repo_name == repo_name)
         .ok_or_else(|| anyhow::anyhow!("Release not found for repository: {}", repo_name))
@@ -363,7 +381,7 @@ fn read_artifacts() -> Result<Vec<Artifact>> {
 
 fn find_project_and_release<'a>(name: &str, projects: &'a [Artifact]) -> Result<&'a Artifact> {
     projects.iter().find(|p| p.is_match_repo(name))
-        .ok_or_else(|| anyhow::anyhow!("Project not found for name: {}", name))
+        .ok_or_else(|| anyhow::anyhow!("{name}: Project not found for name."))
 }
 
 /// Convert `Vec<Result<T>>` to `Result<Vec<T>>`
@@ -402,10 +420,11 @@ pub fn single_err_or_errs_array<T>(errs: Vec<anyhow::Error>) -> Result<T> {
 }
 
 fn init_tera() -> Result<Tera> {
-    let mut tera = Tera::new(".template/*")?;
+    let mut tera = Tera::new(".templates/*")?;
     tera.register_filter("sha256", make_sha256_filter);
     tera.register_filter("format_date", make_format_date);
     tera.register_filter("to_version", make_to_version);
+    tera.register_filter("to_class_name", make_to_class_name);
     Ok(tera)
 }
 
@@ -427,11 +446,25 @@ fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera, co
     }
 }
 
-fn main() -> Result<()> {
-    let args = cli::Args::parse();
-    let (names, config) = args.init()?;
+fn register_artifacts(mut artifacts: Vec<Artifact>, names: Vec<String>) -> Vec<Artifact> {
+    let r = names.into_iter()
+        .filter_map(|name| match github::owner_repo_to_project(name.clone()) {
+            Ok(project) => Some(Artifact::new(project)),
+            Err(e) => {
+                log::warn!("Skipping registration for '{}': {}", name, e);
+                None
+            },
+        })
+        .collect::<Vec<_>>();
+    artifacts.extend(r);
+    artifacts
+}
 
-    let mut tera = init_tera()?;
+fn perform_register(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
+    unimplemented!()
+}
+
+fn perform_update(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
     let artifacts = read_artifacts()?;
 
     let new_artifact = fetch_new_releases(&artifacts, &names, &config)?;
@@ -451,6 +484,18 @@ fn main() -> Result<()> {
             Ok(())
         },
         Err(e) => Err(e),
+    }
+}
+
+fn main() -> Result<()> {
+    let args = cli::Args::parse();
+    let (names, config) = args.init()?;
+
+    let tera = init_tera()?;
+    if config.register {
+        perform_register(names, config, tera)
+    } else {
+        perform_update(names, config, tera)
     }
 }
 
