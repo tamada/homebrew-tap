@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
+  - **Formula:** `tamada/tap/oinkie`
+  - **Description:** The software birthmark toolkit for real-world executables
+  - **Releases:** v0.2.1 (2026-06-25)
 - [lis](https://github.com/tamada/lis)([:spider_web:](https://tamada.github.io/lis))
   - **Formula:** `tamada/tap/lis`
   - **Description:** Minimal and alternative ls implementation in Rust.

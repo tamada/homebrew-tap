@@ -1,5 +1,38 @@
 [
   {
+    "repoName": "tamada/oinkie",
+    "tagName": "v0.2.1",
+    "name": "Release v0.2.1",
+    "publishedAt": "2026-06-25T07:23:45Z",
+    "url": "https://github.com/tamada/oinkie/releases/tag/v0.2.1",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.2.1/oinkie-0.2.1_amd64_darwin.tar.gz",
+        "downloadCount": 0,
+        "name": "oinkie-0.2.1_amd64_darwin.tar.gz",
+        "size": 1441675
+      },
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.2.1/oinkie-0.2.1_amd64_linux.tar.gz",
+        "downloadCount": 0,
+        "name": "oinkie-0.2.1_amd64_linux.tar.gz",
+        "size": 1346098
+      },
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.2.1/oinkie-0.2.1_arm64_darwin.tar.gz",
+        "downloadCount": 0,
+        "name": "oinkie-0.2.1_arm64_darwin.tar.gz",
+        "size": 1368425
+      },
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.2.1/oinkie-0.2.1_arm64_linux.tar.gz",
+        "downloadCount": 0,
+        "name": "oinkie-0.2.1_arm64_linux.tar.gz",
+        "size": 1238390
+      }
+    ]
+  },
+  {
     "repoName": "tamada/lis",
     "tagName": "v0.0.11",
     "name": "Release v0.0.11",

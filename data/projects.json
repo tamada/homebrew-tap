@@ -1,6 +1,13 @@
 [
     {
         "owner": "tamada",
+        "name": "oinkie",
+        "description": "The software birthmark toolkit for real-world executables",
+        "license": "MIT",
+        "url": "https://tamada.github.io/oinkie"
+    },
+    {
+        "owner": "tamada",
         "name": "lis",
         "description": "Minimal and alternative ls implementation in Rust.",
         "license": "CC-0",
