@@ -1,0 +1,41 @@
+name: Update formula
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 'Repository to update formula for'
+        required: true
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Rust
+        run:
+          rustup update stable
+
+      - name: Setup Git
+        run:
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+
+      - name: Update formula
+        run: |
+          cargo run -- "${{ github.event.inputs.repo }}"
+          git add Formula README.md
+
+      - name: Commit and push changes
+        shell: bash
+        run: |
+          if git diff --cached --quiet; then
+            echo "No changes found. Nothing to commit or push."
+          else
+            git commit -m "Update formula for ${{ github.event.inputs.repo }}" || true
+            git push origin main || true
+          fi

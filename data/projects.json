@@ -1,6 +1,13 @@
 [
     {
         "owner": "tamada",
+        "name": "fauxrest",
+        "description": "Pseudo-REST static API generator",
+        "license": "MIT",
+        "url": "https://tamada.github.io/fauxrest"
+    },
+    {
+        "owner": "tamada",
         "name": "oinkie",
         "description": "The software birthmark toolkit for real-world executables",
         "license": "MIT",

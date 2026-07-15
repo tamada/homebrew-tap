@@ -9,9 +9,9 @@ fn is_auth_ok() -> Result<()> {
     if !output.status.success() {
         let code = output.status.code().unwrap_or(-1);
         if code == 1 {
-            return Err(anyhow::anyhow!("GitHub CLI is not authenticated. Please run `gh auth login` to authenticate."));
+            Err(anyhow::anyhow!("GitHub CLI is not authenticated. Please run `gh auth login` to authenticate."))
         } else {
-            return Err(anyhow::anyhow!("GitHub CLI authentication check failed with exit code: {}", code));
+            Err(anyhow::anyhow!("GitHub CLI authentication check failed with exit code: {}", code))
         }
     } else {
         Ok(())
@@ -36,7 +36,7 @@ pub(crate) fn get_latest(repo_name: String) -> Result<Release> {
     Ok(release)
 }
 
-pub(crate) fn owner_repo_to_project(name: String) -> Result<Project> {
+pub(crate) fn _owner_repo_to_project(name: String) -> Result<Project> {
     let (owner, repo) = name
         .split_once('/')
         .with_context(|| format!("Invalid repository name '{}': expected format owner/repo", name))?;

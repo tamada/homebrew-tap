@@ -159,7 +159,7 @@ fn fetch_new_release_of_artifact(target: &Artifact) -> Result<Artifact> {
     }
 }
 
-fn fetch_new_releases<'a>(artifacts: &'a Vec<Artifact>, names: &Vec<String>, config: &cli::Config) -> Result<Vec<Artifact>> {
+fn fetch_new_releases(artifacts: &[Artifact], names: &Vec<String>, config: &cli::Config) -> Result<Vec<Artifact>> {
     log::debug!("fetch_new_releases: names = {:?}", names);
     let targets = find_target_artifacts(artifacts, names)?;
     let mut results = vec![];
@@ -200,11 +200,11 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config)
     Ok(artifact)
 }
 
-fn update_readme(artifacts_orig: &Vec<Artifact>, tera: &Tera, config: &cli::Config) -> Result<()> {
+fn update_readme(artifacts_orig: &[Artifact], tera: &Tera, config: &cli::Config) -> Result<()> {
     log::info!("Updating README.md with project and release information");
     let mut vecp = vec![];
     let mut vecr = vec![];
-    let mut artifacts = artifacts_orig.clone();
+    let mut artifacts = artifacts_orig.to_vec();
     artifacts.sort_by(|a, b| {
         let repo_a = a.release.as_ref().map(|r| r.published_at);
         let repo_b = b.release.as_ref().map(|r| r.published_at);
@@ -253,15 +253,15 @@ fn sha256(url: &str) -> Result<String> {
     }
     response.bytes()
         .map_err(|e| anyhow::anyhow!("Failed to read response body from URL: {}: {}", url, e))
-        .and_then(|bytes| {
+        .map(|bytes| {
             let mut hasher = Sha256::new();
             hasher.update(&bytes);
             let result = hasher.finalize();
-            Ok(format!("{}", base16ct::lower::encode_string(&result)))
+            base16ct::lower::encode_string(&result)
         })
 }
 
-fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_sha256(value: &Value, _args: &HashMap<String, Value>) -> tera::Result<Value> {
     match value.as_str() {
         Some(c) => {
             match sha256(c) {
@@ -278,12 +278,12 @@ fn make_sha256<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> t
     }
 }
 
-fn make_sha256_filter<'a, 'b>(value: &'a Value, args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_sha256_filter(value: &Value, args: &HashMap<String, Value>) -> tera::Result<Value> {
     // futures::executor::block_on(make_sha256(value, args))
     make_sha256(value, args)
 }
 
-fn make_format_date<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_format_date(value: &Value, _args: &HashMap<String, Value>) -> tera::Result<Value> {
     let date_str = match value.as_str() {
         Some(s) => s,
         None => return Err(tera::Error::msg("Expected a string value for date formatting")),
@@ -296,7 +296,7 @@ fn make_format_date<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>)
         .map_err(|e| tera::Error::msg(format!("Failed to format date: {}", e)))
 }
 
-fn make_to_version<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_to_version(value: &Value, _args: &HashMap<String, Value>) -> tera::Result<Value> {
     match value.as_str() {
         Some(tag_name) => {
             serde_json::to_value(tag_name.trim_start_matches('v'))
@@ -306,7 +306,7 @@ fn make_to_version<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) 
     }
 }
 
-fn make_to_class_name<'a, 'b>(value: &'a Value, _args: &'b HashMap<String, Value>) -> tera::Result<Value> {
+fn make_to_class_name(value: &Value, _args: &HashMap<String, Value>) -> tera::Result<Value> {
     fn digit_word(ch: char) -> Option<&'static str> {
         match ch {
             '0' => Some("Zero"),
@@ -432,9 +432,9 @@ fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera, co
     log::info!("Updating recipes for projects: {:?}", names);
     let r = names.into_iter()
         .map(|name| {
-            match find_project_and_release(&name, &projects) {
+            match find_project_and_release(&name, projects) {
                 Ok(p) => 
-                    update_formula(&p, &tera, config),
+                    update_formula(p, tera, config),
                 Err(e) => Err(e),
             }
         }).filter_map(|result| result.err())
@@ -446,9 +446,9 @@ fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera, co
     }
 }
 
-fn register_artifacts(mut artifacts: Vec<Artifact>, names: Vec<String>) -> Vec<Artifact> {
+fn _register_artifacts(mut artifacts: Vec<Artifact>, names: Vec<String>) -> Vec<Artifact> {
     let r = names.into_iter()
-        .filter_map(|name| match github::owner_repo_to_project(name.clone()) {
+        .filter_map(|name| match github::_owner_repo_to_project(name.clone()) {
             Ok(project) => Some(Artifact::new(project)),
             Err(e) => {
                 log::warn!("Skipping registration for '{}': {}", name, e);
@@ -460,7 +460,7 @@ fn register_artifacts(mut artifacts: Vec<Artifact>, names: Vec<String>) -> Vec<A
     artifacts
 }
 
-fn perform_register(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
+fn perform_register(_names: Vec<String>, _config: cli::Config, mut _tera: Tera) -> Result<()> {
     unimplemented!()
 }
 
@@ -478,7 +478,7 @@ fn perform_update(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Re
 
     match update_recipes(names, &updated, &mut tera, &config) {
         Ok(_) => {
-            update_readme(&updated, &mut tera, &config)?;
+            update_readme(&updated, &tera, &config)?;
             let updated_releases: Vec<Release> = updated.iter().filter_map(|a| a.release.clone()).collect();
             write_releases("data/releases.json", &updated_releases, &config)?;
             Ok(())
