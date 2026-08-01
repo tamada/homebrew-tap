@@ -14,7 +14,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [fauxrest](https://github.com/tamada/fauxrest)([:spider_web:](https://tamada.github.io/fauxrest))
   - **Formula:** `tamada/tap/fauxrest`
   - **Description:** Pseudo-REST static API generator
-  - **Releases:** v0.0.2 (2026-07-13)
+  - **Releases:** v0.0.4 (2026-08-01)
 - [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
   - **Formula:** `tamada/tap/oinkie`
   - **Description:** The software birthmark toolkit for real-world executables
