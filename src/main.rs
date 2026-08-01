@@ -175,7 +175,7 @@ fn fetch_new_releases(artifacts: &[Artifact], names: &Vec<String>, config: &cli:
             }
         }
     }
-    Ok(results)
+    errs_vec_to_result(errs, results)
 }
 
 fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config) -> Result<&'a Artifact> {

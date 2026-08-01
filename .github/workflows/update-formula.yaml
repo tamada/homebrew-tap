@@ -25,6 +25,8 @@ jobs:
           git config --global user.email "actions@github.com"
 
       - name: Update formula
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cargo run -- "${{ github.event.inputs.repo }}"
           git add Formula README.md

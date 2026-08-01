@@ -1,6 +1,6 @@
 VERSION="{{ release.tagName | to_version }}"
 
-class Oinkie < Formula
+class {{ project.name | to_class_name}} < Formula
   desc "{{ project.description }}"
   option "without-completions", "Disable bash completions"
   depends_on "bash-completion@2" => :optional

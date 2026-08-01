@@ -23,11 +23,14 @@ pub(crate) fn get_latest(repo_name: String) -> Result<Release> {
     log::info!("Fetching latest release for repository: {}", repo_name);
     is_auth_ok()?;
     let args = vec!["release", "view", "-R", &repo_name, "--json", "assets,publishedAt,tagName,url,name"];
-    let output = duct::cmd("gh", args).read()?;
-    let mut release: Release = match serde_json::from_str(&output) {
+    let output = duct::cmd("gh", args)
+        .stdout_null().stderr_null()
+        .unchecked().run()?;
+    let output_string = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    let mut release: Release = match serde_json::from_str(&output_string) {
         Ok(r) => r,
         Err(e) => {
-            println!("gh output: {}, error = {}", output, e);
+            println!("gh output: {}, error = {}", output_string, e);
             return Err(anyhow::anyhow!("Failed to parse release JSON for {}: {}", repo_name, e));
         }
     };
