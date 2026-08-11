@@ -1,34 +1,34 @@
 [
   {
     "repoName": "tamada/fauxrest",
-    "tagName": "v0.0.2",
-    "name": "Release v0.0.2",
-    "publishedAt": "2026-07-13T01:20:37Z",
-    "url": "https://github.com/tamada/fauxrest/releases/tag/v0.0.2",
+    "tagName": "v0.0.5",
+    "name": "Release v0.0.5",
+    "publishedAt": "2026-08-05T06:24:37Z",
+    "url": "https://github.com/tamada/fauxrest/releases/tag/v0.0.5",
     "assets": [
       {
-        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.2/fauxrest-0.0.2_amd64_darwin.tar.gz",
+        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_amd64_darwin.tar.gz",
         "downloadCount": 0,
-        "name": "fauxrest-0.0.2_amd64_darwin.tar.gz",
-        "size": 2184741
+        "name": "fauxrest-0.0.5_amd64_darwin.tar.gz",
+        "size": 2219158
       },
       {
-        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.2/fauxrest-0.0.2_amd64_linux.tar.gz",
+        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_amd64_linux.tar.gz",
         "downloadCount": 0,
-        "name": "fauxrest-0.0.2_amd64_linux.tar.gz",
-        "size": 2125129
+        "name": "fauxrest-0.0.5_amd64_linux.tar.gz",
+        "size": 2156333
       },
       {
-        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.2/fauxrest-0.0.2_arm64_darwin.tar.gz",
+        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_arm64_darwin.tar.gz",
         "downloadCount": 0,
-        "name": "fauxrest-0.0.2_arm64_darwin.tar.gz",
-        "size": 2094509
+        "name": "fauxrest-0.0.5_arm64_darwin.tar.gz",
+        "size": 2127369
       },
       {
-        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.2/fauxrest-0.0.2_arm64_linux.tar.gz",
+        "url": "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_arm64_linux.tar.gz",
         "downloadCount": 0,
-        "name": "fauxrest-0.0.2_arm64_linux.tar.gz",
-        "size": 1961398
+        "name": "fauxrest-0.0.5_arm64_linux.tar.gz",
+        "size": 1990864
       }
     ]
   },
@@ -133,67 +133,67 @@
   },
   {
     "repoName": "tamada/gixor",
-    "tagName": "v0.4.1",
-    "name": "Release v0.4.1",
-    "publishedAt": "2025-11-05T06:40:31Z",
-    "url": "https://github.com/tamada/gixor/releases/tag/v0.4.1",
+    "tagName": "v0.5.2",
+    "name": "Release v0.5.2",
+    "publishedAt": "2026-08-08T11:44:53Z",
+    "url": "https://github.com/tamada/gixor/releases/tag/v0.5.2",
     "assets": [
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.4.1_darwin_amd64.tar.gz",
-        "size": 3360361
+        "name": "gixor-0.5.2_darwin_amd64.tar.gz",
+        "size": 6342387
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.4.1_darwin_arm64.tar.gz",
-        "size": 3570303
+        "name": "gixor-0.5.2_darwin_arm64.tar.gz",
+        "size": 6097685
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.4.1_linux_amd64.tar.gz",
-        "size": 4269188
+        "name": "gixor-0.5.2_linux_amd64.tar.gz",
+        "size": 6673002
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.4.1/gixor-0.4.1_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.4.1_linux_arm64.tar.gz",
-        "size": 4678816
+        "name": "gixor-0.5.2_linux_arm64.tar.gz",
+        "size": 6692991
       }
     ]
   },
   {
     "repoName": "tamada/totebag",
-    "tagName": "v0.8.11",
-    "name": "Release v0.8.11",
-    "publishedAt": "2026-01-25T05:26:27Z",
-    "url": "https://github.com/tamada/totebag/releases/tag/v0.8.11",
+    "tagName": "v0.8.16",
+    "name": "Release v0.8.16",
+    "publishedAt": "2026-01-25T10:53:27Z",
+    "url": "https://github.com/tamada/totebag/releases/tag/v0.8.16",
     "assets": [
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_darwin_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.8.11_darwin_amd64.tar.gz",
-        "size": 2797235
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.16/totebag-0.8.16_darwin_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.8.16_darwin_amd64.tar.gz",
+        "size": 2801247
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_darwin_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.8.11_darwin_arm64.tar.gz",
-        "size": 2629940
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.16/totebag-0.8.16_darwin_arm64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.8.16_darwin_arm64.tar.gz",
+        "size": 2632465
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_linux_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.8.11_linux_amd64.tar.gz",
-        "size": 3218606
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.16/totebag-0.8.16_linux_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.8.16_linux_amd64.tar.gz",
+        "size": 3217950
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.8.11/totebag-0.8.11_linux_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.8.11_linux_arm64.tar.gz",
-        "size": 2460500
+        "url": "https://github.com/tamada/totebag/releases/download/v0.8.16/totebag-0.8.16_linux_arm64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.8.16_linux_arm64.tar.gz",
+        "size": 2462362
       }
     ]
   },
@@ -238,46 +238,46 @@
   },
   {
     "repoName": "tamada/heatman",
-    "tagName": "v0.1.0",
-    "name": "Release v0.1.0",
-    "publishedAt": "2026-03-26T11:56:49Z",
-    "url": "https://github.com/tamada/heatman/releases/tag/v0.1.0",
+    "tagName": "v0.1.1",
+    "name": "Release v0.1.1",
+    "publishedAt": "2026-06-19T07:09:27Z",
+    "url": "https://github.com/tamada/heatman/releases/tag/v0.1.1",
     "assets": [
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_darwin_amd64.tar.gz",
-        "size": 2756783
+        "name": "heatman-0.1.1_darwin_amd64.tar.gz",
+        "size": 2753791
       },
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_darwin_arm64.tar.gz",
-        "size": 2608671
+        "name": "heatman-0.1.1_darwin_arm64.tar.gz",
+        "size": 2597616
       },
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_linux_amd64.tar.gz",
-        "size": 2632793
+        "name": "heatman-0.1.1_linux_amd64.tar.gz",
+        "size": 2638026
       },
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_linux_arm64.tar.gz",
-        "size": 2416893
+        "name": "heatman-0.1.1_linux_arm64.tar.gz",
+        "size": 2409418
       },
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_windows_amd64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_windows_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_windows_amd64.tar.gz",
-        "size": 5582693
+        "name": "heatman-0.1.1_windows_amd64.tar.gz",
+        "size": 5572313
       },
       {
-        "url": "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_windows_arm64.tar.gz",
+        "url": "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_windows_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "heatman-0.1.0_windows_arm64.tar.gz",
-        "size": 2280214
+        "name": "heatman-0.1.1_windows_arm64.tar.gz",
+        "size": 2277426
       }
     ]
   },
@@ -364,34 +364,34 @@
   },
   {
     "repoName": "tamada/sibling",
-    "tagName": "v2.0.3",
-    "name": "Release v2.0.3",
-    "publishedAt": "2026-01-22T11:49:13Z",
-    "url": "https://github.com/tamada/sibling/releases/tag/v2.0.3",
+    "tagName": "v3.0.0",
+    "name": "Release v3.0.0",
+    "publishedAt": "2026-08-07T04:51:08Z",
+    "url": "https://github.com/tamada/sibling/releases/tag/v3.0.0",
     "assets": [
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_darwin_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "sibling-2.0.3_darwin_amd64.tar.gz",
-        "size": 1012763
+        "url": "https://github.com/tamada/sibling/releases/download/v3.0.0/sibling-3.0.0_darwin_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-3.0.0_darwin_amd64.tar.gz",
+        "size": 977322
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_darwin_arm64.tar.gz",
-        "downloadCount": 1,
-        "name": "sibling-2.0.3_darwin_arm64.tar.gz",
-        "size": 931895
+        "url": "https://github.com/tamada/sibling/releases/download/v3.0.0/sibling-3.0.0_darwin_arm64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-3.0.0_darwin_arm64.tar.gz",
+        "size": 913348
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_linux_amd64.tar.gz",
-        "downloadCount": 1,
-        "name": "sibling-2.0.3_linux_amd64.tar.gz",
-        "size": 1117605
+        "url": "https://github.com/tamada/sibling/releases/download/v3.0.0/sibling-3.0.0_linux_amd64.tar.gz",
+        "downloadCount": 0,
+        "name": "sibling-3.0.0_linux_amd64.tar.gz",
+        "size": 1100913
       },
       {
-        "url": "https://github.com/tamada/sibling/releases/download/v2.0.3/sibling-2.0.3_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/sibling/releases/download/v3.0.0/sibling-3.0.0_linux_arm64.tar.gz",
         "downloadCount": 1,
-        "name": "sibling-2.0.3_linux_arm64.tar.gz",
-        "size": 1029435
+        "name": "sibling-3.0.0_linux_arm64.tar.gz",
+        "size": 1037453
       }
     ]
   },

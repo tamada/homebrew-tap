@@ -11,22 +11,30 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
+  - **Formula:** `tamada/tap/gixor`
+  - **Description:** Git Ignore Management System for Multiple Repositories.
+  - **Releases:** v0.5.2 (2026-08-08)
+- [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
+  - **Formula:** `tamada/tap/sibling`
+  - **Description:** get the next/previous sibling directory name.
+  - **Releases:** v3.0.0 (2026-08-07)
 - [fauxrest](https://github.com/tamada/fauxrest)([:spider_web:](https://tamada.github.io/fauxrest))
   - **Formula:** `tamada/tap/fauxrest`
   - **Description:** Pseudo-REST static API generator
-  - **Releases:** v0.0.4 (2026-08-01)
+  - **Releases:** v0.0.5 (2026-08-05)
 - [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
   - **Formula:** `tamada/tap/oinkie`
   - **Description:** The software birthmark toolkit for real-world executables
   - **Releases:** v0.2.1 (2026-06-25)
+- [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
+  - **Formula:** `tamada/tap/heatman`
+  - **Description:** Create heat map image from given csv file
+  - **Releases:** v0.1.1 (2026-06-19)
 - [lis](https://github.com/tamada/lis)([:spider_web:](https://tamada.github.io/lis))
   - **Formula:** `tamada/tap/lis`
   - **Description:** Minimal and alternative ls implementation in Rust.
   - **Releases:** v0.0.11 (2026-06-19)
-- [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
-  - **Formula:** `tamada/tap/heatman`
-  - **Description:** Create heat map image from given csv file
-  - **Releases:** v0.1.0 (2026-03-26)
 - [spellout](https://github.com/tamada/spellout)([:spider_web:](https://tamada.github.io/spellout/))
   - **Formula:** `tamada/tap/spellout`
   - **Description:** A phonetic code encoder/decoder written in Rust.
@@ -34,15 +42,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:** v0.8.11 (2026-01-25)
-- [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
-  - **Formula:** `tamada/tap/sibling`
-  - **Description:** get the next/previous sibling directory name.
-  - **Releases:** v2.0.3 (2026-01-22)
-- [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
-  - **Formula:** `tamada/tap/gixor`
-  - **Description:** Git Ignore Management System for Multiple Repositories.
-  - **Releases:** v0.4.1 (2025-11-05)
+  - **Releases:** v0.8.16 (2026-01-25)
 - [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use

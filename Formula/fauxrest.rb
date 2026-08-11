@@ -1,4 +1,4 @@
-VERSION="0.0.4"
+VERSION="0.0.5"
 
 class Fauxrest < Formula
   desc "Pseudo-REST static API generator"
@@ -9,20 +9,20 @@ class Fauxrest < Formula
   version VERSION
   license "MIT"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/fauxrest/releases/download/v0.0.4/fauxrest-0.0.4_amd64_darwin.tar.gz"
-    sha256 "56a14411e4ad5298dcee47e2a1ddb3c3e4bfe92285eeb901ad6479e2f8994b49"
+    url "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_amd64_darwin.tar.gz"
+    sha256 "cd8c31540c06b1beb3c77989a3e0afed61580a69cc0214b13d9b013975d9aecf"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/fauxrest/releases/download/v0.0.4/fauxrest-0.0.4_amd64_linux.tar.gz"
-    sha256 "509491451fd65b4105fe413f792f20774258f52e5aceef0ba65711b518bc2065"
+    url "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_amd64_linux.tar.gz"
+    sha256 "5e709b642524e3085d214897457d26cc047c79e1bffaecedc9177eb792b2a8d3"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/fauxrest/releases/download/v0.0.4/fauxrest-0.0.4_arm64_darwin.tar.gz"
-    sha256 "790c09a91a2bc40d7e36b2d1a62e5ea1beea4f64f79f16620842688465f0435a"
+    url "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_arm64_darwin.tar.gz"
+    sha256 "b0bd2ebf2d15ab0b34afc9c3044ef078e6633bf3682dcf5691db75691405ea55"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/fauxrest/releases/download/v0.0.4/fauxrest-0.0.4_arm64_linux.tar.gz"
-    sha256 "438d83ca61647c9105602c0095f5ef6641d7dc5938ffe5daa83b9e61aeb8c340"
+    url "https://github.com/tamada/fauxrest/releases/download/v0.0.5/fauxrest-0.0.5_arm64_linux.tar.gz"
+    sha256 "41fd7b5f23ab7972abe25de028791c056f3e37cb19846d4e25737e64e04a7a56"
   end
 
   def install

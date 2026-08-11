@@ -1,4 +1,4 @@
-VERSION="0.1.0"
+VERSION="0.1.1"
 
 class Heatman < Formula
   desc "Creating heat map from given csv file."
@@ -9,28 +9,28 @@ class Heatman < Formula
   version VERSION
   license "MIT License"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_darwin_amd64.tar.gz"
-    sha256 "3907279f0e7a78f90b33429bb1fc35762118e6f88c410308dee502f8dd8c2457"
+    url "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_darwin_amd64.tar.gz"
+    sha256 "d5d79d575b02c70acd7cccc67aefe51aabe40f277d5124b39f150939b330e190"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_darwin_arm64.tar.gz"
-    sha256 "3f04be1c33b1334fa30c131e7828339d70dad7a52c9ed1c4e520e1e9072ae1a8"
+    url "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_darwin_arm64.tar.gz"
+    sha256 "b4e33e9d4477ee66fc0b4aab8c685bf809cf0c66203b6381fc149659bd1add93"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_linux_amd64.tar.gz"
-    sha256 "6b1332775699ca7f25690aca715b2dc0a593a17d03900b7ed102b79921225285"
+    url "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_linux_amd64.tar.gz"
+    sha256 "fee7d8728fcecc1bb1c9f99ccce526a54cf19ae00925059820f680f9b68f0d1b"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/heatman/releases/download/v0.1.0/heatman-0.1.0_linux_arm64.tar.gz"
-    sha256 "337dc9af69ed4b48e101f55e7cf822fba678fcc92a31d14fac68e3dfbbbc39fc"
+    url "https://github.com/tamada/heatman/releases/download/v0.1.1/heatman-0.1.1_linux_arm64.tar.gz"
+    sha256 "8c735b54412640137ff2c356f8cb615aaf85758ff1c90c18c9a80ea28214d469"
   end
 
   def install
     bin.install "heatman"
 
-    bash_completion.install "assets/completions/bash/heatman" if build.with? "completions"
-    zsh_completion.install  "assets/completions/zsh/_heatman" if build.with? "completions"
-    fish_completion.install "assets/completions/fish/heatman" if build.with? "completions"
+    bash_completion.install "completions/bash/heatman" if build.with? "completions"
+    zsh_completion.install  "completions/zsh/_heatman" if build.with? "completions"
+    fish_completion.install "completions/fish/heatman" if build.with? "completions"
   end
 
   test do
