@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
+  - **Formula:** `tamada/tap/oinkie`
+  - **Description:** The software birthmark toolkit for real-world executables
+  - **Releases:** v0.3.0 (2026-08-14)
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
   - **Description:** Git Ignore Management System for Multiple Repositories.
@@ -23,10 +27,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/fauxrest`
   - **Description:** Pseudo-REST static API generator
   - **Releases:** v0.0.5 (2026-08-05)
-- [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
-  - **Formula:** `tamada/tap/oinkie`
-  - **Description:** The software birthmark toolkit for real-world executables
-  - **Releases:** v0.2.1 (2026-06-25)
 - [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
   - **Formula:** `tamada/tap/heatman`
   - **Description:** Create heat map image from given csv file
