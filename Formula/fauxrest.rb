@@ -30,7 +30,7 @@ class Fauxrest < Formula
 
     bash_completion.install "completions/bash/fauxrest" if build.with? "completions"
     zsh_completion.install  "completions/zsh/_fauxrest" if build.with? "completions"
-    fish_completion.install "completions/fish/fauxrest" if build.with? "completions"
+    fish_completion.install "completions/fish/fauxrest.fish" if build.with? "completions"
   end
 
   test do

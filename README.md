@@ -11,6 +11,14 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
+  - **Formula:** `tamada/tap/oinkie`
+  - **Description:** The software birthmark toolkit for real-world executables
+  - **Releases:** v0.3.0 (2026-08-14)
+- [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
+  - **Formula:** `tamada/tap/totebag`
+  - **Description:** A tool for archiving files and directories and extracting several archive formats.
+  - **Releases:** v0.9.0 (2026-08-12)
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
   - **Description:** Git Ignore Management System for Multiple Repositories.
@@ -23,10 +31,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/fauxrest`
   - **Description:** Pseudo-REST static API generator
   - **Releases:** v0.0.5 (2026-08-05)
-- [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
-  - **Formula:** `tamada/tap/oinkie`
-  - **Description:** The software birthmark toolkit for real-world executables
-  - **Releases:** v0.2.1 (2026-06-25)
 - [heatman](https://github.com/tamada/heatman)([:spider_web:](https://tamada.github.io/heatman/))
   - **Formula:** `tamada/tap/heatman`
   - **Description:** Create heat map image from given csv file
@@ -39,10 +43,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/spellout`
   - **Description:** A phonetic code encoder/decoder written in Rust.
   - **Releases:** v0.1.1 (2026-02-20)
-- [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
-  - **Formula:** `tamada/tap/totebag`
-  - **Description:** A tool for archiving files and directories and extracting several archive formats.
-  - **Releases:** v0.8.16 (2026-01-25)
 - [btmeister](https://github.com/tamada/btmeister)([:spider_web:](https://tamada.github.io/btmeister/))
   - **Formula:** `tamada/tap/btmeister`
   - **Description:** Detecting the build tools in use
