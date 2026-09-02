@@ -1,4 +1,4 @@
-VERSION="0.3.0"
+VERSION="0.4.0"
 
 class Oinkie < Formula
   desc "The software birthmark toolkit for real-world executables"
@@ -9,20 +9,20 @@ class Oinkie < Formula
   version VERSION
   license "MIT"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_amd64_darwin.tar.gz"
-    sha256 "c57a3f50b3d88b85c5fcba5a1563aaf40da99ea0033736fbeaa15833127a31be"
+    url "https://github.com/tamada/oinkie/releases/download/v0.4.0/oinkie-0.4.0_amd64_darwin.tar.gz"
+    sha256 "8eaa9443991801506752e8d0ca056df491d45304eda4e5898cee107a9baaf61a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_amd64_linux.tar.gz"
-    sha256 "e01086dde8b2bbf839f849e31f7ffeb8976a15252719ada05f7593121c6d2a9c"
+    url "https://github.com/tamada/oinkie/releases/download/v0.4.0/oinkie-0.4.0_amd64_linux.tar.gz"
+    sha256 "de89df2eb3f2b1b6a97db2c21000b0033a19a2d539c22f4634244b6f52d4e82a"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_arm64_darwin.tar.gz"
-    sha256 "a51282577196def7c97b8bbd997de631a6dced0a7317cdc9564e83f305a5b2b6"
+    url "https://github.com/tamada/oinkie/releases/download/v0.4.0/oinkie-0.4.0_arm64_darwin.tar.gz"
+    sha256 "6cf1d326311cf8233888a320313422f40960d9876214cdd53eab37a4c6a9db2b"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_arm64_linux.tar.gz"
-    sha256 "8a8d8c8fcd3494db37b89d4b9326be8830dcf3f2d3e5d5da2e6622faa5acd175"
+    url "https://github.com/tamada/oinkie/releases/download/v0.4.0/oinkie-0.4.0_arm64_linux.tar.gz"
+    sha256 "ef9e21de03932fdc25f788d34254848ee0f1605520afc073f51c8f5475cb3f1f"
   end
 
   def install
@@ -30,7 +30,7 @@ class Oinkie < Formula
 
     bash_completion.install "completions/bash/oinkie" if build.with? "completions"
     zsh_completion.install  "completions/zsh/_oinkie" if build.with? "completions"
-    fish_completion.install "completions/fish/oinkie" if build.with? "completions"
+    fish_completion.install "completions/fish/oinkie.fish" if build.with? "completions"
   end
 
   test do
