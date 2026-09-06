@@ -14,7 +14,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
   - **Formula:** `tamada/tap/oinkie`
   - **Description:** The software birthmark toolkit for real-world executables
-  - **Releases:** v0.4.0 (2026-09-02)
+  - **Releases:** v0.5.0 (2026-09-06)
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
