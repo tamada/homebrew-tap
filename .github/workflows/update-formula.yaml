@@ -1,4 +1,7 @@
 name: Update formula
+# The run-name lets tamada/api identify the run it has dispatched.
+# When changing this format, update deploy.yml of tamada/api as well.
+run-name: Update formula for ${{ inputs.repo }}
 on:
   workflow_dispatch:
     inputs:
