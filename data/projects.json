@@ -1,6 +1,13 @@
 [
     {
         "owner": "tamada",
+        "name": "mosty",
+        "description": "MOu Seiseki Teisei ha Yadayo!",
+        "license": "MIT",
+        "url": "https://tamada.github.io/mosty"
+    },
+    {
+        "owner": "tamada",
         "name": "fauxrest",
         "description": "Pseudo-REST static API generator",
         "license": "MIT",
