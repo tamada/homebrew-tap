@@ -1,4 +1,4 @@
-VERSION="0.7.0"
+VERSION="0.8.0"
 
 class Oinkie < Formula
   desc "The software birthmark toolkit for real-world executables"
@@ -9,20 +9,20 @@ class Oinkie < Formula
   version VERSION
   license "MIT"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/oinkie/releases/download/v0.7.0/oinkie-0.7.0_amd64_darwin.tar.gz"
-    sha256 "93f4bbf40c2e4a52b0f70362c3bf2057e7ccecb691f8217efb5ce6944e0c1f6d"
+    url "https://github.com/tamada/oinkie/releases/download/v0.8.0/oinkie-0.8.0_amd64_darwin.tar.gz"
+    sha256 "a8a1ed7a887ff1a1b6431faa0c5b77d5fca35674562e0ea185840886474dc61a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/oinkie/releases/download/v0.7.0/oinkie-0.7.0_amd64_linux.tar.gz"
-    sha256 "c63d4d2cc16739e8425d0664856d186bacff3acb6a552763850492b8c5b31236"
+    url "https://github.com/tamada/oinkie/releases/download/v0.8.0/oinkie-0.8.0_amd64_linux.tar.gz"
+    sha256 "4d8c466dfe9f64ae49955a3a6422aca86b7e48f416362c047ed0ece2c26b64d9"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/oinkie/releases/download/v0.7.0/oinkie-0.7.0_arm64_darwin.tar.gz"
-    sha256 "763f647913867c6d2c58022e2b6f92fdcce404e56141f6abf730f3ecde01a247"
+    url "https://github.com/tamada/oinkie/releases/download/v0.8.0/oinkie-0.8.0_arm64_darwin.tar.gz"
+    sha256 "56e13ea3031fad163890f053ed6cb0bf999755a5bd90cf0964113ba710844c8e"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/oinkie/releases/download/v0.7.0/oinkie-0.7.0_arm64_linux.tar.gz"
-    sha256 "5d03077cb1c502fc8901162d970ce5ec44b7d5dbcb176b28e2a6f4967ad3a478"
+    url "https://github.com/tamada/oinkie/releases/download/v0.8.0/oinkie-0.8.0_arm64_linux.tar.gz"
+    sha256 "d0d912a7163a38846a3c90f348ae4cd98019ff760d0b9d305f0daa0d675b7442"
   end
 
   def install
