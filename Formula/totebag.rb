@@ -1,4 +1,4 @@
-VERSION="0.9.0"
+VERSION="0.10.0"
 
 class Totebag < Formula
   desc "A tool for archiving files and directories and extracting several archive formats."
@@ -9,20 +9,20 @@ class Totebag < Formula
   version VERSION
   license "MIT license"
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_darwin_amd64.tar.gz"
-    sha256 "ba6bf5b4d45eedb924f322501e97e29ec96a845b1603cb407e0fded30b808b83"
+    url "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_darwin_amd64.tar.gz"
+    sha256 "f453110e4f5b4cebcbb7ee7ad8932968ac316cde10f3659ecca5911159b04d5e"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_darwin_arm64.tar.gz"
-    sha256 "940e1dde4bcc1603656ccdb5c4d5f2dc6111539083dc323ceec868570a1ac9a9"
+    url "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_darwin_arm64.tar.gz"
+    sha256 "27600366982647b06758717e4d8ee84c5b533b883f266533f3da2166a343d048"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_linux_amd64.tar.gz"
-    sha256 "1e3485b2cad02d5b02e9ebe2ed48889bfee1eb198bd22c73bacaa66248462f03"
+    url "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_linux_amd64.tar.gz"
+    sha256 "adf2a225bf5bf797d35eca397fca1926dd45e6a0aeb1aee3507d382537d3c81c"
   end
   if OS.linux? && Hardware::CPU.arm?
-    url "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_linux_arm64.tar.gz"
-    sha256 "7d174f1df71adf8c23c7dffed5d77b8836353037627c8ad2faa965dd2c918360"
+    url "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_linux_arm64.tar.gz"
+    sha256 "74cde22955d3227ff7b598a5ff2e3ee24329203d2bfddc6802d888ef37dfe69b"
   end
 
   def install
