@@ -38,8 +38,9 @@ struct Project {
     owner: String,
     name: String,
     description: String,
-    url: String,
     license: String,
+    url: String,
+    #[serde(rename = "ignore-fetch-release", skip_serializing_if = "Option::is_none")]
     ignore_fetch_release: Option<bool>,
 }
 
@@ -54,6 +55,20 @@ impl Project {
 
     pub fn repo_name(&self) -> String {
         format!("{}/{}", self.owner, self.name)
+    }
+
+    /// Base name of the template file and of the generated formula.
+    /// It is the project name, except for `9rules`: a Ruby class name cannot
+    /// start with a digit, so that formula has been `ninerules` from the start.
+    pub fn formula_name(&self) -> String {
+        match self.name.as_str() {
+            "9rules" => String::from("ninerules"),
+            name => String::from(name),
+        }
+    }
+
+    pub fn template_name(&self) -> String {
+        format!("{}.template", self.formula_name())
     }
 }
 
@@ -187,8 +202,8 @@ fn update_formula<'a>(artifact: &'a Artifact, tera: &Tera, config: &cli::Config)
         context.insert("release", release);
     };
 
-    let template_name = format!("{}.template", artifact.project.name);
-    let to = format!("Formula/{}.rb", artifact.project.name);
+    let template_name = artifact.project.template_name();
+    let to = format!("Formula/{}.rb", artifact.project.formula_name());
     let rendered = tera.render(&template_name, &context)?;
     if config.dry_run {
         if config.is_show_target(cli::ShowMode::Recipe) {
@@ -225,6 +240,24 @@ fn update_readme(artifacts_orig: &[Artifact], tera: &Tera, config: &cli::Config)
         }
     } else {
         fs::write("README.md", rendered)?;
+    }
+    Ok(())
+}
+
+fn write_projects<P: AsRef<Path>>(path: P, projects: &[Project], config: &cli::Config) -> Result<()> {
+    log::info!("Writing projects to {}", path.as_ref().display());
+    // data/projects.json is maintained by hand, and is indented by four spaces.
+    let mut buffer = Vec::new();
+    let formatter = serde_json::ser::PrettyFormatter::with_indent(b"    ");
+    let mut serializer = serde_json::Serializer::with_formatter(&mut buffer, formatter);
+    projects.serialize(&mut serializer)?;
+    let content = format!("{}\n", String::from_utf8(buffer)?);
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::ProjectJson) {
+            println!("----- dry-run mode: {} -----\n{}", path.as_ref().display(), content);
+        }
+    } else {
+        fs::write(path, content)?;
     }
     Ok(())
 }
@@ -357,13 +390,55 @@ fn make_to_class_name(value: &Value, _args: &HashMap<String, Value>) -> tera::Re
     }
 }
 
+/// The Homebrew condition selecting the asset of the given name.
+/// Homebrew runs on macOS and on Linux only: it has no `OS.windows?`, and on
+/// Windows it is used through WSL, where it is Linux and takes the Linux asset.
+/// An asset of any other platform or architecture therefore has no condition,
+/// and does not belong in a formula.
+fn os_condition_of(asset_name: &str) -> Option<&'static str> {
+    const CONDITIONS: [(&str, &str, &str); 4] = [
+        ("darwin", "amd64", "OS.mac? && Hardware::CPU.intel?"),
+        ("darwin", "arm64", "OS.mac? && Hardware::CPU.arm?"),
+        ("linux", "amd64", "OS.linux? && Hardware::CPU.intel?"),
+        ("linux", "arm64", "OS.linux? && Hardware::CPU.arm?"),
+    ];
+    CONDITIONS.iter()
+        .find(|(os, arch, _)| asset_name.contains(os) && asset_name.contains(arch))
+        .map(|(_, _, condition)| *condition)
+}
+
+/// Keeps the assets Homebrew can install, each with its `condition` added,
+/// so that a template renders them without picking the platform apart itself.
+fn make_supported_assets(value: &Value, _args: &HashMap<String, Value>) -> tera::Result<Value> {
+    let assets = value.as_array()
+        .ok_or_else(|| tera::Error::msg("Expected an array of assets for supported_assets filter"))?;
+    let mut results = vec![];
+    for asset in assets {
+        let name = asset.get("name").and_then(|name| name.as_str())
+            .ok_or_else(|| tera::Error::msg("Expected a string name in each asset"))?;
+        if let Some(condition) = os_condition_of(name) {
+            let mut asset = asset.clone();
+            let object = asset.as_object_mut()
+                .ok_or_else(|| tera::Error::msg("Expected an object in each asset"))?;
+            object.insert(String::from("condition"), Value::String(String::from(condition)));
+            results.push(asset);
+        } else {
+            log::info!("{}: no platform Homebrew supports, skipped.", name);
+        }
+    }
+    Ok(Value::Array(results))
+}
+
 fn find_release<'a>(repo_name: &str, releases: &'a [Release]) -> Result<&'a Release> {
     releases.iter().find(|r| r.repo_name == repo_name)
         .ok_or_else(|| anyhow::anyhow!("Release not found for repository: {}", repo_name))
 }
 
 fn read_artifacts() -> Result<Vec<Artifact>> {
-    let projects = read_projects("data/projects.json")?;
+    artifacts_of(read_projects("data/projects.json")?)
+}
+
+fn artifacts_of(projects: Vec<Project>) -> Result<Vec<Artifact>> {
     let releases = read_releases("data/releases.json")?;
 
     let r = projects.into_iter()
@@ -425,6 +500,7 @@ fn init_tera() -> Result<Tera> {
     tera.register_filter("format_date", make_format_date);
     tera.register_filter("to_version", make_to_version);
     tera.register_filter("to_class_name", make_to_class_name);
+    tera.register_filter("supported_assets", make_supported_assets);
     Ok(tera)
 }
 
@@ -446,27 +522,70 @@ fn update_recipes(names: Vec<String>, projects: &[Artifact], tera: &mut Tera, co
     }
 }
 
-fn _register_artifacts(mut artifacts: Vec<Artifact>, names: Vec<String>) -> Vec<Artifact> {
-    let r = names.into_iter()
-        .filter_map(|name| match github::_owner_repo_to_project(name.clone()) {
-            Ok(project) => Some(Artifact::new(project)),
-            Err(e) => {
-                log::warn!("Skipping registration for '{}': {}", name, e);
-                None
-            },
-        })
-        .collect::<Vec<_>>();
-    artifacts.extend(r);
-    artifacts
+/// Builds the projects to be newly registered by asking GitHub about them.
+/// The names already found in `projects` are skipped.
+fn new_projects(names: &[String], projects: &[Project]) -> Result<Vec<Project>> {
+    let mut results = vec![];
+    let mut errs = vec![];
+    for name in names {
+        if projects.iter().any(|p| p.is_match_repo(name)) {
+            log::info!("{}: already registered in data/projects.json", name);
+            continue;
+        }
+        log::info!("Fetching the project metadata of {}", name);
+        match github::owner_repo_to_project(name.clone()) {
+            Ok(project) => results.push(project),
+            Err(e) => errs.push(e),
+        }
+    }
+    errs_vec_to_result(errs, results)
 }
 
-fn perform_register(_names: Vec<String>, _config: cli::Config, mut _tera: Tera) -> Result<()> {
-    unimplemented!()
+/// Creates the template of the given project from `.templates/template.template`,
+/// and registers it in `tera` so that the following update can render it even in
+/// the dry run mode, where nothing is written out.
+fn create_template(project: &Project, tera: &mut Tera, config: &cli::Config) -> Result<()> {
+    let template_name = project.template_name();
+    let to = format!(".templates/{}", template_name);
+    if Path::new(&to).exists() {
+        log::info!("{}: already exists, keeping it as is.", to);
+        return Ok(());
+    }
+    log::info!("Creating {} from .templates/template.template", to);
+    let mut context = Context::new();
+    context.insert("project", project);
+    let rendered = tera.render("template.template", &context)?;
+    if config.dry_run {
+        if config.is_show_target(cli::ShowMode::Recipe) {
+            println!("----- dry-run mode: {} -----\n{}", to, rendered);
+        }
+    } else {
+        fs::write(&to, &rendered)?;
+    }
+    tera.add_raw_template(&template_name, &rendered)?;
+    Ok(())
 }
 
-fn perform_update(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
-    let artifacts = read_artifacts()?;
+fn perform_register(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
+    let mut projects = read_projects("data/projects.json")?;
+    let registered = new_projects(&names, &projects)?;
+    for project in registered.iter() {
+        create_template(project, &mut tera, &config)?;
+    }
+    if registered.is_empty() {
+        log::info!("No project to register.");
+    } else {
+        projects.extend(registered);
+        write_projects("data/projects.json", &projects, &config)?;
+    }
+    update_artifacts(names, artifacts_of(projects)?, config, tera)
+}
 
+fn perform_update(names: Vec<String>, config: cli::Config, tera: Tera) -> Result<()> {
+    update_artifacts(names, read_artifacts()?, config, tera)
+}
+
+fn update_artifacts(names: Vec<String>, artifacts: Vec<Artifact>, config: cli::Config, mut tera: Tera) -> Result<()> {
     let new_artifact = fetch_new_releases(&artifacts, &names, &config)?;
     let mut updated = vec![];
     for artifact in artifacts {
@@ -523,6 +642,71 @@ mod tests {
         assert_eq!(projects.len(), 1);
         assert_eq!(projects[0].owner, "test_owner");
         assert_eq!(projects[0].name, "test_repo");
+        assert_eq!(projects[0].ignore_fetch_release, Some(false));
+        Ok(())
+    }
+
+    fn project_of(name: &str) -> Project {
+        Project {
+            owner: String::from("tamada"),
+            name: String::from(name),
+            description: String::new(),
+            license: String::new(),
+            url: String::new(),
+            ignore_fetch_release: None,
+        }
+    }
+
+    #[test]
+    fn test_formula_name() {
+        assert_eq!(project_of("totebag").formula_name(), "totebag");
+        assert_eq!(project_of("totebag").template_name(), "totebag.template");
+        // 9rules is the exception: its formula cannot be named after a digit.
+        assert_eq!(project_of("9rules").formula_name(), "ninerules");
+        assert_eq!(project_of("9rules").template_name(), "ninerules.template");
+    }
+
+    #[test]
+    fn test_os_condition_of() {
+        // The two naming styles in use, and the '-' separated one of peripherals.
+        assert_eq!(os_condition_of("lis-0.0.11_amd64_darwin.tar.gz"), Some("OS.mac? && Hardware::CPU.intel?"));
+        assert_eq!(os_condition_of("gixor-0.5.2_darwin_arm64.tar.gz"), Some("OS.mac? && Hardware::CPU.arm?"));
+        assert_eq!(os_condition_of("peripherals-1.0.1-linux-amd64.tar.gz"), Some("OS.linux? && Hardware::CPU.intel?"));
+        assert_eq!(os_condition_of("heatman-0.1.1_linux_arm64.tar.gz"), Some("OS.linux? && Hardware::CPU.arm?"));
+        // Homebrew has no OS.windows?, and does not serve 32bit or sources.
+        assert_eq!(os_condition_of("oinkie-0.8.1_amd64_windows.zip"), None);
+        assert_eq!(os_condition_of("wildcat-1.2.0_linux_386.tar.gz"), None);
+        assert_eq!(os_condition_of("9rules-1.1.1-src.zip"), None);
+    }
+
+    #[test]
+    fn test_supported_assets_filter_keeps_the_order() -> Result<()> {
+        let assets = serde_json::json!([
+            { "name": "x_darwin_amd64.tar.gz", "url": "https://example.com/1" },
+            { "name": "x_windows_amd64.zip", "url": "https://example.com/2" },
+            { "name": "x_linux_arm64.tar.gz", "url": "https://example.com/3" },
+        ]);
+        let filtered = make_supported_assets(&assets, &HashMap::new())
+            .map_err(|e| anyhow::anyhow!("{}", e))?;
+        let filtered = filtered.as_array().unwrap();
+        assert_eq!(filtered.len(), 2);
+        assert_eq!(filtered[0]["condition"], "OS.mac? && Hardware::CPU.intel?");
+        assert_eq!(filtered[0]["url"], "https://example.com/1");
+        assert_eq!(filtered[1]["condition"], "OS.linux? && Hardware::CPU.arm?");
+        Ok(())
+    }
+
+    #[test]
+    fn test_write_projects_keeps_the_hand_written_shape() -> Result<()> {
+        let projects = vec![project_of("mosty")];
+        let mut buffer = Vec::new();
+        let formatter = serde_json::ser::PrettyFormatter::with_indent(b"    ");
+        let mut serializer = serde_json::Serializer::with_formatter(&mut buffer, formatter);
+        projects.serialize(&mut serializer)?;
+        let content = String::from_utf8(buffer)?;
+        assert!(content.contains("\n        \"owner\": \"tamada\""));
+        // ignore-fetch-release is omitted while it is unset.
+        assert!(!content.contains("ignore"));
         Ok(())
     }
 
