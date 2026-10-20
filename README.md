@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [pelicode](https://github.com/tamada/pelicode)([:spider_web:](https://tamada.github.io/pelicode/))
+  - **Formula:** `tamada/tap/pelicode`
+  - **Description:** Know where your code came from.
+  - **Releases:** v0.1.0 (2026-10-19)
 - [totebag](https://github.com/tamada/totebag)([:spider_web:](https://tamada.github.io/totebag/))
   - **Formula:** `tamada/tap/totebag`
   - **Description:** A tool for archiving files and directories and extracting several archive formats.
@@ -19,6 +23,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/oinkie`
   - **Description:** The software birthmark toolkit for real-world executables
   - **Releases:** v0.8.1 (2026-10-08)
+- [mosty](https://github.com/tamada/mosty)([:spider_web:](https://tamada.github.io/mosty))
+  - **Formula:** `tamada/tap/mosty`
+  - **Description:** MOu Seiseki Teisei ha Yadayo!
+  - **Releases:** v0.1.0 (2026-09-25)
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
   - **Description:** Git Ignore Management System for Multiple Repositories.
@@ -63,10 +71,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/9rules`
   - **Description:** Checking tool of small object programming for the Java language.
   - **Releases:** v1.1.1 (2020-09-23)
-- [mosty](https://github.com/tamada/mosty)([:spider_web:](https://tamada.github.io/mosty))
-  - **Formula:** `tamada/tap/mosty`
-  - **Description:** MOu Seiseki Teisei ha Yadayo!
-  - **Releases:** 
 
 ## Archived products
 

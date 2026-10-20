@@ -1,0 +1,23 @@
+VERSION="{{ release.tagName | to_version }}"
+
+class Pelicode < Formula
+  desc "{{ project.description }}"
+  homepage "https://github.com/{{ project.owner }}/{{ project.name }}"
+  version VERSION
+  license "{{ project.license }}"
+
+  {%- for asset in release.assets | supported_assets %}
+  if {{ asset.condition }}
+    url "{{ asset.url }}"
+    sha256 "{{ asset.url | sha256 }}"
+  end
+  {%- endfor %}
+
+  def install
+    bin.install "{{ project.name }}"
+  end
+
+  test do
+    system "#{bin}/{{ project.name }} --version"
+  end
+end

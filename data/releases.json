@@ -1,5 +1,38 @@
 [
   {
+    "repoName": "tamada/mosty",
+    "tagName": "v0.1.0",
+    "name": "Release v0.1.0",
+    "publishedAt": "2026-09-25T11:06:26Z",
+    "url": "https://github.com/tamada/mosty/releases/tag/v0.1.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/mosty/releases/download/v0.1.0/mosty-0.1.0_amd64_darwin.tar.gz",
+        "downloadCount": 1,
+        "name": "mosty-0.1.0_amd64_darwin.tar.gz",
+        "size": 1569748
+      },
+      {
+        "url": "https://github.com/tamada/mosty/releases/download/v0.1.0/mosty-0.1.0_amd64_linux.tar.gz",
+        "downloadCount": 1,
+        "name": "mosty-0.1.0_amd64_linux.tar.gz",
+        "size": 1517053
+      },
+      {
+        "url": "https://github.com/tamada/mosty/releases/download/v0.1.0/mosty-0.1.0_arm64_darwin.tar.gz",
+        "downloadCount": 1,
+        "name": "mosty-0.1.0_arm64_darwin.tar.gz",
+        "size": 1510028
+      },
+      {
+        "url": "https://github.com/tamada/mosty/releases/download/v0.1.0/mosty-0.1.0_arm64_linux.tar.gz",
+        "downloadCount": 1,
+        "name": "mosty-0.1.0_arm64_linux.tar.gz",
+        "size": 1417111
+      }
+    ]
+  },
+  {
     "repoName": "tamada/fauxrest",
     "tagName": "v0.0.5",
     "name": "Release v0.0.5",
@@ -449,6 +482,51 @@
         "downloadCount": 5,
         "name": "wildcat-1.2.0_windows_amd64.tar.gz",
         "size": 11634703
+      }
+    ]
+  },
+  {
+    "repoName": "tamada/pelicode",
+    "tagName": "v0.1.0",
+    "name": "Release v0.1.0",
+    "publishedAt": "2026-10-19T01:08:48Z",
+    "url": "https://github.com/tamada/pelicode/releases/tag/v0.1.0",
+    "assets": [
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_darwin_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "pelicode-0.1.0_darwin_amd64.tar.gz",
+        "size": 5812146
+      },
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_darwin_arm64.tar.gz",
+        "downloadCount": 2,
+        "name": "pelicode-0.1.0_darwin_arm64.tar.gz",
+        "size": 5539801
+      },
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_linux_amd64.tar.gz",
+        "downloadCount": 2,
+        "name": "pelicode-0.1.0_linux_amd64.tar.gz",
+        "size": 6164394
+      },
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_linux_arm64.tar.gz",
+        "downloadCount": 1,
+        "name": "pelicode-0.1.0_linux_arm64.tar.gz",
+        "size": 6029078
+      },
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_windows_amd64.zip",
+        "downloadCount": 1,
+        "name": "pelicode-0.1.0_windows_amd64.zip",
+        "size": 5563440
+      },
+      {
+        "url": "https://github.com/tamada/pelicode/releases/download/v0.1.0/pelicode-0.1.0_windows_arm64.zip",
+        "downloadCount": 1,
+        "name": "pelicode-0.1.0_windows_arm64.zip",
+        "size": 5211942
       }
     ]
   }
