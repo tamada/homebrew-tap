@@ -595,15 +595,17 @@ fn update_artifacts(names: Vec<String>, artifacts: Vec<Artifact>, config: cli::C
         }
     }
 
-    match update_recipes(names, &updated, &mut tera, &config) {
-        Ok(_) => {
-            update_readme(&updated, &tera, &config)?;
-            let updated_releases: Vec<Release> = updated.iter().filter_map(|a| a.release.clone()).collect();
-            write_releases("data/releases.json", &updated_releases, &config)?;
-            Ok(())
-        },
-        Err(e) => Err(e),
+    // The releases are recorded whether or not the recipes are rewritten, but
+    // only once the recipes that were asked for did get written: recording a
+    // release whose recipe failed to render would hide it from the next run.
+    if config.keep_recipe {
+        log::info!("Keeping the recipes and README.md as they are.");
+    } else {
+        update_recipes(names, &updated, &mut tera, &config)?;
+        update_readme(&updated, &tera, &config)?;
     }
+    let updated_releases: Vec<Release> = updated.iter().filter_map(|a| a.release.clone()).collect();
+    write_releases("data/releases.json", &updated_releases, &config)
 }
 
 fn main() -> Result<()> {
