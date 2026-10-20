@@ -96,5 +96,12 @@
         "description": "Another implementation of wc (word count)",
         "license": "Apache-2.0 License",
         "url": "https://tamada.github.io/wildcat/"
+    },
+    {
+        "owner": "tamada",
+        "name": "pelicode",
+        "description": "Know where your code came from.",
+        "license": "MIT License",
+        "url": "https://tamada.github.io/pelicode/"
     }
 ]

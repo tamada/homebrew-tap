@@ -6,20 +6,8 @@ class Wildcat < Formula
   version VERSION
   license "{{ project.license }}"
 
-  {%- for asset in release.assets %}
-    {%- if "darwin" in asset.name and "amd64" in asset.name %}
-  if OS.mac? && Hardware::CPU.intel?
-    {%- elif "darwin" in asset.name and "arm64" in asset.name %}
-  if OS.mac? && Hardware::CPU.arm?
-    {%- elif "linux" in asset.name and "arm64" in asset.name %}
-  if OS.linux? && Hardware::CPU.arm?
-    {%- elif "windows" in asset.name and "arm64" in asset.name %}
-  if OS.windows? && Hardware::CPU.arm?
-    {%- elif "linux" in asset.name %}
-  if OS.linux? && Hardware::CPU.intel?
-    {%- else %}
-  if OS.windows? && Hardware::CPU.intel?
-    {%- endif %}
+  {%- for asset in release.assets | supported_assets %}
+  if {{ asset.condition }}
     url "{{ asset.url }}"
     sha256 "{{ asset.url | sha256 }}"
   end

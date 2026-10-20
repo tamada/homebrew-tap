@@ -6,7 +6,7 @@ use crate::LogLevel;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 pub(crate) struct Args {
-    #[arg(index=1, value_name = "NAME", help = "Name of the project to update. The name should form 'owner/repo'.")]
+    #[arg(index=1, value_name = "NAME", help = "Name of the project to update. The name forms 'owner/repo', or just 'repo' to use --owner.")]
     pub(crate) names: Vec<String>,
 
     #[arg(short, long, default_value = "warn", help = "Set the logging level.")]
@@ -19,7 +19,10 @@ pub(crate) struct Args {
 impl Args {
     pub(crate) fn init(self) -> Result<(Vec<String>, Config)> {
         init_logger(self.level)?;
-        Ok((self.names, self.config))
+        let names = self.names.iter()
+            .map(|name| self.config.to_repo_name(name))
+            .collect();
+        Ok((names, self.config))
     }
 }
 
@@ -42,11 +45,23 @@ pub(crate) struct Config {
 
     #[arg(long, default_value_t = false, help = "Register the given artifact")]
     pub(crate) register: bool,
+
+    #[arg(long, default_value = "tamada", value_name = "OWNER", help = "Owner assumed for the names given without the 'owner/' part.")]
+    pub(crate) owner: String,
 }
 
 impl Config {
     pub(crate) fn is_show_target(&self, mode: ShowMode) -> bool {
         self.show_mode.contains(&ShowMode::All) || self.show_mode.contains(&mode)
+    }
+
+    /// Completes the given name into the 'owner/repo' form with `--owner`.
+    pub(crate) fn to_repo_name(&self, name: &str) -> String {
+        if name.contains('/') {
+            name.to_string()
+        } else {
+            format!("{}/{}", self.owner, name)
+        }
     }
 }
 

@@ -9,19 +9,8 @@ class {{ project.name | to_class_name}} < Formula
   version VERSION
   license "{{ project.license }}"
 
-  {%- for asset in release.assets %}
-    {%- if "darwin" in asset.name and "amd64" in asset.name %}
-  if OS.mac? && Hardware::CPU.intel?
-    {%- endif %}
-    {%- if "darwin" in asset.name and "arm64" in asset.name %}
-  if OS.mac? && Hardware::CPU.arm?
-    {%- endif %}
-    {%- if "linux" in asset.name and "amd64" in asset.name %}
-  if OS.linux? && Hardware::CPU.intel?
-    {%- endif %}
-    {%- if "linux" in asset.name and "arm64" in asset.name %}
-  if OS.linux? && Hardware::CPU.arm?
-    {%- endif %}
+  {%- for asset in release.assets | supported_assets %}
+  if {{ asset.condition }}
     url "{{ asset.url }}"
     sha256 "{{ asset.url | sha256 }}"
   end

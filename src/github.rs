@@ -37,7 +37,7 @@ pub(crate) fn get_latest(repo_name: String) -> Result<Release> {
     Ok(release)
 }
 
-pub(crate) fn _owner_repo_to_project(name: String) -> Result<Project> {
+pub(crate) fn owner_repo_to_project(name: String) -> Result<Project> {
     let (owner, repo) = name
         .split_once('/')
         .with_context(|| format!("Invalid repository name '{}': expected format owner/repo", name))?;
