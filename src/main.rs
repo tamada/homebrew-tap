@@ -459,6 +459,11 @@ fn find_project_and_release<'a>(name: &str, projects: &'a [Artifact]) -> Result<
         .ok_or_else(|| anyhow::anyhow!("{name}: Project not found for name."))
 }
 
+fn find_project<'a>(name: &str, projects: &'a [Project]) -> Result<&'a Project> {
+    projects.iter().find(|p| p.is_match_repo(name))
+        .ok_or_else(|| anyhow::anyhow!("{name}: Project not found for name."))
+}
+
 /// Convert `Vec<Result<T>>` to `Result<Vec<T>>`
 /// If `Vec<Result<T>>` has the multiple errors,
 /// `Result<Vec<T>>` returns `Err(Vec<Error>)`.
@@ -569,14 +574,21 @@ fn create_template(project: &Project, tera: &mut Tera, config: &cli::Config) -> 
 fn perform_register(names: Vec<String>, config: cli::Config, mut tera: Tera) -> Result<()> {
     let mut projects = read_projects("data/projects.json")?;
     let registered = new_projects(&names, &projects)?;
-    for project in registered.iter() {
-        create_template(project, &mut tera, &config)?;
+    let added = !registered.is_empty();
+    projects.extend(registered);
+
+    // Every name asked for gets its template, not only the ones just added to
+    // data/projects.json: a project put there by hand is already registered,
+    // and would otherwise go on failing for the template it never got.
+    // create_template keeps a template that is already there, so a name that
+    // needs nothing passes through it untouched.
+    for name in names.iter() {
+        create_template(find_project(name, &projects)?, &mut tera, &config)?;
     }
-    if registered.is_empty() {
-        log::info!("No project to register.");
-    } else {
-        projects.extend(registered);
+    if added {
         write_projects("data/projects.json", &projects, &config)?;
+    } else {
+        log::info!("No project to add to data/projects.json.");
     }
     update_artifacts(names, artifacts_of(projects)?, config, tera)
 }
@@ -666,6 +678,15 @@ mod tests {
         // 9rules is the exception: its formula cannot be named after a digit.
         assert_eq!(project_of("9rules").formula_name(), "ninerules");
         assert_eq!(project_of("9rules").template_name(), "ninerules.template");
+    }
+
+    #[test]
+    fn test_find_project() -> Result<()> {
+        let projects = vec![project_of("mosty"), project_of("9rules")];
+        assert_eq!(find_project("tamada/9rules", &projects)?.name, "9rules");
+        assert!(find_project("9rules", &projects).is_err(), "the name has to carry its owner");
+        assert!(find_project("tamada/pelicode", &projects).is_err());
+        Ok(())
     }
 
     #[test]
