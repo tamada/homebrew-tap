@@ -34,34 +34,46 @@
   },
   {
     "repoName": "tamada/oinkie",
-    "tagName": "v0.3.0",
-    "name": "Release v0.3.0",
-    "publishedAt": "2026-08-14T01:59:06Z",
-    "url": "https://github.com/tamada/oinkie/releases/tag/v0.3.0",
+    "tagName": "v0.8.1",
+    "name": "Release v0.8.1",
+    "publishedAt": "2026-10-08T09:44:31Z",
+    "url": "https://github.com/tamada/oinkie/releases/tag/v0.8.1",
     "assets": [
       {
-        "url": "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_amd64_darwin.tar.gz",
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_amd64_darwin.tar.gz",
         "downloadCount": 1,
-        "name": "oinkie-0.3.0_amd64_darwin.tar.gz",
-        "size": 972325
+        "name": "oinkie-0.8.1_amd64_darwin.tar.gz",
+        "size": 2334580
       },
       {
-        "url": "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_amd64_linux.tar.gz",
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_amd64_linux.tar.gz",
         "downloadCount": 1,
-        "name": "oinkie-0.3.0_amd64_linux.tar.gz",
-        "size": 943743
+        "name": "oinkie-0.8.1_amd64_linux.tar.gz",
+        "size": 2137530
       },
       {
-        "url": "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_arm64_darwin.tar.gz",
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_amd64_windows.zip",
         "downloadCount": 1,
-        "name": "oinkie-0.3.0_arm64_darwin.tar.gz",
-        "size": 933766
+        "name": "oinkie-0.8.1_amd64_windows.zip",
+        "size": 2071081
       },
       {
-        "url": "https://github.com/tamada/oinkie/releases/download/v0.3.0/oinkie-0.3.0_arm64_linux.tar.gz",
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_arm64_darwin.tar.gz",
         "downloadCount": 1,
-        "name": "oinkie-0.3.0_arm64_linux.tar.gz",
-        "size": 869232
+        "name": "oinkie-0.8.1_arm64_darwin.tar.gz",
+        "size": 2241712
+      },
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_arm64_linux.tar.gz",
+        "downloadCount": 1,
+        "name": "oinkie-0.8.1_arm64_linux.tar.gz",
+        "size": 1993378
+      },
+      {
+        "url": "https://github.com/tamada/oinkie/releases/download/v0.8.1/oinkie-0.8.1_arm64_windows.zip",
+        "downloadCount": 1,
+        "name": "oinkie-0.8.1_arm64_windows.zip",
+        "size": 1945780
       }
     ]
   },
@@ -166,34 +178,34 @@
   },
   {
     "repoName": "tamada/totebag",
-    "tagName": "v0.9.0",
-    "name": "Release v0.9.0",
-    "publishedAt": "2026-08-12T08:26:20Z",
-    "url": "https://github.com/tamada/totebag/releases/tag/v0.9.0",
+    "tagName": "v0.10.0",
+    "name": "Release v0.10.0",
+    "publishedAt": "2026-10-12T00:17:14Z",
+    "url": "https://github.com/tamada/totebag/releases/tag/v0.10.0",
     "assets": [
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_darwin_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.9.0_darwin_amd64.tar.gz",
-        "size": 2513806
+        "url": "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_darwin_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.10.0_darwin_amd64.tar.gz",
+        "size": 3983233
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_darwin_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.9.0_darwin_arm64.tar.gz",
-        "size": 2358914
+        "url": "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_darwin_arm64.tar.gz",
+        "downloadCount": 2,
+        "name": "totebag-0.10.0_darwin_arm64.tar.gz",
+        "size": 3341703
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_linux_amd64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.9.0_linux_amd64.tar.gz",
-        "size": 2795840
+        "url": "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_linux_amd64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.10.0_linux_amd64.tar.gz",
+        "size": 4277954
       },
       {
-        "url": "https://github.com/tamada/totebag/releases/download/v0.9.0/totebag-0.9.0_linux_arm64.tar.gz",
-        "downloadCount": 0,
-        "name": "totebag-0.9.0_linux_arm64.tar.gz",
-        "size": 2212241
+        "url": "https://github.com/tamada/totebag/releases/download/v0.10.0/totebag-0.10.0_linux_arm64.tar.gz",
+        "downloadCount": 1,
+        "name": "totebag-0.10.0_linux_arm64.tar.gz",
+        "size": 3190739
       }
     ]
   },

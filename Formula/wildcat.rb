@@ -14,20 +14,8 @@ class Wildcat < Formula
     sha256 "72a106fcd128b289585b84e9e1a63b960d334176608b6dc33a450195528a1e7c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_386.tar.gz"
-    sha256 "17d57fdcbc80fbf01abc23df420de0395dcd15f17f7996f765c22bcfd4745772"
-  end
-  if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_linux_amd64.tar.gz"
     sha256 "232d89f0166b23bfcb588502c3b1a897f8691e91ab6c67d31b4cfeb57521d1bc"
-  end
-  if OS.windows? && Hardware::CPU.intel?
-    url "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_386.tar.gz"
-    sha256 "bdbdbce3167f8f6663a2ff79a41c8559e638592cf00cda1d895298a13e3f47e0"
-  end
-  if OS.windows? && Hardware::CPU.intel?
-    url "https://github.com/tamada/wildcat/releases/download/v1.2.0/wildcat-1.2.0_windows_amd64.tar.gz"
-    sha256 "f083b5e5a9d3fb666cb3525574e1a08bba8a6f696dc8853771a9862d7333430c"
   end
 
   option "without-completions", "Disable bash completions"

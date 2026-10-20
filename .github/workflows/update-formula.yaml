@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cargo run -- "${{ github.event.inputs.repo }}"
-          git add Formula README.md
+          git add Formula README.md data/releases.json
 
       - name: Commit and push changes
         shell: bash

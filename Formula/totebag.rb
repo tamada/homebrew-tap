@@ -30,7 +30,7 @@ class Totebag < Formula
 
     bash_completion.install "assets/completions/bash/totebag" if build.with? "completions"
     zsh_completion.install  "assets/completions/zsh/_totebag" if build.with? "completions"
-    fish_completion.install "assets/completions/fish/totebag" if build.with? "completions"
+    fish_completion.install "assets/completions/fish/totebag.fish" if build.with? "completions"
   end
 
   test do

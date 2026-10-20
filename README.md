@@ -18,7 +18,7 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 - [oinkie](https://github.com/tamada/oinkie)([:spider_web:](https://tamada.github.io/oinkie))
   - **Formula:** `tamada/tap/oinkie`
   - **Description:** The software birthmark toolkit for real-world executables
-  - **Releases:** v0.3.0 (2026-08-14)
+  - **Releases:** v0.8.1 (2026-10-08)
 - [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
   - **Formula:** `tamada/tap/gixor`
   - **Description:** Git Ignore Management System for Multiple Repositories.
