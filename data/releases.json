@@ -178,34 +178,46 @@
   },
   {
     "repoName": "tamada/gixor",
-    "tagName": "v0.5.2",
-    "name": "Release v0.5.2",
-    "publishedAt": "2026-08-08T11:44:53Z",
-    "url": "https://github.com/tamada/gixor/releases/tag/v0.5.2",
+    "tagName": "v0.6.0",
+    "name": "Release v0.6.0",
+    "publishedAt": "2026-11-25T05:02:59Z",
+    "url": "https://github.com/tamada/gixor/releases/tag/v0.6.0",
     "assets": [
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_darwin_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_darwin_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.5.2_darwin_amd64.tar.gz",
-        "size": 6342387
+        "name": "gixor-0.6.0_darwin_amd64.tar.gz",
+        "size": 6406257
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_darwin_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_darwin_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.5.2_darwin_arm64.tar.gz",
-        "size": 6097685
+        "name": "gixor-0.6.0_darwin_arm64.tar.gz",
+        "size": 6154222
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_linux_amd64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_linux_amd64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.5.2_linux_amd64.tar.gz",
-        "size": 6673002
+        "name": "gixor-0.6.0_linux_amd64.tar.gz",
+        "size": 6827212
       },
       {
-        "url": "https://github.com/tamada/gixor/releases/download/v0.5.2/gixor-0.5.2_linux_arm64.tar.gz",
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_linux_arm64.tar.gz",
         "downloadCount": 0,
-        "name": "gixor-0.5.2_linux_arm64.tar.gz",
-        "size": 6692991
+        "name": "gixor-0.6.0_linux_arm64.tar.gz",
+        "size": 6778182
+      },
+      {
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_windows_amd64.zip",
+        "downloadCount": 0,
+        "name": "gixor-0.6.0_windows_amd64.zip",
+        "size": 5715016
+      },
+      {
+        "url": "https://github.com/tamada/gixor/releases/download/v0.6.0/gixor-0.6.0_windows_arm64.zip",
+        "downloadCount": 0,
+        "name": "gixor-0.6.0_windows_arm64.zip",
+        "size": 5606072
       }
     ]
   },

@@ -11,6 +11,10 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
 
 ## Available products
 
+- [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
+  - **Formula:** `tamada/tap/gixor`
+  - **Description:** Git Ignore Management System for Multiple Repositories.
+  - **Releases:** v0.6.0 (2026-11-25)
 - [pelicode](https://github.com/tamada/pelicode)([:spider_web:](https://tamada.github.io/pelicode/))
   - **Formula:** `tamada/tap/pelicode`
   - **Description:** Know where your code came from.
@@ -27,10 +31,6 @@ Or run the `brew install tamada/tap/<formula>` command to install the tool in yo
   - **Formula:** `tamada/tap/mosty`
   - **Description:** MOu Seiseki Teisei ha Yadayo!
   - **Releases:** v0.1.0 (2026-09-25)
-- [gixor](https://github.com/tamada/gixor)([:spider_web:](https://tamada.github.io/gixor/))
-  - **Formula:** `tamada/tap/gixor`
-  - **Description:** Git Ignore Management System for Multiple Repositories.
-  - **Releases:** v0.5.2 (2026-08-08)
 - [sibling](https://github.com/tamada/sibling)([:spider_web:](https://tamada.github.io/sibling/))
   - **Formula:** `tamada/tap/sibling`
   - **Description:** get the next/previous sibling directory name.
